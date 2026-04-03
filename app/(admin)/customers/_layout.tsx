@@ -10,6 +10,7 @@ export default function CustomersLayout() {
       }}
     >
       <Stack.Screen name="index" options={{ title: "Clientes" }} />
+      <Stack.Screen name="[id]" options={{ title: "Cliente" }} />
     </Stack>
   );
 }
