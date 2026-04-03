@@ -60,7 +60,7 @@ export default function MoreScreen() {
     { icon: <BarChart3 size={22} color="#FFC300" />, label: "Analíticas", onPress: () => {} },
     { icon: <Tag size={22} color="#FFC300" />, label: "Promociones", onPress: () => router.push("/(admin)/more/promotions") },
     { icon: <Ticket size={22} color="#FFC300" />, label: "Cupones", onPress: () => router.push("/(admin)/more/coupons") },
-    { icon: <CreditCard size={22} color="#FFC300" />, label: "Suscripción", onPress: () => {} },
+    { icon: <CreditCard size={22} color="#FFC300" />, label: "Suscripción", onPress: () => router.push("/(admin)/more/subscription") },
     { icon: <MessageCircle size={22} color="#FFC300" />, label: "WhatsApp", onPress: () => {} },
     { icon: <Sparkles size={22} color="#FFC300" />, label: "AI Studio", onPress: () => {} },
     { icon: <HelpCircle size={22} color="#FFC300" />, label: "Ayuda", onPress: () => {} },
