@@ -1,12 +1,17 @@
 import { View, Text, TouchableOpacity, ScrollView, Alert } from "react-native";
 import {
-  Settings,
+  Store,
+  Clock,
+  CreditCard,
+  DollarSign,
+  ShoppingBag,
+  Truck,
+  Palette,
+  Wrench,
   BarChart3,
   Tag,
   Ticket,
-  CreditCard,
   MessageCircle,
-  Truck,
   Sparkles,
   HelpCircle,
   LogOut,
@@ -40,52 +45,25 @@ export default function MoreScreen() {
     ]);
   };
 
-  const menuItems: MenuItem[] = [
-    {
-      icon: <Settings size={22} color="#FFC300" />,
-      label: "Configuración",
-      onPress: () => {},
-    },
-    {
-      icon: <BarChart3 size={22} color="#FFC300" />,
-      label: "Analíticas",
-      onPress: () => {},
-    },
-    {
-      icon: <Tag size={22} color="#FFC300" />,
-      label: "Promociones",
-      onPress: () => {},
-    },
-    {
-      icon: <Ticket size={22} color="#FFC300" />,
-      label: "Cupones",
-      onPress: () => {},
-    },
-    {
-      icon: <CreditCard size={22} color="#FFC300" />,
-      label: "Suscripción",
-      onPress: () => {},
-    },
-    {
-      icon: <MessageCircle size={22} color="#FFC300" />,
-      label: "WhatsApp",
-      onPress: () => {},
-    },
-    {
-      icon: <Truck size={22} color="#FFC300" />,
-      label: "Delivery",
-      onPress: () => {},
-    },
-    {
-      icon: <Sparkles size={22} color="#FFC300" />,
-      label: "AI Studio",
-      onPress: () => {},
-    },
-    {
-      icon: <HelpCircle size={22} color="#FFC300" />,
-      label: "Ayuda",
-      onPress: () => {},
-    },
+  const settingsItems: MenuItem[] = [
+    { icon: <Store size={22} color="#FFC300" />, label: "Info de tienda", onPress: () => router.push("/(admin)/more/settings/store-info") },
+    { icon: <Clock size={22} color="#FFC300" />, label: "Horarios", onPress: () => router.push("/(admin)/more/settings/business-hours") },
+    { icon: <CreditCard size={22} color="#FFC300" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
+    { icon: <DollarSign size={22} color="#FFC300" />, label: "Conversión de moneda", onPress: () => router.push("/(admin)/more/settings/currency") },
+    { icon: <ShoppingBag size={22} color="#FFC300" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
+    { icon: <Truck size={22} color="#FFC300" />, label: "Delivery", onPress: () => router.push("/(admin)/more/settings/delivery") },
+    { icon: <Palette size={22} color="#FFC300" />, label: "Diseño", onPress: () => router.push("/(admin)/more/settings/design") },
+    { icon: <Wrench size={22} color="#FFC300" />, label: "Avanzado", onPress: () => router.push("/(admin)/more/settings/advanced") },
+  ];
+
+  const otherItems: MenuItem[] = [
+    { icon: <BarChart3 size={22} color="#FFC300" />, label: "Analíticas", onPress: () => {} },
+    { icon: <Tag size={22} color="#FFC300" />, label: "Promociones", onPress: () => {} },
+    { icon: <Ticket size={22} color="#FFC300" />, label: "Cupones", onPress: () => {} },
+    { icon: <CreditCard size={22} color="#FFC300" />, label: "Suscripción", onPress: () => {} },
+    { icon: <MessageCircle size={22} color="#FFC300" />, label: "WhatsApp", onPress: () => {} },
+    { icon: <Sparkles size={22} color="#FFC300" />, label: "AI Studio", onPress: () => {} },
+    { icon: <HelpCircle size={22} color="#FFC300" />, label: "Ayuda", onPress: () => {} },
   ];
 
   return (
@@ -99,8 +77,33 @@ export default function MoreScreen() {
         </Text>
       </View>
 
-      <View className="mt-2">
-        {menuItems.map((item, index) => (
+      {/* Settings Section */}
+      <Text className="text-cream-400 font-sans-medium text-xs px-4 pt-4 pb-2 uppercase tracking-wider">
+        Configuración
+      </Text>
+      <View>
+        {settingsItems.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            className="flex-row items-center px-4 py-4 border-b border-elegant-gray"
+            onPress={item.onPress}
+            activeOpacity={0.7}
+          >
+            <View className="w-10">{item.icon}</View>
+            <Text className="flex-1 text-white font-sans text-base">
+              {item.label}
+            </Text>
+            <ChevronRight size={18} color="#666" />
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      {/* Tools Section */}
+      <Text className="text-cream-400 font-sans-medium text-xs px-4 pt-6 pb-2 uppercase tracking-wider">
+        Herramientas
+      </Text>
+      <View>
+        {otherItems.map((item, index) => (
           <TouchableOpacity
             key={index}
             className="flex-row items-center px-4 py-4 border-b border-elegant-gray"
