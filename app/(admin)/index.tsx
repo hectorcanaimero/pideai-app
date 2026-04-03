@@ -16,6 +16,8 @@ import { useStore } from "@/contexts/StoreContext";
 import { supabase } from "@/services/supabase";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { StoreStatusToggle } from "@/components/dashboard/StoreStatusToggle";
+import { CatalogStats } from "@/components/dashboard/CatalogStats";
+import { StoreQRCode } from "@/components/dashboard/StoreQRCode";
 
 interface DashboardStats {
   todayOrders: number;
@@ -151,6 +153,14 @@ export default function DashboardScreen() {
           subtitle="en tu catalogo"
         />
       </View>
+
+      {/* Catalog Analytics */}
+      <View className="mt-4">
+        <CatalogStats />
+      </View>
+
+      {/* Store QR Code */}
+      <StoreQRCode />
     </ScrollView>
   );
 }
