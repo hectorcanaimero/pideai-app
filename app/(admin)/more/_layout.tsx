@@ -15,7 +15,7 @@ export default function MoreLayout() {
       <Stack.Screen name="settings/payment" options={{ title: "Pagos" }} />
       <Stack.Screen name="settings/currency" options={{ title: "Conversión" }} />
       <Stack.Screen name="settings/order-settings" options={{ title: "Pedidos" }} />
-      <Stack.Screen name="settings/delivery" options={{ title: "Delivery" }} />
+      <Stack.Screen name="settings/delivery" options={{ title: "Entrega" }} />
       <Stack.Screen name="settings/design" options={{ title: "Diseño" }} />
       <Stack.Screen name="settings/advanced" options={{ title: "Avanzado" }} />
       <Stack.Screen name="subscription" options={{ title: "Suscripción" }} />

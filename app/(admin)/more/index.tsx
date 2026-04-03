@@ -52,7 +52,7 @@ export default function MoreScreen() {
     { icon: <CreditCard size={22} color="#FFC300" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
     { icon: <DollarSign size={22} color="#FFC300" />, label: "Conversión de moneda", onPress: () => router.push("/(admin)/more/settings/currency") },
     { icon: <ShoppingBag size={22} color="#FFC300" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
-    { icon: <Truck size={22} color="#FFC300" />, label: "Delivery", onPress: () => router.push("/(admin)/more/settings/delivery") },
+    { icon: <Truck size={22} color="#FFC300" />, label: "Entrega", onPress: () => router.push("/(admin)/more/settings/delivery") },
     { icon: <Palette size={22} color="#FFC300" />, label: "Diseño", onPress: () => router.push("/(admin)/more/settings/design") },
     { icon: <Wrench size={22} color="#FFC300" />, label: "Avanzado", onPress: () => router.push("/(admin)/more/settings/advanced") },
   ];
