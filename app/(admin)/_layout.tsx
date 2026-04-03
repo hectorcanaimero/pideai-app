@@ -6,11 +6,27 @@ import {
   Users,
   MoreHorizontal,
 } from "lucide-react-native";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/services/supabase";
 import { useStore } from "@/contexts/StoreContext";
 import { View, Text, ActivityIndicator } from "react-native";
 
 export default function AdminLayout() {
   const { store, loading, isStoreOwner } = useStore();
+
+  const { data: pendingCount } = useQuery({
+    queryKey: ["pending-orders-count", store?.id],
+    queryFn: async () => {
+      const { count } = await supabase
+        .from("orders")
+        .select("id", { count: "exact", head: true })
+        .eq("store_id", store!.id)
+        .in("status", ["pending", "confirmed"]);
+      return count ?? 0;
+    },
+    enabled: !!store?.id,
+    refetchInterval: 10000,
+  });
 
   if (loading) {
     return (
@@ -72,6 +88,13 @@ export default function AdminLayout() {
           tabBarIcon: ({ color, size }) => (
             <ClipboardList size={size} color={color} />
           ),
+          tabBarBadge:
+            pendingCount && pendingCount > 0 ? pendingCount : undefined,
+          tabBarBadgeStyle: {
+            backgroundColor: "#EF4444",
+            fontFamily: "Poppins-Bold",
+            fontSize: 10,
+          },
         }}
       />
       <Tabs.Screen
