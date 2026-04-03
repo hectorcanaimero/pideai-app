@@ -10,6 +10,11 @@ export default function OrdersLayout() {
       }}
     >
       <Stack.Screen name="index" options={{ title: "Pedidos" }} />
+      <Stack.Screen name="[id]" options={{ title: "Detalle" }} />
+      <Stack.Screen
+        name="kitchen"
+        options={{ title: "Cocina", headerStyle: { backgroundColor: "#000" } }}
+      />
     </Stack>
   );
 }
