@@ -13,6 +13,7 @@ export default function MoreLayout() {
       <Stack.Screen name="settings/store-info" options={{ title: "Info de tienda" }} />
       <Stack.Screen name="settings/business-hours" options={{ title: "Horarios" }} />
       <Stack.Screen name="settings/payment" options={{ title: "Pagos" }} />
+      <Stack.Screen name="settings/payment-methods" options={{ title: "Métodos de pago" }} />
       <Stack.Screen name="settings/currency" options={{ title: "Conversión" }} />
       <Stack.Screen name="settings/order-settings" options={{ title: "Pedidos" }} />
       <Stack.Screen name="settings/delivery" options={{ title: "Entrega" }} />

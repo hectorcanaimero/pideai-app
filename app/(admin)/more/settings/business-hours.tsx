@@ -9,8 +9,9 @@ import {
   Alert,
   ActivityIndicator,
 } from "react-native";
-import { Clock, Plus, Trash2, Info, Moon } from "lucide-react-native";
+import { Clock, Plus, Trash2, Info, Moon, Power } from "lucide-react-native";
 import { useStore } from "@/contexts/StoreContext";
+import { useUpdateStore } from "@/hooks/useStoreSettings";
 import { supabase } from "@/services/supabase";
 
 interface StoreHour {
@@ -33,12 +34,15 @@ const DAYS = [
 
 export default function BusinessHoursScreen() {
   const { store } = useStore();
+  const updateStore = useUpdateStore();
   const [hours, setHours] = useState<StoreHour[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [forceStatus, setForceStatus] = useState<string>("normal");
 
   useEffect(() => {
     if (store?.id) loadHours();
+    if (store) setForceStatus(store.force_status ?? "normal");
   }, [store?.id]);
 
   const loadHours = async () => {
@@ -157,6 +161,86 @@ export default function BusinessHoursScreen() {
         <Text className="text-white font-sans-bold text-lg">
           Horarios de atención
         </Text>
+      </View>
+
+      {/* Force Status */}
+      <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
+        <View className="flex-row items-center gap-2 mb-3">
+          <Power size={16} color="#FFC300" />
+          <Text className="text-white font-sans-semibold text-sm">
+            Forzar apertura / cierre
+          </Text>
+        </View>
+
+        <View className="flex-row gap-2 mb-2">
+          <TouchableOpacity
+            className={`flex-1 py-2.5 rounded-xl items-center ${
+              forceStatus === "normal" ? "bg-gold-500" : "bg-elegant-dark"
+            }`}
+            onPress={async () => {
+              setForceStatus("normal");
+              await updateStore.mutateAsync({ force_status: "normal" });
+            }}
+            activeOpacity={0.7}
+          >
+            <Text
+              className={`font-sans-medium text-xs ${
+                forceStatus === "normal" ? "text-elegant-dark" : "text-cream-400"
+              }`}
+            >
+              Normal
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            className={`flex-1 py-2.5 rounded-xl items-center ${
+              forceStatus === "force_open" ? "bg-green-600" : "bg-elegant-dark"
+            }`}
+            onPress={async () => {
+              setForceStatus("force_open");
+              await updateStore.mutateAsync({ force_status: "force_open" });
+            }}
+            activeOpacity={0.7}
+          >
+            <Text
+              className={`font-sans-medium text-xs ${
+                forceStatus === "force_open" ? "text-white" : "text-cream-400"
+              }`}
+            >
+              Forzar abierto
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            className={`flex-1 py-2.5 rounded-xl items-center ${
+              forceStatus === "force_closed" ? "bg-red-600" : "bg-elegant-dark"
+            }`}
+            onPress={async () => {
+              setForceStatus("force_closed");
+              await updateStore.mutateAsync({ force_status: "force_closed" });
+            }}
+            activeOpacity={0.7}
+          >
+            <Text
+              className={`font-sans-medium text-xs ${
+                forceStatus === "force_closed" ? "text-white" : "text-cream-400"
+              }`}
+            >
+              Forzar cerrado
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View className="flex-row items-start gap-1.5">
+          <Info size={12} color="#888" style={{ marginTop: 2 }} />
+          <Text className="text-cream-400/60 font-sans text-xs flex-1">
+            {forceStatus === "normal"
+              ? "La tienda abre y cierra según los horarios configurados abajo."
+              : forceStatus === "force_open"
+              ? "La tienda aparece como ABIERTA sin importar los horarios."
+              : "La tienda aparece como CERRADA sin importar los horarios."}
+          </Text>
+        </View>
       </View>
 
       <View className="flex-row items-start gap-1.5 mb-5">
