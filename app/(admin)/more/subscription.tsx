@@ -176,11 +176,11 @@ export default function SubscriptionScreen() {
           </Text>
         </View>
 
-        {status === "trialing" && subscription.trial_end && (
+        {status === "trialing" && (subscription as any).trial_end && (
           <View className="flex-row justify-between mt-1 pt-2 border-t border-white/10">
             <Text className="text-blue-400 font-sans text-sm">Fin de prueba</Text>
             <Text className="text-blue-400 font-sans-medium text-sm">
-              {formatDate(subscription.trial_end)}
+              {formatDate((subscription as any).trial_end)}
             </Text>
           </View>
         )}
