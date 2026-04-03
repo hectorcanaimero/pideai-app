@@ -17,10 +17,11 @@ import {
   HelpCircle,
   LogOut,
   ChevronRight,
-  Bike,
 } from "lucide-react-native";
+import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/useAuth";
 import { useStore } from "@/contexts/StoreContext";
+import { supabase } from "@/services/supabase";
 import { router } from "expo-router";
 
 interface MenuItem {
@@ -32,6 +33,20 @@ interface MenuItem {
 export default function MoreScreen() {
   const { signOut } = useAuth();
   const { store } = useStore();
+
+  // Check module access for WhatsApp
+  const { data: hasWhatsapp } = useQuery({
+    queryKey: ["module-access", store?.id, "whatsapp"],
+    queryFn: async () => {
+      const { data, error } = await supabase.rpc("has_module_enabled", {
+        p_store_id: store!.id,
+        p_module_name: "whatsapp",
+      });
+      if (error) return false;
+      return data as boolean;
+    },
+    enabled: !!store?.id,
+  });
 
   const handleLogout = () => {
     Alert.alert("Cerrar Sesión", "¿Estás seguro?", [
@@ -64,7 +79,16 @@ export default function MoreScreen() {
     { icon: <Tag size={22} color="#FFC300" />, label: "Promociones", onPress: () => router.push("/(admin)/more/promotions") },
     { icon: <Ticket size={22} color="#FFC300" />, label: "Cupones", onPress: () => router.push("/(admin)/more/coupons") },
     { icon: <CreditCard size={22} color="#FFC300" />, label: "Suscripción", onPress: () => router.push("/(admin)/more/subscription") },
-    { icon: <MessageCircle size={22} color="#FFC300" />, label: "WhatsApp", onPress: () => router.push("/(admin)/more/whatsapp") },
+    // WhatsApp only shows if module is enabled in subscription
+    ...(hasWhatsapp
+      ? [
+          {
+            icon: <MessageCircle size={22} color="#FFC300" />,
+            label: "WhatsApp",
+            onPress: () => router.push("/(admin)/more/whatsapp"),
+          },
+        ]
+      : []),
     { icon: <Sparkles size={22} color="#FFC300" />, label: "AI Studio", onPress: () => router.push("/(admin)/more/ai-studio") },
     { icon: <HelpCircle size={22} color="#FFC300" />, label: "Central de ayuda", onPress: () => router.push("/(admin)/more/help") },
   ];
