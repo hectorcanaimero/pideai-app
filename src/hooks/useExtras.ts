@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/services/supabase";
+import { useStore } from "@/contexts/StoreContext";
 
 export interface ExtraGroup {
   id: string;
@@ -126,5 +127,71 @@ export function useDeleteExtra() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: extrasKeys.all });
     },
+  });
+}
+
+export function useCreateExtraGroup() {
+  const queryClient = useQueryClient();
+  const { store } = useStore();
+
+  return useMutation({
+    mutationFn: async (data: {
+      name: string;
+      selection_type: "single" | "multiple";
+      is_required: boolean;
+      min_selections?: number;
+      max_selections?: number | null;
+      category_id?: string | null;
+    }) => {
+      const { error } = await supabase.from("extra_groups").insert({
+        ...data,
+        store_id: store!.id,
+        is_active: true,
+      });
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: extrasKeys.all }),
+  });
+}
+
+export function useUpdateExtraGroup() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      id,
+      ...data
+    }: {
+      id: string;
+      name?: string;
+      selection_type?: string;
+      is_required?: boolean;
+      min_selections?: number;
+      max_selections?: number | null;
+      is_active?: boolean;
+      category_id?: string | null;
+    }) => {
+      const { error } = await supabase
+        .from("extra_groups")
+        .update(data)
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: extrasKeys.all }),
+  });
+}
+
+export function useDeleteExtraGroup() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase
+        .from("extra_groups")
+        .delete()
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: extrasKeys.all }),
   });
 }
