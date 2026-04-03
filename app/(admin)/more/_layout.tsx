@@ -25,6 +25,8 @@ export default function MoreLayout() {
       <Stack.Screen name="whatsapp" options={{ title: "WhatsApp" }} />
       <Stack.Screen name="delivery-management" options={{ title: "Motoristas" }} />
       <Stack.Screen name="ai-studio" options={{ title: "AI Studio" }} />
+      <Stack.Screen name="extras/index" options={{ title: "Grupos de Extra" }} />
+      <Stack.Screen name="extras/[groupId]" options={{ title: "Extras del grupo" }} />
       <Stack.Screen name="help" options={{ title: "Central de ayuda" }} />
       <Stack.Screen name="analytics" options={{ title: "Analíticas" }} />
     </Stack>

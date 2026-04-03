@@ -147,7 +147,7 @@ export default function ExtraGroupsScreen() {
     return (
       <TouchableOpacity
         className="bg-elegant-gray rounded-xl p-4 mb-2 flex-row items-center"
-        onPress={() => router.push(`/(admin)/menu/extras/${item.id}`)}
+        onPress={() => router.push(`/(admin)/more/extras/${item.id}`)}
         onLongPress={() => openEdit(item)}
         activeOpacity={0.7}
       >
