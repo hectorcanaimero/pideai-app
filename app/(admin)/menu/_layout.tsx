@@ -13,6 +13,7 @@ export default function MenuLayout() {
       <Stack.Screen name="category/[id]" options={{ title: "Categoria" }} />
       <Stack.Screen name="product/[id]" options={{ title: "Producto" }} />
       <Stack.Screen name="product/create" options={{ title: "Nuevo Producto" }} />
+      <Stack.Screen name="extras/index" options={{ title: "Grupos de Extra" }} />
       <Stack.Screen name="extras/[groupId]" options={{ title: "Extras" }} />
     </Stack>
   );
