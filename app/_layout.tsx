@@ -1,5 +1,5 @@
 import "../global.css";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Slot } from "expo-router";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -9,8 +9,14 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { StoreProvider } from "@/contexts/StoreContext";
 import { AppState, AppStateStatus } from "react-native";
 import { focusManager } from "@tanstack/react-query";
+import { useOrderNotifications } from "@/hooks/useOrderNotifications";
 
 SplashScreen.preventAutoHideAsync();
+
+function NotificationSetup({ children }: { children: ReactNode }) {
+  useOrderNotifications();
+  return <>{children}</>;
+}
 
 function onAppStateChange(status: AppStateStatus) {
   focusManager.setFocused(status === "active");
@@ -43,7 +49,9 @@ export default function RootLayout() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <StoreProvider>
-          <Slot />
+          <NotificationSetup>
+            <Slot />
+          </NotificationSetup>
         </StoreProvider>
       </AuthProvider>
     </QueryClientProvider>
