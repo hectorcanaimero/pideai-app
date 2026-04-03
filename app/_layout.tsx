@@ -12,6 +12,10 @@ import { focusManager } from "@tanstack/react-query";
 import { useOrderNotifications } from "@/hooks/useOrderNotifications";
 import { OfflineBanner } from "@/components/shared/OfflineBanner";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
+import { initSentry } from "@/lib/sentry";
+
+// Initialize Sentry at module level
+initSentry();
 
 SplashScreen.preventAutoHideAsync();
 

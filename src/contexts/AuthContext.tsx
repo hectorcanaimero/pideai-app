@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/services/supabase";
+import { setUserContext, clearUserContext } from "@/lib/sentry";
 
 interface AuthContextType {
   session: Session | null;
@@ -25,6 +26,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
+      if (session?.user) {
+        setUserContext(session.user.id, session.user.email);
+      } else {
+        clearUserContext();
+      }
       setLoading(false);
     });
 
@@ -32,6 +38,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
+      if (session?.user) {
+        setUserContext(session.user.id, session.user.email);
+      } else {
+        clearUserContext();
+      }
     });
 
     return () => subscription.unsubscribe();

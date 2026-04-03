@@ -75,7 +75,10 @@
           "sounds": []
         }
       ],
-      "@sentry/react-native"
+      ["@sentry/react-native/expo", {
+        "organization": "pideai",
+        "project": "mobile-admin"
+      }]
     ],
     "experiments": {
       "typedRoutes": true,
