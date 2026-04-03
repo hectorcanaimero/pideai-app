@@ -1,39 +1,15 @@
 import { View, Text } from "react-native";
 import { Eye, Users, TrendingUp } from "lucide-react-native";
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/services/supabase";
 import { useStore } from "@/contexts/StoreContext";
+import { getCatalogViewsByStore } from "@/lib/posthogApi";
 
 export function CatalogStats() {
   const { store } = useStore();
 
   const { data } = useQuery({
     queryKey: ["catalog-views", store?.id],
-    queryFn: async () => {
-      // Get current month's catalog views
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = now.getMonth() + 1;
-
-      const { data, error } = await supabase
-        .from("catalog_views_monthly")
-        .select("total_views, unique_visitors")
-        .eq("store_id", store!.id)
-        .eq("year", year)
-        .eq("month", month)
-        .maybeSingle();
-
-      if (error) {
-        console.error("Error fetching catalog views:", error);
-        return { totalViews: 0, uniqueVisitors: 0, viewsPerVisitor: 0 };
-      }
-
-      const totalViews = data?.total_views ?? 0;
-      const uniqueVisitors = data?.unique_visitors ?? 0;
-      const viewsPerVisitor = uniqueVisitors > 0 ? (totalViews / uniqueVisitors).toFixed(1) : "0";
-
-      return { totalViews, uniqueVisitors, viewsPerVisitor };
-    },
+    queryFn: () => getCatalogViewsByStore(store!.id, 30),
     enabled: !!store?.id,
     staleTime: 5 * 60 * 1000,
   });
