@@ -32,7 +32,11 @@ export default function CustomersScreen() {
         onPress={() =>
           router.push({
             pathname: "/(admin)/customers/[id]",
-            params: { id: item.email, name: item.name },
+            params: {
+              id: item.phone ?? item.email,
+              name: item.name,
+              phone: item.phone ?? "",
+            },
           })
         }
       />

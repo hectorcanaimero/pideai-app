@@ -14,18 +14,23 @@ import { OrderStatusBadge } from "@/components/orders/OrderStatusBadge";
 import { ORDER_TYPE_LABELS, type OrderStatus } from "@/lib/orderConstants";
 
 export default function CustomerDetailScreen() {
-  const { id: email, name } = useLocalSearchParams<{
+  const { id: identifier, name, phone: paramPhone } = useLocalSearchParams<{
     id: string;
     name: string;
+    phone: string;
   }>();
-  const { data: orders, isLoading } = useCustomerOrders(email);
   const { data: customers } = useCustomers();
   const { store } = useStore();
   const currency = store?.currency ?? "USD";
 
-  // Find customer data from list
-  const customer = customers?.find((c) => c.email === email);
-  const phone = customer?.phone;
+  // Find customer data from list — match by phone first, then email
+  const customer = customers?.find(
+    (c) => c.phone === paramPhone || c.email === identifier
+  );
+  const phone = customer?.phone ?? paramPhone;
+  const email = customer?.email ?? identifier;
+
+  const { data: orders, isLoading } = useCustomerOrders(phone, email);
 
   return (
     <ScrollView
