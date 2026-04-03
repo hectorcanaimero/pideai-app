@@ -6,6 +6,7 @@ import {
   RefreshControl,
   ActivityIndicator,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   ShoppingBag,
   DollarSign,
@@ -27,6 +28,7 @@ interface DashboardStats {
 }
 
 export default function DashboardScreen() {
+  const insets = useSafeAreaInsets();
   const { store } = useStore();
   const [stats, setStats] = useState<DashboardStats>({
     todayOrders: 0,
@@ -107,7 +109,7 @@ export default function DashboardScreen() {
   return (
     <ScrollView
       className="flex-1 bg-elegant-dark"
-      contentContainerStyle={{ padding: 16, paddingTop: 26, paddingBottom: 32 }}
+      contentContainerStyle={{ padding: 16, paddingTop: insets.top + 10, paddingBottom: 32 }}
       refreshControl={
         <RefreshControl
           refreshing={refreshing}
