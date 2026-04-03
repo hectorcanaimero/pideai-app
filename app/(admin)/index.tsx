@@ -19,6 +19,7 @@ import { StatCard } from "@/components/dashboard/StatCard";
 import { StoreStatusToggle } from "@/components/dashboard/StoreStatusToggle";
 import { CatalogStats } from "@/components/dashboard/CatalogStats";
 import { StoreQRCode } from "@/components/dashboard/StoreQRCode";
+import { ExchangeRateWidget } from "@/components/dashboard/ExchangeRateWidget";
 
 interface DashboardStats {
   todayOrders: number;
@@ -127,6 +128,9 @@ export default function DashboardScreen() {
       <View className="mb-4">
         <StoreStatusToggle />
       </View>
+
+      {/* Exchange Rate - Venezuela only */}
+      <ExchangeRateWidget />
 
       <View className="flex-row flex-wrap gap-3 mb-4">
         <StatCard
