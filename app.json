@@ -15,7 +15,11 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.pideai.admin"
+      "bundleIdentifier": "com.pideai.admin",
+      "associatedDomains": [
+        "applinks:pideai.com",
+        "applinks:*.pideai.com"
+      ]
     },
     "android": {
       "adaptiveIcon": {
@@ -26,7 +30,24 @@
       },
       "package": "com.pideai.admin",
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "*.pideai.com",
+              "pathPrefix": "/"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "output": "static",
@@ -53,7 +74,8 @@
         {
           "sounds": []
         }
-      ]
+      ],
+      "@sentry/react-native"
     ],
     "experiments": {
       "typedRoutes": true,
