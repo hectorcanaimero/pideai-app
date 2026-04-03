@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as Notifications from "expo-notifications";
+import { type EventSubscription } from "expo-modules-core";
 import { router } from "expo-router";
 import { supabase } from "@/services/supabase";
 import { useStore } from "@/contexts/StoreContext";
@@ -13,7 +14,7 @@ export function useOrderNotifications() {
   const { store } = useStore();
   const { user } = useAuth();
   const lastOrderIdRef = useRef<string | null>(null);
-  const responseListener = useRef<Notifications.EventSubscription>();
+  const responseListener = useRef<EventSubscription | null>(null);
 
   // Register for push notifications
   useEffect(() => {
@@ -33,9 +34,7 @@ export function useOrderNotifications() {
 
     return () => {
       if (responseListener.current) {
-        Notifications.removeNotificationSubscription(
-          responseListener.current
-        );
+        responseListener.current.remove();
       }
     };
   }, []);

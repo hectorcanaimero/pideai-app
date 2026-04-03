@@ -9,6 +9,8 @@ Notifications.setNotificationHandler({
     shouldShowAlert: true,
     shouldPlaySound: true,
     shouldSetBadge: true,
+    shouldShowBanner: true,
+    shouldShowList: true,
   }),
 });
 
@@ -37,7 +39,7 @@ export async function registerForPushNotifications(
   const projectId = Constants.expoConfig?.extra?.eas?.projectId;
   const token = (await Notifications.getExpoPushTokenAsync({ projectId })).data;
 
-  const { error } = await supabase.from("device_tokens").upsert(
+  const { error } = await supabase.from("device_tokens" as any).upsert(
     {
       user_id: userId,
       store_id: storeId,
