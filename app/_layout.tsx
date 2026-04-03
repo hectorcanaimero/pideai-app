@@ -10,6 +10,8 @@ import { StoreProvider } from "@/contexts/StoreContext";
 import { AppState, AppStateStatus } from "react-native";
 import { focusManager } from "@tanstack/react-query";
 import { useOrderNotifications } from "@/hooks/useOrderNotifications";
+import { OfflineBanner } from "@/components/shared/OfflineBanner";
+import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -46,14 +48,17 @@ export default function RootLayout() {
   }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <StoreProvider>
-          <NotificationSetup>
-            <Slot />
-          </NotificationSetup>
-        </StoreProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <StoreProvider>
+            <NotificationSetup>
+              <OfflineBanner />
+              <Slot />
+            </NotificationSetup>
+          </StoreProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
