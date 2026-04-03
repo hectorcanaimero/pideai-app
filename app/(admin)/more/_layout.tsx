@@ -21,6 +21,9 @@ export default function MoreLayout() {
       <Stack.Screen name="subscription" options={{ title: "Suscripción" }} />
       <Stack.Screen name="promotions" options={{ title: "Promociones" }} />
       <Stack.Screen name="coupons" options={{ title: "Cupones" }} />
+      <Stack.Screen name="whatsapp" options={{ title: "WhatsApp" }} />
+      <Stack.Screen name="delivery-management" options={{ title: "Motoristas" }} />
+      <Stack.Screen name="ai-studio" options={{ title: "AI Studio" }} />
     </Stack>
   );
 }
