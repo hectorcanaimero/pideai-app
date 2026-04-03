@@ -18,6 +18,8 @@ export default function MoreLayout() {
       <Stack.Screen name="settings/delivery" options={{ title: "Delivery" }} />
       <Stack.Screen name="settings/design" options={{ title: "Diseño" }} />
       <Stack.Screen name="settings/advanced" options={{ title: "Avanzado" }} />
+      <Stack.Screen name="promotions" options={{ title: "Promociones" }} />
+      <Stack.Screen name="coupons" options={{ title: "Cupones" }} />
     </Stack>
   );
 }
