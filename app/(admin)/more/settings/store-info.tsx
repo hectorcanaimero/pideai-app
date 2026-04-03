@@ -47,6 +47,7 @@ export default function StoreInfoScreen() {
   const [isFoodBusiness, setIsFoodBusiness] = useState(true);
   const [catalogMode, setCatalogMode] = useState(false);
   const [operatingModes, setOperatingModes] = useState<string[]>([]);
+  const [hideCatalogPrices, setHideCatalogPrices] = useState(false);
 
   useEffect(() => {
     if (store) {
@@ -59,6 +60,7 @@ export default function StoreInfoScreen() {
       setIsFoodBusiness(store.is_food_business ?? true);
       setCatalogMode(store.catalog_mode ?? false);
       setOperatingModes(store.operating_modes ?? []);
+      setHideCatalogPrices((store as any).hide_catalog_prices === true);
     }
   }, [store]);
 
@@ -85,6 +87,7 @@ export default function StoreInfoScreen() {
         is_food_business: isFoodBusiness,
         catalog_mode: catalogMode,
         operating_modes: operatingModes.length > 0 ? operatingModes : null,
+        hide_catalog_prices: catalogMode ? hideCatalogPrices : false,
       });
       Alert.alert("Guardado", "Información actualizada");
     } catch {
@@ -277,6 +280,24 @@ export default function StoreInfoScreen() {
             thumbColor="#fff"
           />
         </View>
+
+        {/* Hide prices - only when catalog mode is ON */}
+        {catalogMode && (
+          <View className="flex-row items-center justify-between mt-4 pt-4 border-t border-elegant-dark">
+            <View className="flex-1 mr-3">
+              <Text className="text-white font-sans-medium text-sm">Ocultar precios</Text>
+              <Text className="text-cream-400 font-sans text-xs mt-0.5">
+                No mostrar precios en el catálogo
+              </Text>
+            </View>
+            <Switch
+              value={hideCatalogPrices}
+              onValueChange={setHideCatalogPrices}
+              trackColor={{ false: "#444", true: "#FFC300" }}
+              thumbColor="#fff"
+            />
+          </View>
+        )}
       </View>
 
       {/* Save */}
