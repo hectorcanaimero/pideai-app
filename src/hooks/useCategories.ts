@@ -45,10 +45,15 @@ export function useCreateCategory() {
   const { store } = useStore();
 
   return useMutation({
-    mutationFn: async ({ name, description }: { name: string; description?: string }) => {
+    mutationFn: async ({ name, description, display_order }: { name: string; description?: string; display_order?: number }) => {
       const { data, error } = await supabase
         .from("categories")
-        .insert({ name, description: description || null, store_id: store!.id })
+        .insert({
+          name,
+          description: description || null,
+          display_order: display_order ?? null,
+          store_id: store!.id,
+        })
         .select()
         .single();
 
@@ -65,10 +70,14 @@ export function useUpdateCategory() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async ({ id, name, description }: { id: string; name: string; description?: string }) => {
+    mutationFn: async ({ id, name, description, display_order }: { id: string; name: string; description?: string; display_order?: number }) => {
       const { error } = await supabase
         .from("categories")
-        .update({ name, description: description || null })
+        .update({
+          name,
+          description: description || null,
+          display_order: display_order ?? null,
+        })
         .eq("id", id);
 
       if (error) throw error;
