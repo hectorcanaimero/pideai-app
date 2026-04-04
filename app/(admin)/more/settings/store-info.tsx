@@ -102,20 +102,20 @@ export default function StoreInfoScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Store size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Información de la tienda</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Información de la tienda</Text>
       </View>
 
       {/* Basic Info */}
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Nombre de la tienda *</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={name}
         onChangeText={setName}
       />
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Email</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -124,7 +124,7 @@ export default function StoreInfoScreen() {
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Teléfono</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={phone}
         onChangeText={setPhone}
         keyboardType="phone-pad"
@@ -132,7 +132,7 @@ export default function StoreInfoScreen() {
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Dirección</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={address}
         onChangeText={setAddress}
       />
@@ -140,7 +140,7 @@ export default function StoreInfoScreen() {
       {/* Country */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
         <Globe size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">País</Text>
+        <Text className="text-text-primary font-sans-semibold text-sm">País</Text>
       </View>
       <ScrollView
         horizontal
@@ -159,7 +159,7 @@ export default function StoreInfoScreen() {
           >
             <Text
               className={`font-sans-medium text-sm ${
-                country === c.code ? "text-elegant-dark" : "text-cream-300"
+                country === c.code ? "text-text-inverted" : "text-cream-300"
               }`}
             >
               {c.label}
@@ -171,7 +171,7 @@ export default function StoreInfoScreen() {
       {/* Currency */}
       <View className="flex-row items-center gap-2 mb-2">
         <DollarSign size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">Moneda</Text>
+        <Text className="text-text-primary font-sans-semibold text-sm">Moneda</Text>
       </View>
       <ScrollView
         horizontal
@@ -190,7 +190,7 @@ export default function StoreInfoScreen() {
           >
             <Text
               className={`font-sans-medium text-sm ${
-                currency === c ? "text-elegant-dark" : "text-cream-300"
+                currency === c ? "text-text-inverted" : "text-cream-300"
               }`}
             >
               {c}
@@ -202,7 +202,7 @@ export default function StoreInfoScreen() {
       {/* Operating Modes */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
         <ShoppingBag size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">Modos de funcionamiento</Text>
+        <Text className="text-text-primary font-sans-semibold text-sm">Modos de funcionamiento</Text>
       </View>
       <View className="gap-2 mb-4">
         {OPERATING_MODES.map((mode) => {
@@ -231,7 +231,7 @@ export default function StoreInfoScreen() {
                   isActive ? "bg-gold-500" : "bg-elegant-dark border border-cream-400/30"
                 }`}
               >
-                {isActive && <Text className="text-elegant-dark text-xs font-sans-bold">✓</Text>}
+                {isActive && <Text className="text-text-inverted text-xs font-sans-bold">✓</Text>}
               </View>
             </TouchableOpacity>
           );
@@ -241,12 +241,12 @@ export default function StoreInfoScreen() {
       {/* Business Type */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
         <Utensils size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">Tipo de empresa</Text>
+        <Text className="text-text-primary font-sans-semibold text-sm">Tipo de empresa</Text>
       </View>
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">Negocio de comida</Text>
+            <Text className="text-text-primary font-sans-medium text-sm">Negocio de comida</Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">
               {isFoodBusiness
                 ? "Stock deshabilitado, galería de imágenes limitada"
@@ -266,7 +266,7 @@ export default function StoreInfoScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">Modo catálogo</Text>
+            <Text className="text-text-primary font-sans-medium text-sm">Modo catálogo</Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">
               {catalogMode
                 ? "Solo muestra productos, sin carrito ni pedidos"
@@ -285,7 +285,7 @@ export default function StoreInfoScreen() {
         {catalogMode && (
           <View className="flex-row items-center justify-between mt-4 pt-4 border-t border-elegant-dark">
             <View className="flex-1 mr-3">
-              <Text className="text-white font-sans-medium text-sm">Ocultar precios</Text>
+              <Text className="text-text-primary font-sans-medium text-sm">Ocultar precios</Text>
               <Text className="text-cream-400 font-sans text-xs mt-0.5">
                 No mostrar precios en el catálogo
               </Text>
@@ -310,9 +310,9 @@ export default function StoreInfoScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">Guardar</Text>
+          <Text className="text-text-inverted font-sans-bold text-base">Guardar</Text>
         )}
       </TouchableOpacity>
     </ScrollView>

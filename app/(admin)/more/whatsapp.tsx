@@ -45,7 +45,7 @@ export default function WhatsAppScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <MessageCircle size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">WhatsApp</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">WhatsApp</Text>
       </View>
 
       {/* WhatsApp Number */}
@@ -53,7 +53,7 @@ export default function WhatsAppScreen() {
         Número de WhatsApp
       </Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={whatsappNumber}
         onChangeText={setWhatsappNumber}
         keyboardType="phone-pad"
@@ -65,7 +65,7 @@ export default function WhatsAppScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-sm">
               Redirigir pedidos a WhatsApp
             </Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">
@@ -96,7 +96,7 @@ export default function WhatsAppScreen() {
         activeOpacity={0.8}
         disabled={updateStore.isPending}
       >
-        <Text className="text-elegant-dark font-sans-bold text-base">
+        <Text className="text-text-inverted font-sans-bold text-base">
           {updateStore.isPending ? "Guardando..." : "Guardar cambios"}
         </Text>
       </TouchableOpacity>

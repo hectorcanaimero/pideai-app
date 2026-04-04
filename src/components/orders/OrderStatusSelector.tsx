@@ -66,7 +66,7 @@ export function OrderStatusSelector({ orderId, currentStatus }: OrderStatusSelec
           disabled={updateStatus.isPending}
           activeOpacity={0.8}
         >
-          <Text className="text-white font-sans-bold text-base">
+          <Text className="text-text-primary font-sans-bold text-base">
             {updateStatus.isPending ? "Actualizando..." : `Pasar a: ${STATUS_LABELS[nextStatus]}`}
           </Text>
         </TouchableOpacity>

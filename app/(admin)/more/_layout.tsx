@@ -4,7 +4,7 @@ export default function MoreLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: "#1A1A1A" },
+        headerStyle: { backgroundColor: "#FFFFFF" },
         headerTintColor: "#EB1C8D",
         headerTitleStyle: { fontFamily: "Poppins-SemiBold" },
       }}

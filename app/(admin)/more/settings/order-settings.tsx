@@ -36,12 +36,12 @@ export default function OrderSettingsScreen() {
     <ScrollView className="flex-1 bg-elegant-dark" contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
       <View className="flex-row items-center gap-2 mb-6">
         <ClipboardList size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Pedidos</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Pedidos</Text>
       </View>
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Monto mínimo de pedido</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={minimumOrderPrice}
         onChangeText={setMinimumOrderPrice}
         keyboardType="decimal-pad"
@@ -52,7 +52,7 @@ export default function OrderSettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">Redirigir a WhatsApp</Text>
+            <Text className="text-text-primary font-sans-medium text-sm">Redirigir a WhatsApp</Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">Enviar pedido por WhatsApp</Text>
           </View>
           <Switch value={redirectToWhatsapp} onValueChange={setRedirectToWhatsapp} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
@@ -65,7 +65,7 @@ export default function OrderSettingsScreen() {
         disabled={updateStore.isPending}
         activeOpacity={0.8}
       >
-        {updateStore.isPending ? <ActivityIndicator color="#1A1A1A" /> : <Text className="text-elegant-dark font-sans-bold text-base">Guardar</Text>}
+        {updateStore.isPending ? <ActivityIndicator color="#FFFFFF" /> : <Text className="text-text-inverted font-sans-bold text-base">Guardar</Text>}
       </TouchableOpacity>
     </ScrollView>
   );

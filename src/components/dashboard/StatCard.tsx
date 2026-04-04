@@ -15,7 +15,7 @@ export function StatCard({ icon, label, value, subtitle }: StatCardProps) {
         {icon}
         <Text className="text-cream-400 font-sans text-xs">{label}</Text>
       </View>
-      <Text className="text-white font-sans-bold text-2xl">{value}</Text>
+      <Text className="text-text-primary font-sans-bold text-2xl">{value}</Text>
       {subtitle && (
         <Text className="text-cream-400 font-sans text-xs mt-1">{subtitle}</Text>
       )}

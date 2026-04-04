@@ -85,7 +85,7 @@ export default function DeliveryManagementScreen() {
 
             {/* Info */}
             <View className="flex-1 mr-3">
-              <Text className="text-white font-sans-bold text-base">
+              <Text className="text-text-primary font-sans-bold text-base">
                 {item.name}
               </Text>
               <View className="flex-row items-center mt-1 gap-3">

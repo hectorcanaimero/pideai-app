@@ -81,6 +81,7 @@ export function useOrderNotifications() {
         .from("orders")
         .select("id, customer_name, total_amount, order_type, status")
         .eq("store_id", store.id)
+        .eq("status", "pending")
         .order("created_at", { ascending: false })
         .limit(1);
 

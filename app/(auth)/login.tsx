@@ -43,7 +43,7 @@ export default function LoginScreen() {
       <View className="flex-1 justify-center px-8">
         <View className="items-center mb-12">
           <Text className="text-4xl font-sans-bold text-gold-500">PideAI</Text>
-          <Text className="text-base font-sans text-cream-200 mt-2">
+          <Text className="text-base font-sans text-text-secondary mt-2">
             Panel Administrativo
           </Text>
         </View>
@@ -53,7 +53,7 @@ export default function LoginScreen() {
             Email
           </Text>
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3.5 rounded-xl font-sans text-base"
+            className="bg-elegant-gray text-text-primary px-4 py-3.5 rounded-xl font-sans text-base"
             placeholder="tu@email.com"
             placeholderTextColor="#666"
             value={email}
@@ -69,7 +69,7 @@ export default function LoginScreen() {
             Contraseña
           </Text>
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3.5 rounded-xl font-sans text-base"
+            className="bg-elegant-gray text-text-primary px-4 py-3.5 rounded-xl font-sans text-base"
             placeholder="••••••••"
             placeholderTextColor="#666"
             value={password}
@@ -88,9 +88,9 @@ export default function LoginScreen() {
           activeOpacity={0.8}
         >
           {loading ? (
-            <ActivityIndicator color="#1A1A1A" />
+            <ActivityIndicator color="#FFFFFF" />
           ) : (
-            <Text className="text-elegant-dark font-sans-bold text-base">
+            <Text className="text-text-inverted font-sans-bold text-base">
               Iniciar Sesión
             </Text>
           )}

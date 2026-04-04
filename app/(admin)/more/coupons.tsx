@@ -273,7 +273,7 @@ export default function CouponsScreen() {
         {/* Code */}
         <Text className="text-cream-300 font-sans text-xs mb-1">Código *</Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.code}
           onChangeText={(t) => setForm((f) => ({ ...f, code: t.toUpperCase() }))}
           placeholder="Ej: DESCUENTO10"
@@ -285,7 +285,7 @@ export default function CouponsScreen() {
         {/* Name */}
         <Text className="text-cream-300 font-sans text-xs mb-1">Nombre *</Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.name}
           onChangeText={(t) => setForm((f) => ({ ...f, name: t }))}
           placeholder="Ej: 10% de descuento"
@@ -305,7 +305,7 @@ export default function CouponsScreen() {
             <Text
               className={`font-sans-medium text-xs ${
                 form.type === "percentage"
-                  ? "text-elegant-dark"
+                  ? "text-text-inverted"
                   : "text-cream-300"
               }`}
             >
@@ -322,7 +322,7 @@ export default function CouponsScreen() {
             <Text
               className={`font-sans-medium text-xs ${
                 form.type === "fixed_amount"
-                  ? "text-elegant-dark"
+                  ? "text-text-inverted"
                   : "text-cream-300"
               }`}
             >
@@ -336,7 +336,7 @@ export default function CouponsScreen() {
           Valor {form.type === "percentage" ? "(%)" : "($)"} *
         </Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.value}
           onChangeText={(t) => setForm((f) => ({ ...f, value: t }))}
           keyboardType="decimal-pad"
@@ -349,7 +349,7 @@ export default function CouponsScreen() {
           Monto mínimo de orden ($)
         </Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.minimum_order_amount}
           onChangeText={(t) =>
             setForm((f) => ({ ...f, minimum_order_amount: t }))
@@ -366,7 +366,7 @@ export default function CouponsScreen() {
               Descuento máximo ($)
             </Text>
             <TextInput
-              className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+              className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
               value={form.maximum_discount}
               onChangeText={(t) =>
                 setForm((f) => ({ ...f, maximum_discount: t }))
@@ -383,7 +383,7 @@ export default function CouponsScreen() {
           Límite de usos
         </Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.usage_limit}
           onChangeText={(t) => setForm((f) => ({ ...f, usage_limit: t }))}
           keyboardType="number-pad"
@@ -396,7 +396,7 @@ export default function CouponsScreen() {
           Fecha inicio (YYYY-MM-DD)
         </Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.start_date}
           onChangeText={(t) => setForm((f) => ({ ...f, start_date: t }))}
           placeholder="2026-01-01"
@@ -408,7 +408,7 @@ export default function CouponsScreen() {
           Fecha fin (YYYY-MM-DD)
         </Text>
         <TextInput
-          className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+          className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.end_date}
           onChangeText={(t) => setForm((f) => ({ ...f, end_date: t }))}
           placeholder="2026-12-31"
@@ -433,7 +433,7 @@ export default function CouponsScreen() {
           disabled={isSaving}
           activeOpacity={0.8}
         >
-          <Text className="text-elegant-dark font-sans-bold text-sm">
+          <Text className="text-text-inverted font-sans-bold text-sm">
             {isSaving
               ? "Guardando..."
               : editingCoupon
@@ -481,7 +481,7 @@ export default function CouponsScreen() {
               <Text className="text-gold font-sans-bold text-lg tracking-wider">
                 {item.code}
               </Text>
-              <Text className="text-white font-sans text-sm mt-1">
+              <Text className="text-text-primary font-sans text-sm mt-1">
                 {item.name}
               </Text>
             </View>
@@ -551,8 +551,8 @@ export default function CouponsScreen() {
           }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A1A" />
-          <Text className="text-elegant-dark font-sans-bold text-xs">
+          <Plus size={14} color="#FFFFFF" />
+          <Text className="text-text-inverted font-sans-bold text-xs">
             Nuevo
           </Text>
         </TouchableOpacity>

@@ -134,7 +134,7 @@ export function ExchangeRateWidget() {
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
           <TrendingUp size={18} color="#EB1C8D" />
-          <Text className="text-white font-sans-semibold text-base">Tasa BCV</Text>
+          <Text className="text-text-primary font-sans-semibold text-base">Tasa BCV</Text>
         </View>
         <TouchableOpacity
           className="bg-elegant-dark p-2 rounded-lg"
@@ -155,7 +155,7 @@ export function ExchangeRateWidget() {
         <View className="flex-1 bg-elegant-dark rounded-xl p-3">
           <Text className="text-cream-400 font-sans text-xs mb-1">USD</Text>
           <View className="flex-row items-baseline gap-1">
-            <Text className="text-white font-sans-bold text-2xl">
+            <Text className="text-text-primary font-sans-bold text-2xl">
               {usdRate ? usdRate.rate.toFixed(2) : "—"}
             </Text>
             <Text className="text-cream-400 font-sans text-xs">Bs</Text>
@@ -172,7 +172,7 @@ export function ExchangeRateWidget() {
           <View className="flex-1 bg-elegant-dark rounded-xl p-3">
             <Text className="text-cream-400 font-sans text-xs mb-1">EUR</Text>
             <View className="flex-row items-baseline gap-1">
-              <Text className="text-white font-sans-bold text-2xl">
+              <Text className="text-text-primary font-sans-bold text-2xl">
                 {eurRate.rate.toFixed(2)}
               </Text>
               <Text className="text-cream-400 font-sans text-xs">Bs</Text>

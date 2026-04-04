@@ -42,7 +42,7 @@ export default function AdminLayout() {
   if (!store || !isStoreOwner) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark px-8">
-        <Text className="text-xl font-sans-bold text-white text-center">
+        <Text className="text-xl font-sans-bold text-text-primary text-center">
           No tenés acceso a ninguna tienda
         </Text>
         <Text className="text-cream-400 mt-2 text-center font-sans">
@@ -57,15 +57,15 @@ export default function AdminLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#1A1A1A",
-          borderTopColor: "#2A2A2A",
+          backgroundColor: "#FFFFFF",
+          borderTopColor: "#E5E5E5",
           borderTopWidth: 1,
           height: 85,
           paddingBottom: 20,
           paddingTop: 8,
         },
         tabBarActiveTintColor: "#EB1C8D",
-        tabBarInactiveTintColor: "#888",
+        tabBarInactiveTintColor: "#6B6B6B",
         tabBarLabelStyle: {
           fontFamily: "Poppins-Medium",
           fontSize: 11,

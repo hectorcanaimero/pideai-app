@@ -17,7 +17,7 @@ export function CategoryCard({ category, onLongPress }: CategoryCardProps) {
       activeOpacity={0.7}
     >
       <View className="flex-1">
-        <Text className="text-white font-sans-semibold text-base">{category.name}</Text>
+        <Text className="text-text-primary font-sans-semibold text-base">{category.name}</Text>
         {category.description && (
           <Text className="text-cream-400 font-sans text-xs mt-0.5" numberOfLines={1}>
             {category.description}

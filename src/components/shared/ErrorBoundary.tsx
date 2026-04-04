@@ -39,7 +39,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <View className="flex-1 items-center justify-center bg-elegant-dark px-8">
           <AlertTriangle size={48} color="#EF4444" />
-          <Text className="text-white font-sans-bold text-lg mt-4 text-center">
+          <Text className="text-text-primary font-sans-bold text-lg mt-4 text-center">
             Algo salió mal
           </Text>
           <Text className="text-cream-400 font-sans text-sm mt-2 text-center">
@@ -50,8 +50,8 @@ export class ErrorBoundary extends Component<Props, State> {
             onPress={this.handleReset}
             activeOpacity={0.8}
           >
-            <RefreshCw size={16} color="#1A1A1A" />
-            <Text className="text-elegant-dark font-sans-bold text-sm">Reintentar</Text>
+            <RefreshCw size={16} color="#FFFFFF" />
+            <Text className="text-text-inverted font-sans-bold text-sm">Reintentar</Text>
           </TouchableOpacity>
         </View>
       );

@@ -158,7 +158,7 @@ export default function BusinessHoursScreen() {
     >
       <View className="flex-row items-center gap-2 mb-2">
         <Clock size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">
+        <Text className="text-text-primary font-sans-bold text-lg">
           Horarios de atención
         </Text>
       </View>
@@ -167,7 +167,7 @@ export default function BusinessHoursScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
           <Power size={16} color="#EB1C8D" />
-          <Text className="text-white font-sans-semibold text-sm">
+          <Text className="text-text-primary font-sans-semibold text-sm">
             Forzar apertura / cierre
           </Text>
         </View>
@@ -185,7 +185,7 @@ export default function BusinessHoursScreen() {
           >
             <Text
               className={`font-sans-medium text-xs ${
-                forceStatus === "normal" ? "text-elegant-dark" : "text-cream-400"
+                forceStatus === "normal" ? "text-text-inverted" : "text-cream-400"
               }`}
             >
               Normal
@@ -204,7 +204,7 @@ export default function BusinessHoursScreen() {
           >
             <Text
               className={`font-sans-medium text-xs ${
-                forceStatus === "force_open" ? "text-white" : "text-cream-400"
+                forceStatus === "force_open" ? "text-text-primary" : "text-cream-400"
               }`}
             >
               Forzar abierto
@@ -223,7 +223,7 @@ export default function BusinessHoursScreen() {
           >
             <Text
               className={`font-sans-medium text-xs ${
-                forceStatus === "force_closed" ? "text-white" : "text-cream-400"
+                forceStatus === "force_closed" ? "text-text-primary" : "text-cream-400"
               }`}
             >
               Forzar cerrado
@@ -260,7 +260,7 @@ export default function BusinessHoursScreen() {
           <View key={day.value} className="bg-elegant-gray rounded-2xl p-4 mb-3">
             {/* Day header */}
             <View className="flex-row items-center justify-between mb-2">
-              <Text className="text-white font-sans-semibold text-sm">
+              <Text className="text-text-primary font-sans-semibold text-sm">
                 {day.label}
               </Text>
               <View className="flex-row items-center gap-2">
@@ -293,7 +293,7 @@ export default function BusinessHoursScreen() {
                         Apertura
                       </Text>
                       <TextInput
-                        className="bg-elegant-gray text-white px-3 py-2 rounded-lg font-sans text-sm text-center"
+                        className="bg-elegant-gray text-text-primary px-3 py-2 rounded-lg font-sans text-sm text-center"
                         value={hour.open_time.slice(0, 5)}
                         onChangeText={(text) =>
                           updateHour(globalIndex, "open_time", formatTimeInput(text))
@@ -312,7 +312,7 @@ export default function BusinessHoursScreen() {
                         Cierre
                       </Text>
                       <TextInput
-                        className="bg-elegant-gray text-white px-3 py-2 rounded-lg font-sans text-sm text-center"
+                        className="bg-elegant-gray text-text-primary px-3 py-2 rounded-lg font-sans text-sm text-center"
                         value={hour.close_time.slice(0, 5)}
                         onChangeText={(text) =>
                           updateHour(globalIndex, "close_time", formatTimeInput(text))
@@ -380,9 +380,9 @@ export default function BusinessHoursScreen() {
         activeOpacity={0.8}
       >
         {saving ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-base">
             Guardar horarios
           </Text>
         )}

@@ -121,7 +121,7 @@ export default function DashboardScreen() {
       }
     >
       <View className="mb-6">
-        <Text className="text-2xl font-sans-bold text-white">Hola!</Text>
+        <Text className="text-2xl font-sans-bold text-text-primary">Hola!</Text>
         <Text className="text-cream-400 font-sans mt-1">{store?.name ?? "Mi Tienda"}</Text>
       </View>
 

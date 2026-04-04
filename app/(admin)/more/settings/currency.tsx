@@ -42,13 +42,13 @@ export default function CurrencySettingsScreen() {
     <ScrollView className="flex-1 bg-elegant-dark" contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
       <View className="flex-row items-center gap-2 mb-6">
         <DollarSign size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Conversión de moneda</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Conversión de moneda</Text>
       </View>
 
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">Habilitar conversión</Text>
+            <Text className="text-text-primary font-sans-medium text-sm">Habilitar conversión</Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">Mostrar precios en bolívares (VES)</Text>
           </View>
           <Switch value={enableConversion} onValueChange={setEnableConversion} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
@@ -59,14 +59,14 @@ export default function CurrencySettingsScreen() {
         <>
           <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
             <View className="flex-row items-center justify-between mb-3">
-              <Text className="text-white font-sans-medium text-sm">Usar tasa manual</Text>
+              <Text className="text-text-primary font-sans-medium text-sm">Usar tasa manual</Text>
               <Switch value={useManualRate} onValueChange={setUseManualRate} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
             </View>
             {useManualRate && (
               <View>
                 <Text className="text-cream-300 font-sans text-xs mb-1">Tasa USD → VES</Text>
                 <TextInput
-                  className="bg-elegant-dark text-white px-4 py-2.5 rounded-xl font-sans text-sm"
+                  className="bg-elegant-dark text-text-primary px-4 py-2.5 rounded-xl font-sans text-sm"
                   value={manualRate}
                   onChangeText={setManualRate}
                   keyboardType="decimal-pad"
@@ -80,7 +80,7 @@ export default function CurrencySettingsScreen() {
           <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
             <View className="flex-row items-center justify-between">
               <View className="flex-1 mr-3">
-                <Text className="text-white font-sans-medium text-sm">Ocultar precio original</Text>
+                <Text className="text-text-primary font-sans-medium text-sm">Ocultar precio original</Text>
                 <Text className="text-cream-400 font-sans text-xs mt-0.5">Mostrar solo VES</Text>
               </View>
               <Switch value={hideOriginalPrice} onValueChange={setHideOriginalPrice} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
@@ -95,7 +95,7 @@ export default function CurrencySettingsScreen() {
         disabled={updateStore.isPending}
         activeOpacity={0.8}
       >
-        {updateStore.isPending ? <ActivityIndicator color="#1A1A1A" /> : <Text className="text-elegant-dark font-sans-bold text-base">Guardar</Text>}
+        {updateStore.isPending ? <ActivityIndicator color="#FFFFFF" /> : <Text className="text-text-inverted font-sans-bold text-base">Guardar</Text>}
       </TouchableOpacity>
     </ScrollView>
   );

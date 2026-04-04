@@ -37,7 +37,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <View className="flex-1 justify-center">
         <View className="flex-row items-center gap-2">
           <Text
-            className="text-white font-sans-medium text-sm flex-1"
+            className="text-text-primary font-sans-medium text-sm flex-1"
             numberOfLines={1}
           >
             {product.name}

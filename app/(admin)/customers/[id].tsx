@@ -44,7 +44,7 @@ export default function CustomerDetailScreen() {
             {(name ?? "?").charAt(0).toUpperCase()}
           </Text>
         </View>
-        <Text className="text-white font-sans-bold text-xl">
+        <Text className="text-text-primary font-sans-bold text-xl">
           {name ?? "Cliente"}
         </Text>
         <Text className="text-cream-400 font-sans text-sm mt-0.5">
@@ -112,7 +112,7 @@ export default function CustomerDetailScreen() {
       {/* Order History */}
       <View className="flex-row items-center gap-2 mb-3">
         <ShoppingBag size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-base">
+        <Text className="text-text-primary font-sans-semibold text-base">
           Historial de pedidos
         </Text>
       </View>
@@ -135,7 +135,7 @@ export default function CustomerDetailScreen() {
             >
               <View className="flex-1">
                 <View className="flex-row items-center gap-2">
-                  <Text className="text-white font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-sm">
                     #{orderNumber}
                   </Text>
                   <OrderStatusBadge status={order.status as OrderStatus} />

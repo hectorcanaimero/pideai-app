@@ -260,15 +260,15 @@ export default function PaymentMethodsScreen() {
       <View className="flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
           <CreditCard size={20} color="#EB1C8D" />
-          <Text className="text-white font-sans-bold text-lg">Métodos de pago</Text>
+          <Text className="text-text-primary font-sans-bold text-lg">Métodos de pago</Text>
         </View>
         <TouchableOpacity
           className="bg-gold-500 px-3 py-1.5 rounded-lg flex-row items-center gap-1"
           onPress={() => { resetForm(); setShowForm(true); }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A1A" />
-          <Text className="text-elegant-dark font-sans-bold text-xs">Nuevo</Text>
+          <Plus size={14} color="#FFFFFF" />
+          <Text className="text-text-inverted font-sans-bold text-xs">Nuevo</Text>
         </TouchableOpacity>
       </View>
 
@@ -306,10 +306,10 @@ export default function PaymentMethodsScreen() {
                   onPress={() => setPaymentType(type.key)}
                   activeOpacity={0.7}
                 >
-                  <Icon size={14} color={isSelected ? "#1A1A1A" : "#888"} />
+                  <Icon size={14} color={isSelected ? "#FFFFFF" : "#888"} />
                   <Text
                     className={`font-sans-medium text-[10px] ${
-                      isSelected ? "text-elegant-dark" : "text-cream-400"
+                      isSelected ? "text-text-inverted" : "text-cream-400"
                     }`}
                   >
                     {type.label}
@@ -324,7 +324,7 @@ export default function PaymentMethodsScreen() {
             Nombre (opcional, se autogenera)
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={name}
             onChangeText={setName}
             placeholder={getTypeLabel(paymentType)}
@@ -351,7 +351,7 @@ export default function PaymentMethodsScreen() {
                   >
                     <Text
                       className={`font-sans text-xs ${
-                        bankCode === bank.code ? "text-elegant-dark font-sans-medium" : "text-cream-300"
+                        bankCode === bank.code ? "text-text-inverted font-sans-medium" : "text-cream-300"
                       }`}
                     >
                       {bank.name}
@@ -362,7 +362,7 @@ export default function PaymentMethodsScreen() {
 
               <Text className="text-cream-300 font-sans text-xs mb-1">Cédula</Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={cedula}
                 onChangeText={setCedula}
                 placeholder="V-12345678"
@@ -371,7 +371,7 @@ export default function PaymentMethodsScreen() {
 
               <Text className="text-cream-300 font-sans text-xs mb-1">Teléfono</Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={pmPhone}
                 onChangeText={setPmPhone}
                 placeholder="0412-1234567"
@@ -385,7 +385,7 @@ export default function PaymentMethodsScreen() {
             <>
               <Text className="text-cream-300 font-sans text-xs mb-1">Email de Zelle</Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zelleEmail}
                 onChangeText={setZelleEmail}
                 placeholder="tu@email.com"
@@ -396,7 +396,7 @@ export default function PaymentMethodsScreen() {
 
               <Text className="text-cream-300 font-sans text-xs mb-1">Titular</Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zelleHolder}
                 onChangeText={setZelleHolder}
                 placeholder="Nombre del titular"
@@ -409,7 +409,7 @@ export default function PaymentMethodsScreen() {
             <>
               <Text className="text-cream-300 font-sans text-xs mb-1">Binance Pay ID / Email</Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={binanceKey}
                 onChangeText={setBinanceKey}
                 placeholder="ID o email de Binance"
@@ -424,7 +424,7 @@ export default function PaymentMethodsScreen() {
             Descripción / Instrucciones
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={description}
             onChangeText={setDescription}
             placeholder="Instrucciones para el cliente"
@@ -452,7 +452,7 @@ export default function PaymentMethodsScreen() {
             disabled={createMethod.isPending || updateMethod.isPending}
             activeOpacity={0.8}
           >
-            <Text className="text-elegant-dark font-sans-bold text-sm">
+            <Text className="text-text-inverted font-sans-bold text-sm">
               {createMethod.isPending || updateMethod.isPending
                 ? "Guardando..."
                 : editing
@@ -484,7 +484,7 @@ export default function PaymentMethodsScreen() {
                 </View>
                 <View className="flex-1">
                   <View className="flex-row items-center gap-2">
-                    <Text className="text-white font-sans-medium text-sm flex-1">
+                    <Text className="text-text-primary font-sans-medium text-sm flex-1">
                       {method.name}
                     </Text>
                     <Switch

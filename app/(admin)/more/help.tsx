@@ -313,7 +313,7 @@ export default function HelpScreen() {
           </Text>
         </TouchableOpacity>
 
-        <Text className="text-white font-sans-bold text-lg mb-4">
+        <Text className="text-text-primary font-sans-bold text-lg mb-4">
           {selectedArticle.title}
         </Text>
 
@@ -339,7 +339,7 @@ export default function HelpScreen() {
         {/* Tip */}
         {selectedArticle.tip && (
           <View className="bg-elegant-gray rounded-xl p-4 mb-3 border-l-4 border-yellow-500">
-            <Text className="text-white font-sans-medium text-sm mb-1">
+            <Text className="text-text-primary font-sans-medium text-sm mb-1">
               {"💡 Consejo"}
             </Text>
             <Text className="text-cream-400 font-sans text-sm leading-5">
@@ -351,7 +351,7 @@ export default function HelpScreen() {
         {/* Note */}
         {selectedArticle.note && (
           <View className="bg-elegant-gray rounded-xl p-4 mb-3 border-l-4 border-blue-500">
-            <Text className="text-white font-sans-medium text-sm mb-1">
+            <Text className="text-text-primary font-sans-medium text-sm mb-1">
               {"ℹ️ Nota"}
             </Text>
             <Text className="text-cream-400 font-sans text-sm leading-5">
@@ -383,7 +383,7 @@ export default function HelpScreen() {
 
         <View className="flex-row items-center gap-2 mb-4">
           {selectedCategory.icon}
-          <Text className="text-white font-sans-bold text-lg">
+          <Text className="text-text-primary font-sans-bold text-lg">
             {selectedCategory.label}
           </Text>
         </View>
@@ -396,7 +396,7 @@ export default function HelpScreen() {
             onPress={() => setSelectedArticle(article)}
             activeOpacity={0.7}
           >
-            <Text className="text-white font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-sm">
               {article.title}
             </Text>
             <Text className="text-cream-400 font-sans text-xs mt-1">
@@ -420,7 +420,7 @@ export default function HelpScreen() {
           <Sparkles size={24} color="#EB1C8D" />
         </View>
         <View className="flex-1">
-          <Text className="text-white font-sans-bold text-base">
+          <Text className="text-text-primary font-sans-bold text-base">
             Hola, soy Sofía
           </Text>
           <Text className="text-cream-400 font-sans text-xs">
@@ -433,7 +433,7 @@ export default function HelpScreen() {
       <View className="bg-elegant-gray rounded-xl flex-row items-center px-3 mb-5">
         <Search size={18} color="#888" />
         <TextInput
-          className="flex-1 text-white font-sans text-sm py-3 px-2"
+          className="flex-1 text-text-primary font-sans text-sm py-3 px-2"
           placeholder="Buscar artículos, preguntas..."
           placeholderTextColor="#888"
           value={search}
@@ -465,7 +465,7 @@ export default function HelpScreen() {
                   }}
                   activeOpacity={0.7}
                 >
-                  <Text className="text-white font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-sm">
                     {article.title}
                   </Text>
                 </TouchableOpacity>
@@ -481,7 +481,7 @@ export default function HelpScreen() {
               </Text>
               {filteredFaqs.map((faq, i) => (
                 <View key={i} className="bg-elegant-gray rounded-xl p-4 mb-2">
-                  <Text className="text-white font-sans-medium text-sm mb-1.5">
+                  <Text className="text-text-primary font-sans-medium text-sm mb-1.5">
                     {faq.q}
                   </Text>
                   <Text className="text-cream-400 font-sans text-xs leading-5">
@@ -520,7 +520,7 @@ export default function HelpScreen() {
                 activeOpacity={0.7}
               >
                 <View className="mb-2">{cat.icon}</View>
-                <Text className="text-white font-sans-medium text-sm">
+                <Text className="text-text-primary font-sans-medium text-sm">
                   {cat.label}
                 </Text>
                 <Text className="text-cream-400 font-sans text-xs mt-0.5">
@@ -543,7 +543,7 @@ export default function HelpScreen() {
               activeOpacity={0.7}
             >
               <View className="flex-row items-center justify-between">
-                <Text className="text-white font-sans-medium text-sm flex-1 pr-2">
+                <Text className="text-text-primary font-sans-medium text-sm flex-1 pr-2">
                   {faq.q}
                 </Text>
                 {expandedFaq === i ? (
@@ -573,7 +573,7 @@ export default function HelpScreen() {
         activeOpacity={0.7}
       >
         <MessageCircle size={20} color="#fff" />
-        <Text className="text-white font-sans-bold text-sm">
+        <Text className="text-text-primary font-sans-bold text-sm">
           Contactar soporte por WhatsApp
         </Text>
       </TouchableOpacity>

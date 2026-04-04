@@ -22,13 +22,13 @@ export function OrderCard({ order }: OrderCardProps) {
     >
       <View className="flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
-          <Text className="text-white font-sans-bold text-base">#{orderNumber}</Text>
+          <Text className="text-text-primary font-sans-bold text-base">#{orderNumber}</Text>
           <Text className="text-cream-400 font-sans text-xs">{orderType}</Text>
         </View>
         <OrderStatusBadge status={order.status} />
       </View>
 
-      <Text className="text-cream-200 font-sans text-sm mb-1">
+      <Text className="text-text-secondary font-sans text-sm mb-1">
         {order.customer_name}
       </Text>
 

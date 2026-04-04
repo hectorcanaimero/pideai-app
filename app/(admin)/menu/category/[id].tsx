@@ -33,8 +33,8 @@ export default function CategoryProductsScreen() {
           }
           activeOpacity={0.8}
         >
-          <Plus size={16} color="#1A1A1A" />
-          <Text className="text-elegant-dark font-sans-bold text-sm">
+          <Plus size={16} color="#FFFFFF" />
+          <Text className="text-text-inverted font-sans-bold text-sm">
             Nuevo Producto
           </Text>
         </TouchableOpacity>

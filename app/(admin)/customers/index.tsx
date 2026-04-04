@@ -51,7 +51,7 @@ export default function CustomersScreen() {
         <View className="bg-elegant-gray rounded-xl flex-row items-center px-3">
           <Search size={16} color="#666" />
           <TextInput
-            className="flex-1 text-white font-sans text-sm py-3 px-2"
+            className="flex-1 text-text-primary font-sans text-sm py-3 px-2"
             placeholder="Buscar por nombre, email o telefono"
             placeholderTextColor="#666"
             value={search}

@@ -222,7 +222,7 @@ export default function DeliverySettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Truck size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Entrega</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Entrega</Text>
       </View>
 
       {/* Estimated delivery time */}
@@ -230,7 +230,7 @@ export default function DeliverySettingsScreen() {
         Tiempo estimado de entrega (minutos)
       </Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-2"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-2"
         value={estimatedTime}
         onChangeText={setEstimatedTime}
         keyboardType="number-pad"
@@ -248,7 +248,7 @@ export default function DeliverySettingsScreen() {
       {/* Delivery price mode */}
       <View className="flex-row items-center gap-2 mb-3">
         <DollarSign size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-sm">
           Modo de precio de entrega
         </Text>
       </View>
@@ -263,7 +263,7 @@ export default function DeliverySettingsScreen() {
         >
           <Text
             className={`font-sans-medium text-sm ${
-              priceMode === "fixed" ? "text-elegant-dark" : "text-cream-300"
+              priceMode === "fixed" ? "text-text-inverted" : "text-cream-300"
             }`}
           >
             Precio fijo
@@ -279,7 +279,7 @@ export default function DeliverySettingsScreen() {
         >
           <Text
             className={`font-sans-medium text-sm ${
-              priceMode === "by_zone" ? "text-elegant-dark" : "text-cream-300"
+              priceMode === "by_zone" ? "text-text-inverted" : "text-cream-300"
             }`}
           >
             Por zona
@@ -303,7 +303,7 @@ export default function DeliverySettingsScreen() {
             Precio fijo de envío ({currency})
           </Text>
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-2"
+            className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-2"
             value={fixedPrice}
             onChangeText={setFixedPrice}
             keyboardType="decimal-pad"
@@ -326,7 +326,7 @@ export default function DeliverySettingsScreen() {
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-row items-center gap-2">
               <MapPin size={16} color="#EB1C8D" />
-              <Text className="text-white font-sans-semibold text-sm">
+              <Text className="text-text-primary font-sans-semibold text-sm">
                 Zonas de envío
               </Text>
             </View>
@@ -338,8 +338,8 @@ export default function DeliverySettingsScreen() {
               }}
               activeOpacity={0.8}
             >
-              <Plus size={14} color="#1A1A1A" />
-              <Text className="text-elegant-dark font-sans-bold text-xs">
+              <Plus size={14} color="#FFFFFF" />
+              <Text className="text-text-inverted font-sans-bold text-xs">
                 Nueva
               </Text>
             </TouchableOpacity>
@@ -361,7 +361,7 @@ export default function DeliverySettingsScreen() {
                 Nombre de la zona *
               </Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zoneName}
                 onChangeText={setZoneName}
                 placeholder="Ej: Centro, Zona Norte"
@@ -373,7 +373,7 @@ export default function DeliverySettingsScreen() {
                 Precio de envío ({currency})
               </Text>
               <TextInput
-                className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zonePrice}
                 onChangeText={setZonePrice}
                 keyboardType="decimal-pad"
@@ -400,7 +400,7 @@ export default function DeliverySettingsScreen() {
                     Monto mínimo ({currency})
                   </Text>
                   <TextInput
-                    className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+                    className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                     value={zoneFreeMinAmount}
                     onChangeText={setZoneFreeMinAmount}
                     keyboardType="decimal-pad"
@@ -416,7 +416,7 @@ export default function DeliverySettingsScreen() {
                 disabled={createZone.isPending || updateZone.isPending}
                 activeOpacity={0.8}
               >
-                <Text className="text-elegant-dark font-sans-bold text-sm">
+                <Text className="text-text-inverted font-sans-bold text-sm">
                   {createZone.isPending || updateZone.isPending
                     ? "Guardando..."
                     : editingZone
@@ -437,7 +437,7 @@ export default function DeliverySettingsScreen() {
                 className="bg-elegant-gray rounded-xl p-3 mb-2 flex-row items-center"
               >
                 <View className="flex-1">
-                  <Text className="text-white font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-sm">
                     {zone.zone_name}
                   </Text>
                   <View className="flex-row items-center gap-2 mt-0.5">
@@ -492,7 +492,7 @@ export default function DeliverySettingsScreen() {
       {/* ============ FREE DELIVERY (global) ============ */}
       <View className="flex-row items-center gap-2 mb-3 mt-2">
         <Gift size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-sm">
           Envío gratis global
         </Text>
       </View>
@@ -500,7 +500,7 @@ export default function DeliverySettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-2">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-sm">
               Habilitar envío gratis
             </Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">
@@ -521,7 +521,7 @@ export default function DeliverySettingsScreen() {
               Monto mínimo para envío gratis ({currency})
             </Text>
             <TextInput
-              className="bg-elegant-dark text-white px-4 py-2.5 rounded-xl font-sans text-sm"
+              className="bg-elegant-dark text-text-primary px-4 py-2.5 rounded-xl font-sans text-sm"
               value={freeDeliveryMinAmount}
               onChangeText={setFreeDeliveryMinAmount}
               keyboardType="decimal-pad"
@@ -553,9 +553,9 @@ export default function DeliverySettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-base">
             Guardar
           </Text>
         )}

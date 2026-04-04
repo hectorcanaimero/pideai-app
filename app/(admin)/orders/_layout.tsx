@@ -4,7 +4,7 @@ export default function OrdersLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: "#1A1A1A" },
+        headerStyle: { backgroundColor: "#FFFFFF" },
         headerTintColor: "#EB1C8D",
         headerTitleStyle: { fontFamily: "Poppins-SemiBold" },
       }}
@@ -13,7 +13,7 @@ export default function OrdersLayout() {
       <Stack.Screen name="[id]" options={{ title: "Detalle" }} />
       <Stack.Screen
         name="kitchen"
-        options={{ title: "Cocina", headerStyle: { backgroundColor: "#000" } }}
+        options={{ title: "Cocina", headerStyle: { backgroundColor: "#F0EFEF" } }}
       />
     </Stack>
   );

@@ -98,7 +98,7 @@ export default function MoreScreen() {
   return (
     <ScrollView className="flex-1 bg-elegant-dark">
       <View className="px-4 py-6 border-b border-elegant-gray">
-        <Text className="text-white font-sans-bold text-xl">
+        <Text className="text-text-primary font-sans-bold text-xl">
           {store?.name ?? "Mi Tienda"}
         </Text>
         <Text className="text-cream-400 font-sans text-sm mt-1">
@@ -119,7 +119,7 @@ export default function MoreScreen() {
             activeOpacity={0.7}
           >
             <View className="w-10">{item.icon}</View>
-            <Text className="flex-1 text-white font-sans text-base">
+            <Text className="flex-1 text-text-primary font-sans text-base">
               {item.label}
             </Text>
             <ChevronRight size={18} color="#666" />
@@ -140,7 +140,7 @@ export default function MoreScreen() {
             activeOpacity={0.7}
           >
             <View className="w-10">{item.icon}</View>
-            <Text className="flex-1 text-white font-sans text-base">
+            <Text className="flex-1 text-text-primary font-sans text-base">
               {item.label}
             </Text>
             <ChevronRight size={18} color="#666" />

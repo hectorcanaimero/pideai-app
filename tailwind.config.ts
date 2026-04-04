@@ -9,63 +9,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#FDF2F8",
-          100: "#FCE7F3",
-          200: "#FBCFE8",
-          300: "#F9A8D4",
-          400: "#F472B6",
-          500: "#EB1C8D",
-          600: "#D6187F",
-          700: "#BE185D",
-          800: "#9D174D",
-          900: "#831843",
+        primary: {
+          DEFAULT: "#EB1C8D",
+          hover: "#C9157A",
+          light: "#F7EBF4",
+          badge: "#FADADF",
         },
-        surface: {
-          50: "#FFFFFF",
-          100: "#F7EBF4",
-          200: "#F0EFEF",
-          300: "#E5E5E5",
-          400: "#D4D4D4",
+        background: {
+          main: "#F0EFEF",
+          soft: "#F7EBF4",
+          surface: "#FFFFFF",
         },
-        neutral: {
-          dark: "#1A1A1A",
-          gray: "#2A2A2A",
-          muted: "#6B6B6B",
-          light: "#A3A3A3",
+        text: {
+          primary: "#1A1A1A",
+          secondary: "#6B6B6B",
+          inverted: "#FFFFFF",
         },
-        badge: {
-          pink: "#FADADF",
-        },
-        // Keep gold as alias for backward compat during migration
+        // Aliases for backward compat (used heavily in existing code)
         gold: {
-          50: "#FDF2F8",
-          100: "#FCE7F3",
-          200: "#FBCFE8",
-          300: "#F9A8D4",
-          400: "#F472B6",
           500: "#EB1C8D",
-          600: "#D6187F",
-          700: "#BE185D",
-          800: "#9D174D",
-          900: "#831843",
+          700: "#C9157A",
         },
         cream: {
-          50: "#FFFFFF",
           100: "#F7EBF4",
           200: "#F0EFEF",
-          300: "#E5E5E5",
-          400: "#D4D4D4",
-          500: "#A3A3A3",
+          300: "#D4D4D4",
+          400: "#6B6B6B",
         },
-        "elegant-dark": "#1A1A1A",
-        "elegant-gray": "#2A2A2A",
+        "elegant-dark": "#F0EFEF",
+        "elegant-gray": "#FFFFFF",
       },
       fontFamily: {
         sans: ["Poppins-Regular"],
         "sans-medium": ["Poppins-Medium"],
         "sans-semibold": ["Poppins-SemiBold"],
         "sans-bold": ["Poppins-Bold"],
+      },
+      borderRadius: {
+        brand: "0.625rem",
       },
     },
   },

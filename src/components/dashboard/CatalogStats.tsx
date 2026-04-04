@@ -16,7 +16,7 @@ export function CatalogStats() {
 
   return (
     <View className="mb-4">
-      <Text className="text-white font-sans-semibold text-base mb-3">Analytics del catálogo</Text>
+      <Text className="text-text-primary font-sans-semibold text-base mb-3">Analytics del catálogo</Text>
 
       <View className="flex-row gap-2">
         <View className="flex-1 bg-blue-500/10 rounded-2xl p-3 border border-blue-500/20">
@@ -24,7 +24,7 @@ export function CatalogStats() {
             <Eye size={14} color="#3B82F6" />
             <Text className="text-blue-400 font-sans text-[10px]">Vistas</Text>
           </View>
-          <Text className="text-white font-sans-bold text-xl">{data?.totalViews ?? 0}</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">{data?.totalViews ?? 0}</Text>
           <Text className="text-blue-300/60 font-sans text-[10px]">Últimos 30 días</Text>
         </View>
 
@@ -33,7 +33,7 @@ export function CatalogStats() {
             <Users size={14} color="#22C55E" />
             <Text className="text-green-400 font-sans text-[10px]">Visitantes</Text>
           </View>
-          <Text className="text-white font-sans-bold text-xl">{data?.uniqueVisitors ?? 0}</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">{data?.uniqueVisitors ?? 0}</Text>
           <Text className="text-green-300/60 font-sans text-[10px]">Personas únicas</Text>
         </View>
 
@@ -42,7 +42,7 @@ export function CatalogStats() {
             <TrendingUp size={14} color="#A855F7" />
             <Text className="text-purple-400 font-sans text-[10px]">Por visitante</Text>
           </View>
-          <Text className="text-white font-sans-bold text-xl">{data?.viewsPerVisitor ?? 0}</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">{data?.viewsPerVisitor ?? 0}</Text>
           <Text className="text-purple-300/60 font-sans text-[10px]">Promedio</Text>
         </View>
       </View>

@@ -107,11 +107,11 @@ export default function MenuScreen() {
           activeOpacity={0.8}
         >
           {showForm ? (
-            <X size={16} color="#1A1A1A" />
+            <X size={16} color="#FFFFFF" />
           ) : (
-            <Plus size={16} color="#1A1A1A" />
+            <Plus size={16} color="#FFFFFF" />
           )}
-          <Text className="text-elegant-dark font-sans-bold text-sm">
+          <Text className="text-text-inverted font-sans-bold text-sm">
             {showForm ? "Cancelar" : "Nueva"}
           </Text>
         </TouchableOpacity>
@@ -130,7 +130,7 @@ export default function MenuScreen() {
               Nombre *
             </Text>
             <TextInput
-              className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+              className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
               placeholder="Ej: Hamburguesas, Bebidas, Postres"
               placeholderTextColor="#666"
               value={name}
@@ -143,7 +143,7 @@ export default function MenuScreen() {
               Descripción
             </Text>
             <TextInput
-              className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+              className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
               placeholder="Descripción breve de la categoría"
               placeholderTextColor="#666"
               value={description}
@@ -158,7 +158,7 @@ export default function MenuScreen() {
               Orden de visualización
             </Text>
             <TextInput
-              className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-2"
+              className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-2"
               placeholder="0"
               placeholderTextColor="#666"
               value={displayOrder}
@@ -196,7 +196,7 @@ export default function MenuScreen() {
                 disabled={createCategory.isPending || updateCategory.isPending}
                 activeOpacity={0.8}
               >
-                <Text className="text-elegant-dark font-sans-bold text-sm">
+                <Text className="text-text-inverted font-sans-bold text-sm">
                   {createCategory.isPending || updateCategory.isPending
                     ? "Guardando..."
                     : editing

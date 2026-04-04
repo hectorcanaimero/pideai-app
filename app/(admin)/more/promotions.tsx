@@ -242,7 +242,7 @@ export default function PromotionsScreen() {
       >
         <View className="flex-row items-start justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-bold text-base">
+            <Text className="text-text-primary font-sans-bold text-base">
               {item.name}
             </Text>
             {item.description ? (
@@ -296,8 +296,8 @@ export default function PromotionsScreen() {
           }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A1A" />
-          <Text className="text-elegant-dark font-sans-bold text-xs">
+          <Plus size={14} color="#FFFFFF" />
+          <Text className="text-text-inverted font-sans-bold text-xs">
             Nueva
           </Text>
         </TouchableOpacity>
@@ -330,7 +330,7 @@ export default function PromotionsScreen() {
             Nombre *
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={formName}
             onChangeText={setFormName}
             placeholder="Ej: 2x1 en hamburguesas"
@@ -343,7 +343,7 @@ export default function PromotionsScreen() {
             Descripción
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={formDescription}
             onChangeText={setFormDescription}
             placeholder="Descripción opcional"
@@ -364,7 +364,7 @@ export default function PromotionsScreen() {
               <Text
                 className={`font-sans-medium text-sm ${
                   formType === "percentage"
-                    ? "text-elegant-dark"
+                    ? "text-text-inverted"
                     : "text-cream-300"
                 }`}
               >
@@ -380,7 +380,7 @@ export default function PromotionsScreen() {
             >
               <Text
                 className={`font-sans-medium text-sm ${
-                  formType === "fixed" ? "text-elegant-dark" : "text-cream-300"
+                  formType === "fixed" ? "text-text-inverted" : "text-cream-300"
                 }`}
               >
                 Monto fijo
@@ -393,7 +393,7 @@ export default function PromotionsScreen() {
             Valor * {formType === "percentage" ? "(%)" : "($)"}
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={formValue}
             onChangeText={setFormValue}
             keyboardType="decimal-pad"
@@ -406,7 +406,7 @@ export default function PromotionsScreen() {
             Fecha inicio
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={formStartDate}
             onChangeText={setFormStartDate}
             placeholder="YYYY-MM-DD"
@@ -418,7 +418,7 @@ export default function PromotionsScreen() {
             Fecha fin
           </Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={formEndDate}
             onChangeText={setFormEndDate}
             placeholder="YYYY-MM-DD"
@@ -458,7 +458,7 @@ export default function PromotionsScreen() {
             disabled={isSaving}
             activeOpacity={0.8}
           >
-            <Text className="text-elegant-dark font-sans-bold text-sm">
+            <Text className="text-text-inverted font-sans-bold text-sm">
               {isSaving
                 ? "Guardando..."
                 : editingPromotion

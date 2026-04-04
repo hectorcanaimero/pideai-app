@@ -28,7 +28,7 @@ export function CustomerCard({
 
       {/* Info */}
       <View className="flex-1">
-        <Text className="text-white font-sans-medium text-sm">
+        <Text className="text-text-primary font-sans-medium text-sm">
           {customer.name}
         </Text>
         <View className="flex-row items-center gap-1 mt-0.5">

@@ -19,7 +19,7 @@ export function OfflineBanner() {
   return (
     <View className="bg-red-600 px-4 py-2 flex-row items-center justify-center gap-2">
       <WifiOff size={14} color="#fff" />
-      <Text className="text-white font-sans-medium text-xs">Sin conexión a internet</Text>
+      <Text className="text-text-primary font-sans-medium text-xs">Sin conexión a internet</Text>
     </View>
   );
 }

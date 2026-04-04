@@ -52,7 +52,7 @@ export function StoreStatusToggle() {
           onPress={() => toggleStatus("normal")}
           activeOpacity={0.7}
         >
-          <Text className={`font-sans-medium text-xs ${isNormal ? "text-elegant-dark" : "text-cream-400"}`}>
+          <Text className={`font-sans-medium text-xs ${isNormal ? "text-text-inverted" : "text-cream-400"}`}>
             Normal
           </Text>
         </TouchableOpacity>
@@ -62,7 +62,7 @@ export function StoreStatusToggle() {
           onPress={() => toggleStatus("force_open")}
           activeOpacity={0.7}
         >
-          <Text className={`font-sans-medium text-xs ${isForceOpen ? "text-white" : "text-cream-400"}`}>
+          <Text className={`font-sans-medium text-xs ${isForceOpen ? "text-text-primary" : "text-cream-400"}`}>
             Abrir
           </Text>
         </TouchableOpacity>
@@ -72,7 +72,7 @@ export function StoreStatusToggle() {
           onPress={() => toggleStatus("force_closed")}
           activeOpacity={0.7}
         >
-          <Text className={`font-sans-medium text-xs ${isForceClosed ? "text-white" : "text-cream-400"}`}>
+          <Text className={`font-sans-medium text-xs ${isForceClosed ? "text-text-primary" : "text-cream-400"}`}>
             Cerrar
           </Text>
         </TouchableOpacity>

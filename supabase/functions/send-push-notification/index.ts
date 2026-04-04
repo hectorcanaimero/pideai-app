@@ -10,6 +10,7 @@ interface PushMessage {
   sound?: string;
   priority?: string;
   badge?: number;
+  channelId?: string;
 }
 
 interface OrderRecord {
@@ -112,6 +113,7 @@ Deno.serve(async (req) => {
       sound: "default",
       priority: "high",
       badge: pendingCount ?? 1,
+      channelId: "orders",
     }));
 
     // Send to Expo Push API (supports batch)

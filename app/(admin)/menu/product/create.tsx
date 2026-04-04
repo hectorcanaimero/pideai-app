@@ -113,7 +113,7 @@ export default function CreateProductScreen() {
         Nombre *
       </Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={name}
         onChangeText={setName}
         placeholder="Ej: Hamburguesa clásica"
@@ -125,7 +125,7 @@ export default function CreateProductScreen() {
         Precio *
       </Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={price}
         onChangeText={setPrice}
         placeholder="0.00"
@@ -138,7 +138,7 @@ export default function CreateProductScreen() {
         Descripción
       </Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={description}
         onChangeText={setDescription}
         placeholder="Descripción del producto"
@@ -152,7 +152,7 @@ export default function CreateProductScreen() {
       {isStockEnabled && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-white font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-sm">
               Controlar stock
             </Text>
             <Switch
@@ -168,7 +168,7 @@ export default function CreateProductScreen() {
                 Cantidad disponible
               </Text>
               <TextInput
-                className="bg-elegant-dark text-white px-4 py-2.5 rounded-xl font-sans text-sm"
+                className="bg-elegant-dark text-text-primary px-4 py-2.5 rounded-xl font-sans text-sm"
                 value={stockQuantity}
                 onChangeText={setStockQuantity}
                 placeholder="0"
@@ -188,9 +188,9 @@ export default function CreateProductScreen() {
         activeOpacity={0.8}
       >
         {saving ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-base">
             Crear Producto
           </Text>
         )}

@@ -12,7 +12,7 @@ export function OrderItemsList({ items, currency = "USD" }: OrderItemsListProps)
       {items.map((item) => (
         <View key={item.id} className="flex-row justify-between">
           <View className="flex-1 mr-2">
-            <Text className="text-white font-sans text-sm">
+            <Text className="text-text-primary font-sans text-sm">
               {item.quantity}x {item.item_name}
             </Text>
             {item.extras && item.extras.length > 0 && (

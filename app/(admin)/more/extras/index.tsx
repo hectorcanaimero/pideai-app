@@ -152,7 +152,7 @@ export default function ExtraGroupsScreen() {
         activeOpacity={0.7}
       >
         <View className="flex-1">
-          <Text className="text-white font-sans-medium text-sm">{item.name}</Text>
+          <Text className="text-text-primary font-sans-medium text-sm">{item.name}</Text>
           <Text className="text-cream-400 font-sans text-xs mt-0.5">
             {item.selection_type === "single" ? "Seleccion unica" : "Seleccion multiple"}
             {item.is_required ? " - Requerido" : " - Opcional"}
@@ -202,7 +202,7 @@ export default function ExtraGroupsScreen() {
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-row items-center gap-2">
                 <Layers size={20} color="#EB1C8D" />
-                <Text className="text-white font-sans-bold text-lg">Grupos de Extra</Text>
+                <Text className="text-text-primary font-sans-bold text-lg">Grupos de Extra</Text>
               </View>
               <TouchableOpacity
                 className="bg-gold-500 px-4 py-2 rounded-xl flex-row items-center gap-1.5"
@@ -210,11 +210,11 @@ export default function ExtraGroupsScreen() {
                 activeOpacity={0.8}
               >
                 {showForm ? (
-                  <X size={16} color="#1A1A1A" />
+                  <X size={16} color="#FFFFFF" />
                 ) : (
-                  <Plus size={16} color="#1A1A1A" />
+                  <Plus size={16} color="#FFFFFF" />
                 )}
-                <Text className="text-elegant-dark font-sans-bold text-sm">
+                <Text className="text-text-inverted font-sans-bold text-sm">
                   {showForm ? "Cancelar" : "Crear grupo"}
                 </Text>
               </TouchableOpacity>
@@ -262,7 +262,7 @@ export default function ExtraGroupsScreen() {
             {/* Create / Edit form */}
             {showForm && (
               <View className="bg-elegant-gray rounded-xl p-4 mb-4 gap-3">
-                <Text className="text-white font-sans-bold text-sm mb-1">
+                <Text className="text-text-primary font-sans-bold text-sm mb-1">
                   {editingGroup ? "Editar grupo" : "Nuevo grupo de extras"}
                 </Text>
                 <Text className="text-cream-400 font-sans text-xs -mt-2 mb-1">
@@ -271,7 +271,7 @@ export default function ExtraGroupsScreen() {
 
                 {/* Name */}
                 <TextInput
-                  className="bg-elegant-dark text-white px-4 py-3 rounded-xl font-sans text-sm"
+                  className="bg-elegant-dark text-text-primary px-4 py-3 rounded-xl font-sans text-sm"
                   placeholder="Nombre del grupo (ej: Tamano, Salsas)"
                   placeholderTextColor="#666"
                   value={form.name}
@@ -296,7 +296,7 @@ export default function ExtraGroupsScreen() {
                       <Text
                         className={`font-sans-medium text-xs ${
                           form.selection_type === "single"
-                            ? "text-elegant-dark"
+                            ? "text-text-inverted"
                             : "text-cream-400"
                         }`}
                       >
@@ -316,7 +316,7 @@ export default function ExtraGroupsScreen() {
                       <Text
                         className={`font-sans-medium text-xs ${
                           form.selection_type === "multiple"
-                            ? "text-elegant-dark"
+                            ? "text-text-inverted"
                             : "text-cream-400"
                         }`}
                       >
@@ -346,7 +346,7 @@ export default function ExtraGroupsScreen() {
                       Min. selecciones
                     </Text>
                     <TextInput
-                      className="bg-elegant-dark text-white px-4 py-3 rounded-xl font-sans text-sm"
+                      className="bg-elegant-dark text-text-primary px-4 py-3 rounded-xl font-sans text-sm"
                       placeholder="0"
                       placeholderTextColor="#666"
                       value={form.min_selections}
@@ -361,7 +361,7 @@ export default function ExtraGroupsScreen() {
                       Max. selecciones
                     </Text>
                     <TextInput
-                      className="bg-elegant-dark text-white px-4 py-3 rounded-xl font-sans text-sm"
+                      className="bg-elegant-dark text-text-primary px-4 py-3 rounded-xl font-sans text-sm"
                       placeholder="Sin limite"
                       placeholderTextColor="#666"
                       value={form.max_selections}
@@ -394,7 +394,7 @@ export default function ExtraGroupsScreen() {
                       <Text
                         className={`font-sans-medium text-xs ${
                           form.assignment_type === "none"
-                            ? "text-elegant-dark"
+                            ? "text-text-inverted"
                             : "text-cream-400"
                         }`}
                       >
@@ -414,7 +414,7 @@ export default function ExtraGroupsScreen() {
                       <Text
                         className={`font-sans-medium text-xs ${
                           form.assignment_type === "category"
-                            ? "text-elegant-dark"
+                            ? "text-text-inverted"
                             : "text-cream-400"
                         }`}
                       >
@@ -431,7 +431,7 @@ export default function ExtraGroupsScreen() {
                       >
                         <Text
                           className={`font-sans text-sm ${
-                            selectedCategory ? "text-white" : "text-cream-400/50"
+                            selectedCategory ? "text-text-primary" : "text-cream-400/50"
                           }`}
                         >
                           {selectedCategory?.name ?? "Seleccionar categoria"}
@@ -495,7 +495,7 @@ export default function ExtraGroupsScreen() {
                   disabled={createGroup.isPending || updateGroup.isPending}
                   activeOpacity={0.8}
                 >
-                  <Text className="text-elegant-dark font-sans-bold text-sm">
+                  <Text className="text-text-inverted font-sans-bold text-sm">
                     {createGroup.isPending || updateGroup.isPending
                       ? "Guardando..."
                       : editingGroup

@@ -41,7 +41,7 @@ export function StoreQRCode() {
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
           <QrCode size={18} color="#EB1C8D" />
-          <Text className="text-white font-sans-semibold text-base">Código QR de tu tienda</Text>
+          <Text className="text-text-primary font-sans-semibold text-base">Código QR de tu tienda</Text>
         </View>
       </View>
 
@@ -69,8 +69,8 @@ export function StoreQRCode() {
         onPress={handleShare}
         activeOpacity={0.8}
       >
-        <ShareIcon size={16} color="#1A1A1A" />
-        <Text className="text-elegant-dark font-sans-bold text-sm">Compartir</Text>
+        <ShareIcon size={16} color="#FFFFFF" />
+        <Text className="text-text-inverted font-sans-bold text-sm">Compartir</Text>
       </TouchableOpacity>
     </View>
   );

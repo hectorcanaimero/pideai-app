@@ -61,7 +61,7 @@ export default function ExtrasGroupScreen() {
   const renderExtra = ({ item }: { item: ProductExtra }) => (
     <View className="bg-elegant-gray rounded-2xl p-4 mb-2 flex-row items-center">
       <View className="flex-1">
-        <Text className="text-white font-sans-medium text-sm">{item.name}</Text>
+        <Text className="text-text-primary font-sans-medium text-sm">{item.name}</Text>
         <Text className="text-gold-500 font-sans text-xs mt-0.5">
           +${item.price.toFixed(2)}
         </Text>
@@ -89,11 +89,11 @@ export default function ExtrasGroupScreen() {
           activeOpacity={0.8}
         >
           {showCreate ? (
-            <X size={16} color="#1A1A1A" />
+            <X size={16} color="#FFFFFF" />
           ) : (
-            <Plus size={16} color="#1A1A1A" />
+            <Plus size={16} color="#FFFFFF" />
           )}
-          <Text className="text-elegant-dark font-sans-bold text-sm">
+          <Text className="text-text-inverted font-sans-bold text-sm">
             {showCreate ? "Cancelar" : "Nuevo Extra"}
           </Text>
         </TouchableOpacity>
@@ -102,7 +102,7 @@ export default function ExtrasGroupScreen() {
       {showCreate && (
         <View className="px-4 pb-3 gap-2">
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-sm"
+            className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-sm"
             placeholder="Nombre del extra"
             placeholderTextColor="#666"
             value={newName}
@@ -111,7 +111,7 @@ export default function ExtrasGroupScreen() {
           />
           <View className="flex-row gap-2">
             <TextInput
-              className="flex-1 bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-sm"
+              className="flex-1 bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-sm"
               placeholder="Precio (0.00)"
               placeholderTextColor="#666"
               value={newPrice}
@@ -122,7 +122,7 @@ export default function ExtrasGroupScreen() {
               className="bg-gold-500 px-6 rounded-xl items-center justify-center"
               onPress={handleCreate}
             >
-              <Text className="text-elegant-dark font-sans-bold text-sm">
+              <Text className="text-text-inverted font-sans-bold text-sm">
                 Crear
               </Text>
             </TouchableOpacity>

@@ -24,7 +24,7 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
       >
         <Text
           className={`font-sans-medium text-sm ${
-            selectedStatus === null ? "text-elegant-dark" : "text-cream-300"
+            selectedStatus === null ? "text-text-inverted" : "text-cream-300"
           }`}
         >
           Todos
@@ -50,14 +50,14 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
             />
             <Text
               className={`font-sans-medium text-sm ${
-                isSelected ? "text-elegant-dark" : "text-cream-300"
+                isSelected ? "text-text-inverted" : "text-cream-300"
               }`}
             >
               {STATUS_LABELS[status]}
             </Text>
             {showBadge && (
               <View className="bg-red-500 rounded-full min-w-[18px] h-[18px] items-center justify-center ml-0.5">
-                <Text className="text-white font-sans-bold text-[10px]">{pendingCount}</Text>
+                <Text className="text-text-primary font-sans-bold text-[10px]">{pendingCount}</Text>
               </View>
             )}
           </TouchableOpacity>

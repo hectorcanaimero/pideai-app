@@ -30,7 +30,7 @@ export function KitchenCard({ order }: KitchenCardProps) {
     >
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
-          <Text className="text-white font-sans-bold text-lg">#{orderNumber}</Text>
+          <Text className="text-text-primary font-sans-bold text-lg">#{orderNumber}</Text>
           <OrderStatusBadge status={order.status} />
         </View>
         <View className="flex-row items-center gap-1">
@@ -45,14 +45,14 @@ export function KitchenCard({ order }: KitchenCardProps) {
         </View>
       </View>
 
-      <Text className="text-cream-200 font-sans-medium text-sm mb-2">
+      <Text className="text-text-secondary font-sans-medium text-sm mb-2">
         {order.customer_name}
       </Text>
 
       <View className="bg-elegant-dark rounded-xl p-3 mb-3">
         {order.order_items?.map((item) => (
           <View key={item.id} className="mb-1.5">
-            <Text className="text-white font-sans text-base">
+            <Text className="text-text-primary font-sans text-base">
               {item.quantity}x {item.item_name}
             </Text>
             {item.extras && item.extras.length > 0 && (
@@ -86,7 +86,7 @@ export function KitchenCard({ order }: KitchenCardProps) {
           disabled={updateStatus.isPending}
           activeOpacity={0.8}
         >
-          <Text className="text-white font-sans-bold text-sm">
+          <Text className="text-text-primary font-sans-bold text-sm">
             {STATUS_LABELS[nextStatus]} →
           </Text>
         </TouchableOpacity>

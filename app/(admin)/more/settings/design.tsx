@@ -151,11 +151,11 @@ export default function DesignSettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Palette size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Diseño</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Diseño</Text>
       </View>
 
       {/* Logo */}
-      <Text className="text-white font-sans-semibold text-sm mb-3">Logo de la tienda</Text>
+      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Logo de la tienda</Text>
       <TouchableOpacity
         className="bg-elegant-gray rounded-2xl h-32 items-center justify-center mb-2 overflow-hidden"
         onPress={handlePickLogo}
@@ -187,14 +187,14 @@ export default function DesignSettingsScreen() {
       </View>
 
       {/* Primary Color */}
-      <Text className="text-white font-sans-semibold text-sm mb-3">Color primario</Text>
+      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Color primario</Text>
       <View className="flex-row items-center gap-3 mb-2">
         <View
           className="w-12 h-12 rounded-xl border-2 border-cream-400/20"
           style={{ backgroundColor: primaryColor || "#EB1C8D" }}
         />
         <TextInput
-          className="flex-1 bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base"
+          className="flex-1 bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base"
           value={primaryColor}
           onChangeText={setPrimaryColor}
           placeholder="#EB1C8D"
@@ -228,14 +228,14 @@ export default function DesignSettingsScreen() {
       </View>
 
       {/* Price Color */}
-      <Text className="text-white font-sans-semibold text-sm mb-3">Color de precio</Text>
+      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Color de precio</Text>
       <View className="flex-row items-center gap-3 mb-2">
         <View
           className="w-12 h-12 rounded-xl border-2 border-cream-400/20"
           style={{ backgroundColor: priceColor || "#22C55E" }}
         />
         <TextInput
-          className="flex-1 bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base"
+          className="flex-1 bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base"
           value={priceColor}
           onChangeText={setPriceColor}
           placeholder="#22C55E"
@@ -271,7 +271,7 @@ export default function DesignSettingsScreen() {
       {/* Separator */}
       <View className="flex-row items-center gap-2 mb-4 mt-2">
         <Tag size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-sm">
           Etiquetas Personalizadas
         </Text>
       </View>
@@ -284,7 +284,7 @@ export default function DesignSettingsScreen() {
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Delivery</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={deliveryLabel}
         onChangeText={setDeliveryLabel}
         placeholder="Delivery"
@@ -293,7 +293,7 @@ export default function DesignSettingsScreen() {
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Pick-up</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-4"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={pickupLabel}
         onChangeText={setPickupLabel}
         placeholder="Pick-up"
@@ -302,7 +302,7 @@ export default function DesignSettingsScreen() {
 
       <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Menú Digital</Text>
       <TextInput
-        className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-6"
+        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-6"
         value={digitalMenuLabel}
         onChangeText={setDigitalMenuLabel}
         placeholder="Mesa"
@@ -313,7 +313,7 @@ export default function DesignSettingsScreen() {
       <View className="flex-row items-center justify-between mb-3 mt-2">
         <View className="flex-row items-center gap-2">
           <Share2 size={16} color="#EB1C8D" />
-          <Text className="text-white font-sans-semibold text-sm">
+          <Text className="text-text-primary font-sans-semibold text-sm">
             Redes Sociales
           </Text>
         </View>
@@ -323,11 +323,11 @@ export default function DesignSettingsScreen() {
           activeOpacity={0.8}
         >
           {showSocialForm ? (
-            <X size={14} color="#1A1A1A" />
+            <X size={14} color="#FFFFFF" />
           ) : (
-            <Plus size={14} color="#1A1A1A" />
+            <Plus size={14} color="#FFFFFF" />
           )}
-          <Text className="text-elegant-dark font-sans-bold text-xs">
+          <Text className="text-text-inverted font-sans-bold text-xs">
             {showSocialForm ? "Cancelar" : "Agregar"}
           </Text>
         </TouchableOpacity>
@@ -361,7 +361,7 @@ export default function DesignSettingsScreen() {
                 <Text
                   className={`font-sans text-xs ${
                     socialPlatform === p.key
-                      ? "text-elegant-dark font-sans-medium"
+                      ? "text-text-inverted font-sans-medium"
                       : "text-cream-300"
                   }`}
                 >
@@ -373,7 +373,7 @@ export default function DesignSettingsScreen() {
 
           <Text className="text-cream-300 font-sans text-xs mb-1">URL</Text>
           <TextInput
-            className="bg-elegant-dark text-white px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
+            className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={socialUrl}
             onChangeText={setSocialUrl}
             placeholder={
@@ -391,7 +391,7 @@ export default function DesignSettingsScreen() {
             disabled={addSocialLink.isPending}
             activeOpacity={0.8}
           >
-            <Text className="text-elegant-dark font-sans-bold text-sm">
+            <Text className="text-text-inverted font-sans-bold text-sm">
               {addSocialLink.isPending ? "Guardando..." : "Agregar red"}
             </Text>
           </TouchableOpacity>
@@ -408,7 +408,7 @@ export default function DesignSettingsScreen() {
               className="bg-elegant-gray rounded-xl p-3 mb-2 flex-row items-center"
             >
               <View className="flex-1">
-                <Text className="text-white font-sans-medium text-sm">
+                <Text className="text-text-primary font-sans-medium text-sm">
                   {platformInfo?.label ?? link.platform}
                 </Text>
                 <Text
@@ -458,9 +458,9 @@ export default function DesignSettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-base">
             Guardar
           </Text>
         )}

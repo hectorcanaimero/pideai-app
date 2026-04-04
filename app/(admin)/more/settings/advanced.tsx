@@ -78,13 +78,13 @@ export default function AdvancedSettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Settings size={20} color="#EB1C8D" />
-        <Text className="text-white font-sans-bold text-lg">Avanzado</Text>
+        <Text className="text-text-primary font-sans-bold text-lg">Avanzado</Text>
       </View>
 
       {/* Audio Notifications Section */}
       <View className="flex-row items-center gap-2 mb-3">
         <Bell size={16} color="#EB1C8D" />
-        <Text className="text-white font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-sm">
           Alerta sonora de pedidos
         </Text>
       </View>
@@ -99,7 +99,7 @@ export default function AdvancedSettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-white font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-sm">
               Habilitar sonido
             </Text>
             <Text className="text-cream-400 font-sans text-xs mt-0.5">
@@ -125,7 +125,7 @@ export default function AdvancedSettingsScreen() {
             </Text>
           </View>
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-2"
+            className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-2"
             value={volume}
             onChangeText={setVolume}
             keyboardType="number-pad"
@@ -145,7 +145,7 @@ export default function AdvancedSettingsScreen() {
             Repeticiones (1 - 10)
           </Text>
           <TextInput
-            className="bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base mb-2"
+            className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-2"
             value={repeatCount}
             onChangeText={setRepeatCount}
             keyboardType="number-pad"
@@ -189,9 +189,9 @@ export default function AdvancedSettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A1A" />
+          <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-elegant-dark font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-base">
             Guardar
           </Text>
         )}
