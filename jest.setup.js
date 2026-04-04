@@ -17,6 +17,10 @@ jest.mock("expo-notifications", () => ({
   setNotificationHandler: jest.fn(),
   addNotificationReceivedListener: jest.fn(() => ({ remove: jest.fn() })),
   addNotificationResponseReceivedListener: jest.fn(() => ({ remove: jest.fn() })),
+  setBadgeCountAsync: jest.fn(),
+  scheduleNotificationAsync: jest.fn(),
+  setNotificationChannelAsync: jest.fn(),
+  AndroidImportance: { MAX: 5, HIGH: 4, DEFAULT: 3 },
 }));
 
 jest.mock("expo-av", () => ({
