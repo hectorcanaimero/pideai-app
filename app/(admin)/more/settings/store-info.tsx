@@ -101,7 +101,7 @@ export default function StoreInfoScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-6">
-        <Store size={20} color="#FFC300" />
+        <Store size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">Información de la tienda</Text>
       </View>
 
@@ -139,7 +139,7 @@ export default function StoreInfoScreen() {
 
       {/* Country */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
-        <Globe size={16} color="#FFC300" />
+        <Globe size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">País</Text>
       </View>
       <ScrollView
@@ -170,7 +170,7 @@ export default function StoreInfoScreen() {
 
       {/* Currency */}
       <View className="flex-row items-center gap-2 mb-2">
-        <DollarSign size={16} color="#FFC300" />
+        <DollarSign size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">Moneda</Text>
       </View>
       <ScrollView
@@ -201,7 +201,7 @@ export default function StoreInfoScreen() {
 
       {/* Operating Modes */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
-        <ShoppingBag size={16} color="#FFC300" />
+        <ShoppingBag size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">Modos de funcionamiento</Text>
       </View>
       <View className="gap-2 mb-4">
@@ -240,7 +240,7 @@ export default function StoreInfoScreen() {
 
       {/* Business Type */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
-        <Utensils size={16} color="#FFC300" />
+        <Utensils size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">Tipo de empresa</Text>
       </View>
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
@@ -256,7 +256,7 @@ export default function StoreInfoScreen() {
           <Switch
             value={isFoodBusiness}
             onValueChange={setIsFoodBusiness}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -276,7 +276,7 @@ export default function StoreInfoScreen() {
           <Switch
             value={catalogMode}
             onValueChange={setCatalogMode}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -293,7 +293,7 @@ export default function StoreInfoScreen() {
             <Switch
               value={hideCatalogPrices}
               onValueChange={setHideCatalogPrices}
-              trackColor={{ false: "#444", true: "#FFC300" }}
+              trackColor={{ false: "#444", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -310,7 +310,7 @@ export default function StoreInfoScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">Guardar</Text>
         )}

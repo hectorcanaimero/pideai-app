@@ -17,10 +17,10 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/services/supabase";
 
 const PRESET_COLORS = [
-  "#FFC300", "#FF5733", "#EF4444", "#F97316", "#F59E0B",
+  "#EB1C8D", "#FF5733", "#EF4444", "#F97316", "#F59E0B",
   "#22C55E", "#10B981", "#14B8A6", "#06B6D4", "#3B82F6",
   "#6366F1", "#8B5CF6", "#A855F7", "#EC4899", "#F43F5E",
-  "#1A1A2E", "#2D2D44", "#000000", "#FFFFFF", "#6B7280",
+  "#1A1A1A", "#2A2A2A", "#000000", "#FFFFFF", "#6B7280",
 ];
 
 export default function DesignSettingsScreen() {
@@ -150,7 +150,7 @@ export default function DesignSettingsScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-6">
-        <Palette size={20} color="#FFC300" />
+        <Palette size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">Diseño</Text>
       </View>
 
@@ -163,7 +163,7 @@ export default function DesignSettingsScreen() {
         activeOpacity={0.7}
       >
         {uploadingLogo ? (
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         ) : logoUri ? (
           <Image
             source={{ uri: logoUri }}
@@ -191,13 +191,13 @@ export default function DesignSettingsScreen() {
       <View className="flex-row items-center gap-3 mb-2">
         <View
           className="w-12 h-12 rounded-xl border-2 border-cream-400/20"
-          style={{ backgroundColor: primaryColor || "#FFC300" }}
+          style={{ backgroundColor: primaryColor || "#EB1C8D" }}
         />
         <TextInput
           className="flex-1 bg-elegant-gray text-white px-4 py-3 rounded-xl font-sans text-base"
           value={primaryColor}
           onChangeText={setPrimaryColor}
-          placeholder="#FFC300"
+          placeholder="#EB1C8D"
           placeholderTextColor="#666"
           autoCapitalize="characters"
           maxLength={7}
@@ -270,7 +270,7 @@ export default function DesignSettingsScreen() {
 
       {/* Separator */}
       <View className="flex-row items-center gap-2 mb-4 mt-2">
-        <Tag size={16} color="#FFC300" />
+        <Tag size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">
           Etiquetas Personalizadas
         </Text>
@@ -312,7 +312,7 @@ export default function DesignSettingsScreen() {
       {/* Social Links */}
       <View className="flex-row items-center justify-between mb-3 mt-2">
         <View className="flex-row items-center gap-2">
-          <Share2 size={16} color="#FFC300" />
+          <Share2 size={16} color="#EB1C8D" />
           <Text className="text-white font-sans-semibold text-sm">
             Redes Sociales
           </Text>
@@ -323,9 +323,9 @@ export default function DesignSettingsScreen() {
           activeOpacity={0.8}
         >
           {showSocialForm ? (
-            <X size={14} color="#1A1A2E" />
+            <X size={14} color="#1A1A1A" />
           ) : (
-            <Plus size={14} color="#1A1A2E" />
+            <Plus size={14} color="#1A1A1A" />
           )}
           <Text className="text-elegant-dark font-sans-bold text-xs">
             {showSocialForm ? "Cancelar" : "Agregar"}
@@ -458,7 +458,7 @@ export default function DesignSettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Guardar

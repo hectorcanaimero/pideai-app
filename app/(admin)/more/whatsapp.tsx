@@ -44,7 +44,7 @@ export default function WhatsAppScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-6">
-        <MessageCircle size={20} color="#FFC300" />
+        <MessageCircle size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">WhatsApp</Text>
       </View>
 
@@ -75,7 +75,7 @@ export default function WhatsAppScreen() {
           <Switch
             value={redirectToWhatsapp}
             onValueChange={setRedirectToWhatsapp}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -83,7 +83,7 @@ export default function WhatsAppScreen() {
 
       {/* Info Note */}
       <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mb-6">
-        <Info size={16} color="#FFC300" />
+        <Info size={16} color="#EB1C8D" />
         <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
           Configurá templates y campañas desde el panel web
         </Text>

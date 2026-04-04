@@ -146,7 +146,7 @@ export default function BusinessHoursScreen() {
   if (loading) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -157,7 +157,7 @@ export default function BusinessHoursScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-2">
-        <Clock size={20} color="#FFC300" />
+        <Clock size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">
           Horarios de atención
         </Text>
@@ -166,7 +166,7 @@ export default function BusinessHoursScreen() {
       {/* Force Status */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
-          <Power size={16} color="#FFC300" />
+          <Power size={16} color="#EB1C8D" />
           <Text className="text-white font-sans-semibold text-sm">
             Forzar apertura / cierre
           </Text>
@@ -272,7 +272,7 @@ export default function BusinessHoursScreen() {
                   onPress={() => addHour(day.value)}
                   activeOpacity={0.7}
                 >
-                  <Plus size={14} color="#FFC300" />
+                  <Plus size={14} color="#EB1C8D" />
                 </TouchableOpacity>
               </View>
             </View>
@@ -380,7 +380,7 @@ export default function BusinessHoursScreen() {
         activeOpacity={0.8}
       >
         {saving ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Guardar horarios

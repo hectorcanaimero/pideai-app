@@ -128,7 +128,7 @@ export default function ProductDetailScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -203,7 +203,7 @@ export default function ProductDetailScreen() {
             <Switch
               value={trackStock}
               onValueChange={setTrackStock}
-              trackColor={{ false: "#444", true: "#FFC300" }}
+              trackColor={{ false: "#444", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -231,7 +231,7 @@ export default function ProductDetailScreen() {
         activeOpacity={0.8}
       >
         {saving ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Guardar Cambios

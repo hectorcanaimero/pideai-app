@@ -133,7 +133,7 @@ export function ExchangeRateWidget() {
     <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
-          <TrendingUp size={18} color="#FFC300" />
+          <TrendingUp size={18} color="#EB1C8D" />
           <Text className="text-white font-sans-semibold text-base">Tasa BCV</Text>
         </View>
         <TouchableOpacity
@@ -143,9 +143,9 @@ export function ExchangeRateWidget() {
           activeOpacity={0.7}
         >
           {isRefreshing ? (
-            <ActivityIndicator size="small" color="#FFC300" />
+            <ActivityIndicator size="small" color="#EB1C8D" />
           ) : (
-            <RefreshCw size={16} color="#FFC300" />
+            <RefreshCw size={16} color="#EB1C8D" />
           )}
         </TouchableOpacity>
       </View>

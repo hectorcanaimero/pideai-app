@@ -158,7 +158,7 @@ export default function CreateProductScreen() {
             <Switch
               value={trackStock}
               onValueChange={setTrackStock}
-              trackColor={{ false: "#444", true: "#FFC300" }}
+              trackColor={{ false: "#444", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -188,7 +188,7 @@ export default function CreateProductScreen() {
         activeOpacity={0.8}
       >
         {saving ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Crear Producto

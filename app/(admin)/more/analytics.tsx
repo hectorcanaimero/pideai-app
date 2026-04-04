@@ -22,7 +22,7 @@ export default function AnalyticsScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -31,7 +31,7 @@ export default function AnalyticsScreen() {
     <ScrollView
       className="flex-1 bg-elegant-dark"
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-      refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor="#FFC300" colors={["#FFC300"]} />}
+      refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor="#EB1C8D" colors={["#EB1C8D"]} />}
     >
       {/* Period selector */}
       <View className="flex-row gap-2 mb-6">
@@ -61,7 +61,7 @@ export default function AnalyticsScreen() {
         </View>
         <View className="flex-1 bg-elegant-gray rounded-2xl p-4">
           <View className="flex-row items-center gap-1.5 mb-1">
-            <ShoppingBag size={14} color="#FFC300" />
+            <ShoppingBag size={14} color="#EB1C8D" />
             <Text className="text-cream-400 font-sans text-xs">Pedidos</Text>
           </View>
           <Text className="text-white font-sans-bold text-xl">{data?.totalOrders}</Text>
@@ -96,7 +96,7 @@ export default function AnalyticsScreen() {
 
       {/* Top products */}
       <View className="flex-row items-center gap-2 mb-3">
-        <Trophy size={16} color="#FFC300" />
+        <Trophy size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-base">Productos mas vendidos</Text>
       </View>
       <View className="bg-elegant-gray rounded-2xl p-4">

@@ -71,7 +71,7 @@ export default function CustomersScreen() {
       {/* List */}
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -83,8 +83,8 @@ export default function CustomersScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListEmptyComponent={

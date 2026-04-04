@@ -31,7 +31,7 @@ export default function AdminLayout() {
   if (loading) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
         <Text className="text-cream-300 mt-4 font-sans">
           Cargando tienda...
         </Text>
@@ -57,14 +57,14 @@ export default function AdminLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#1A1A2E",
-          borderTopColor: "#2D2D44",
+          backgroundColor: "#1A1A1A",
+          borderTopColor: "#2A2A2A",
           borderTopWidth: 1,
           height: 85,
           paddingBottom: 20,
           paddingTop: 8,
         },
-        tabBarActiveTintColor: "#FFC300",
+        tabBarActiveTintColor: "#EB1C8D",
         tabBarInactiveTintColor: "#888",
         tabBarLabelStyle: {
           fontFamily: "Poppins-Medium",

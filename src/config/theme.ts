@@ -1,27 +1,30 @@
-// src/config/theme.ts
 export const colors = {
-  gold: {
-    50: "#FFF9E6",
-    100: "#FFF3CC",
-    200: "#FFE799",
-    300: "#FFDB66",
-    400: "#FFCF33",
-    500: "#FFC300",
-    600: "#CC9C00",
-    700: "#997500",
-    800: "#664E00",
-    900: "#332700",
+  brand: {
+    50: "#FDF2F8",
+    100: "#FCE7F3",
+    200: "#FBCFE8",
+    300: "#F9A8D4",
+    400: "#F472B6",
+    500: "#EB1C8D",
+    600: "#D6187F",
+    700: "#BE185D",
+    800: "#9D174D",
+    900: "#831843",
   },
-  cream: {
-    50: "#FFFDF7",
-    100: "#FFFBEF",
-    200: "#FFF7DF",
-    300: "#FFF3CF",
-    400: "#FFEFBF",
-    500: "#FFEBAF",
+  surface: {
+    white: "#FFFFFF",
+    roseSoft: "#F7EBF4",
+    grayPearl: "#F0EFEF",
   },
-  elegantDark: "#1A1A2E",
-  elegantGray: "#2D2D44",
+  neutral: {
+    dark: "#1A1A1A",
+    gray: "#2A2A2A",
+    muted: "#6B6B6B",
+    light: "#A3A3A3",
+  },
+  badge: {
+    pink: "#FADADF",
+  },
   status: {
     pending: "#EAB308",
     confirmed: "#3B82F6",

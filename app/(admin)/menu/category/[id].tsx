@@ -33,7 +33,7 @@ export default function CategoryProductsScreen() {
           }
           activeOpacity={0.8}
         >
-          <Plus size={16} color="#1A1A2E" />
+          <Plus size={16} color="#1A1A1A" />
           <Text className="text-elegant-dark font-sans-bold text-sm">
             Nuevo Producto
           </Text>
@@ -42,7 +42,7 @@ export default function CategoryProductsScreen() {
 
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -54,8 +54,8 @@ export default function CategoryProductsScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListEmptyComponent={

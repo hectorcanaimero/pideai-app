@@ -29,7 +29,7 @@ function formatDate(dateStr: string | null | undefined): string {
 function ProgressBar({ label, icon, used, limit }: { label: string; icon: React.ReactNode; used: number; limit: number | null }) {
   const percentage = limit ? Math.min((used / limit) * 100, 100) : 0;
   const isUnlimited = limit === null || limit === undefined || limit === 0;
-  const barColor = percentage >= 90 ? "#ef4444" : percentage >= 70 ? "#eab308" : "#FFC300";
+  const barColor = percentage >= 90 ? "#ef4444" : percentage >= 70 ? "#eab308" : "#EB1C8D";
 
   return (
     <View className="mb-4">
@@ -44,7 +44,7 @@ function ProgressBar({ label, icon, used, limit }: { label: string; icon: React.
       </View>
       <View className="bg-elegant-gray rounded-full h-2.5 overflow-hidden">
         {isUnlimited ? (
-          <View className="h-full rounded-full w-full" style={{ backgroundColor: "#FFC300", opacity: 0.3 }} />
+          <View className="h-full rounded-full w-full" style={{ backgroundColor: "#EB1C8D", opacity: 0.3 }} />
         ) : (
           <View
             className="h-full rounded-full"
@@ -102,7 +102,7 @@ export default function SubscriptionScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-elegant-dark items-center justify-center">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -111,7 +111,7 @@ export default function SubscriptionScreen() {
     return (
       <ScrollView className="flex-1 bg-elegant-dark" contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
         <View className="bg-elegant-gray rounded-2xl p-6 items-center">
-          <Crown size={40} color="#FFC300" />
+          <Crown size={40} color="#EB1C8D" />
           <Text className="text-white font-sans-bold text-lg mt-3">Sin suscripcion</Text>
           <Text className="text-cream-400 font-sans text-sm text-center mt-2">
             No tienes una suscripcion activa. Activa un plan para desbloquear todas las funcionalidades.
@@ -133,7 +133,7 @@ export default function SubscriptionScreen() {
       {/* Plan Card */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
-          <CreditCard size={20} color="#FFC300" />
+          <CreditCard size={20} color="#EB1C8D" />
           <Text className="text-white font-sans-bold text-lg">Plan actual</Text>
         </View>
 
@@ -158,7 +158,7 @@ export default function SubscriptionScreen() {
       {/* Dates Card */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
-          <Calendar size={20} color="#FFC300" />
+          <Calendar size={20} color="#EB1C8D" />
           <Text className="text-white font-sans-bold text-base">Periodo de facturacion</Text>
         </View>
 
@@ -192,21 +192,21 @@ export default function SubscriptionScreen() {
 
         <ProgressBar
           label="Productos"
-          icon={<Package size={16} color="#FFC300" />}
+          icon={<Package size={16} color="#EB1C8D" />}
           used={usage?.products ?? 0}
           limit={plan?.max_products ?? null}
         />
 
         <ProgressBar
           label="Categorias"
-          icon={<Layers size={16} color="#FFC300" />}
+          icon={<Layers size={16} color="#EB1C8D" />}
           used={usage?.categories ?? 0}
           limit={plan?.max_categories ?? null}
         />
 
         <ProgressBar
           label="Pedidos"
-          icon={<ShoppingBag size={16} color="#FFC300" />}
+          icon={<ShoppingBag size={16} color="#EB1C8D" />}
           used={usage?.orders ?? 0}
           limit={plan?.max_orders ?? null}
         />
@@ -218,7 +218,7 @@ export default function SubscriptionScreen() {
         onPress={handleUpgrade}
         activeOpacity={0.8}
       >
-        <ExternalLink size={18} color="#1A1A2E" />
+        <ExternalLink size={18} color="#1A1A1A" />
         <Text className="text-elegant-dark font-sans-bold text-base">
           {status === "active" ? "Gestionar suscripcion" : "Mejorar plan"}
         </Text>

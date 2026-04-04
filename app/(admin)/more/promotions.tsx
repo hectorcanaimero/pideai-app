@@ -256,21 +256,21 @@ export default function PromotionsScreen() {
             onValueChange={(val) =>
               toggleActive.mutate({ id: item.id, is_active: val })
             }
-            trackColor={{ false: "#333", true: "#FFC300" }}
+            trackColor={{ false: "#333", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
 
         <View className="flex-row items-center mt-3 flex-wrap gap-y-2">
           <View className="flex-row items-center mr-4">
-            <Percent size={14} color="#FFC300" />
+            <Percent size={14} color="#EB1C8D" />
             <Text className="text-cream-400 font-sans text-xs ml-1">
               {formatType(item.type)} · {formatValue(item.type, item.value)}
             </Text>
           </View>
 
           <View className="flex-row items-center">
-            <Calendar size={14} color="#FFC300" />
+            <Calendar size={14} color="#EB1C8D" />
             <Text className="text-cream-400 font-sans text-xs ml-1">
               {formatDate(item.start_date)} → {formatDate(item.end_date)}
             </Text>
@@ -296,7 +296,7 @@ export default function PromotionsScreen() {
           }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A2E" />
+          <Plus size={14} color="#1A1A1A" />
           <Text className="text-elegant-dark font-sans-bold text-xs">
             Nueva
           </Text>
@@ -305,7 +305,7 @@ export default function PromotionsScreen() {
 
       {/* Info text */}
       <View className="flex-row items-start bg-elegant-gray/50 rounded-xl p-3 mb-3">
-        <Info size={16} color="#FFC300" />
+        <Info size={16} color="#EB1C8D" />
         <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
           Las promociones te permiten ofrecer descuentos a tus clientes. Podés
           crear descuentos por porcentaje o monto fijo, y definir fechas de
@@ -431,7 +431,7 @@ export default function PromotionsScreen() {
             <Switch
               value={formIsActive}
               onValueChange={setFormIsActive}
-              trackColor={{ false: "#444", true: "#FFC300" }}
+              trackColor={{ false: "#444", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -475,7 +475,7 @@ export default function PromotionsScreen() {
     <View className="flex-1 bg-elegant-dark">
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -487,8 +487,8 @@ export default function PromotionsScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListHeaderComponent={ListHeader}

@@ -24,7 +24,7 @@ export function CategoryCard({ category, onLongPress }: CategoryCardProps) {
           </Text>
         )}
         <View className="flex-row items-center gap-1 mt-1.5">
-          <Package size={12} color="#FFC300" />
+          <Package size={12} color="#EB1C8D" />
           <Text className="text-gold-500 font-sans text-xs">
             {category.product_count ?? 0} productos
           </Text>

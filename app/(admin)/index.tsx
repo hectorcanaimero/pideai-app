@@ -102,7 +102,7 @@ export default function DashboardScreen() {
   if (loading) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -115,8 +115,8 @@ export default function DashboardScreen() {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}
-          tintColor="#FFC300"
-          colors={["#FFC300"]}
+          tintColor="#EB1C8D"
+          colors={["#EB1C8D"]}
         />
       }
     >
@@ -134,7 +134,7 @@ export default function DashboardScreen() {
 
       <View className="flex-row flex-wrap gap-3 mb-4">
         <StatCard
-          icon={<ShoppingBag size={16} color="#FFC300" />}
+          icon={<ShoppingBag size={16} color="#EB1C8D" />}
           label="Pedidos hoy"
           value={String(stats.todayOrders)}
         />

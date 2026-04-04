@@ -21,7 +21,7 @@ export default function KitchenScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 items-center justify-center bg-black">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -58,8 +58,8 @@ export default function KitchenScreen() {
           <RefreshControl
             refreshing={isRefetching}
             onRefresh={refetch}
-            tintColor="#FFC300"
-            colors={["#FFC300"]}
+            tintColor="#EB1C8D"
+            colors={["#EB1C8D"]}
           />
         }
         ListEmptyComponent={

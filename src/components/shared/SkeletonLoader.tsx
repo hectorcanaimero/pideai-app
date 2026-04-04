@@ -29,7 +29,7 @@ export function Skeleton({ width = "100%", height = 16, borderRadius = 8, classN
         width: width as any,
         height,
         borderRadius,
-        backgroundColor: "#2D2D44",
+        backgroundColor: "#2A2A2A",
         opacity,
       }}
     />

@@ -34,14 +34,14 @@ export function OrderCard({ order }: OrderCardProps) {
 
       {order.customer_phone && (
         <View className="flex-row items-center gap-1.5 mb-1">
-          <Phone size={12} color="#FFEFBF" />
+          <Phone size={12} color="#F7EBF4" />
           <Text className="text-cream-400 font-sans text-xs">{order.customer_phone}</Text>
         </View>
       )}
 
       {order.order_type === "delivery" && order.delivery_address && (
         <View className="flex-row items-center gap-1.5 mb-1">
-          <MapPin size={12} color="#FFEFBF" />
+          <MapPin size={12} color="#F7EBF4" />
           <Text className="text-cream-400 font-sans text-xs flex-1" numberOfLines={1}>
             {order.delivery_address}
           </Text>

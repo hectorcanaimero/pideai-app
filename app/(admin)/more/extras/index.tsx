@@ -168,7 +168,7 @@ export default function ExtraGroupsScreen() {
           onPress={() => openEdit(item)}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
         >
-          <Pencil size={14} color="#FFC300" />
+          <Pencil size={14} color="#EB1C8D" />
         </TouchableOpacity>
         <TouchableOpacity
           className="p-2 mr-1"
@@ -192,8 +192,8 @@ export default function ExtraGroupsScreen() {
           <RefreshControl
             refreshing={isRefetching}
             onRefresh={refetch}
-            tintColor="#FFC300"
-            colors={["#FFC300"]}
+            tintColor="#EB1C8D"
+            colors={["#EB1C8D"]}
           />
         }
         ListHeaderComponent={
@@ -201,7 +201,7 @@ export default function ExtraGroupsScreen() {
             {/* Header */}
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-row items-center gap-2">
-                <Layers size={20} color="#FFC300" />
+                <Layers size={20} color="#EB1C8D" />
                 <Text className="text-white font-sans-bold text-lg">Grupos de Extra</Text>
               </View>
               <TouchableOpacity
@@ -210,9 +210,9 @@ export default function ExtraGroupsScreen() {
                 activeOpacity={0.8}
               >
                 {showForm ? (
-                  <X size={16} color="#1A1A2E" />
+                  <X size={16} color="#1A1A1A" />
                 ) : (
-                  <Plus size={16} color="#1A1A2E" />
+                  <Plus size={16} color="#1A1A1A" />
                 )}
                 <Text className="text-elegant-dark font-sans-bold text-sm">
                   {showForm ? "Cancelar" : "Crear grupo"}
@@ -226,7 +226,7 @@ export default function ExtraGroupsScreen() {
               onPress={() => setShowHelp(!showHelp)}
               activeOpacity={0.8}
             >
-              <Info size={16} color="#FFC300" style={{ marginTop: 2 }} />
+              <Info size={16} color="#EB1C8D" style={{ marginTop: 2 }} />
               <View className="flex-1">
                 <Text className="text-gold-500 font-sans-medium text-xs mb-1">
                   Como funcionan los extras?
@@ -334,7 +334,7 @@ export default function ExtraGroupsScreen() {
                     onValueChange={(v) =>
                       setForm((f) => ({ ...f, is_required: v }))
                     }
-                    trackColor={{ false: "#444", true: "#FFC300" }}
+                    trackColor={{ false: "#444", true: "#EB1C8D" }}
                     thumbColor="#fff"
                   />
                 </View>
@@ -510,7 +510,7 @@ export default function ExtraGroupsScreen() {
         renderItem={renderGroupItem}
         ListEmptyComponent={
           isLoading ? (
-            <ActivityIndicator size="large" color="#FFC300" />
+            <ActivityIndicator size="large" color="#EB1C8D" />
           ) : (
             <View className="items-center py-20">
               <Text className="text-cream-400 font-sans">No hay grupos de extras</Text>

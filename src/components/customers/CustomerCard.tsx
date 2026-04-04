@@ -32,7 +32,7 @@ export function CustomerCard({
           {customer.name}
         </Text>
         <View className="flex-row items-center gap-1 mt-0.5">
-          <Mail size={10} color="#FFEFBF" />
+          <Mail size={10} color="#F7EBF4" />
           <Text
             className="text-cream-400 font-sans text-xs"
             numberOfLines={1}
@@ -42,7 +42,7 @@ export function CustomerCard({
         </View>
         <View className="flex-row items-center gap-3 mt-1">
           <View className="flex-row items-center gap-1">
-            <ShoppingBag size={10} color="#FFC300" />
+            <ShoppingBag size={10} color="#EB1C8D" />
             <Text className="text-gold-500 font-sans text-xs">
               {customer.order_count} pedidos
             </Text>

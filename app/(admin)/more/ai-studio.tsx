@@ -201,14 +201,14 @@ export default function AIStudioScreen() {
     >
       {/* Header */}
       <View className="flex-row items-center gap-2 mb-2">
-        <Sparkles size={20} color="#FFC300" />
+        <Sparkles size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">AI Photo Studio</Text>
       </View>
 
       {/* Credits */}
       <View className="bg-elegant-gray rounded-xl p-3 flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
-          <Zap size={14} color="#FFC300" />
+          <Zap size={14} color="#EB1C8D" />
           <Text className="text-cream-400 font-sans text-xs">Créditos disponibles</Text>
         </View>
         <Text className="text-gold-500 font-sans-bold text-sm">
@@ -231,7 +231,7 @@ export default function AIStudioScreen() {
           </Text>
 
           {productsLoading ? (
-            <ActivityIndicator size="large" color="#FFC300" />
+            <ActivityIndicator size="large" color="#EB1C8D" />
           ) : products && products.length > 0 ? (
             products.map((product) => (
               <TouchableOpacity
@@ -281,7 +281,7 @@ export default function AIStudioScreen() {
             className="flex-row items-center mb-4"
             onPress={() => setStep("select_product")}
           >
-            <ChevronLeft size={18} color="#FFC300" />
+            <ChevronLeft size={18} color="#EB1C8D" />
             <Text className="text-gold-500 font-sans-medium text-sm ml-1">Volver</Text>
           </TouchableOpacity>
 
@@ -314,7 +314,7 @@ export default function AIStudioScreen() {
                   }`}
                   style={{
                     width: "48%",
-                    backgroundColor: isSelected ? `${style.color}15` : "#2D2D44",
+                    backgroundColor: isSelected ? `${style.color}15` : "#2A2A2A",
                   }}
                   onPress={() => {
                     setSelectedStyle(style.id);
@@ -342,7 +342,7 @@ export default function AIStudioScreen() {
             className="flex-row items-center mb-4"
             onPress={() => setStep("select_style")}
           >
-            <ChevronLeft size={18} color="#FFC300" />
+            <ChevronLeft size={18} color="#EB1C8D" />
             <Text className="text-gold-500 font-sans-medium text-sm ml-1">Volver</Text>
           </TouchableOpacity>
 
@@ -399,7 +399,7 @@ export default function AIStudioScreen() {
             disabled={!credits || credits.remaining <= 0}
             activeOpacity={0.8}
           >
-            <Sparkles size={18} color={credits && credits.remaining > 0 ? "#1A1A2E" : "#999"} />
+            <Sparkles size={18} color={credits && credits.remaining > 0 ? "#1A1A1A" : "#999"} />
             <Text className={`font-sans-bold text-base ${
               credits && credits.remaining > 0 ? "text-elegant-dark" : "text-gray-400"
             }`}>
@@ -418,7 +418,7 @@ export default function AIStudioScreen() {
       {/* STEP: Processing */}
       {step === "processing" && (
         <View className="items-center py-16">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
           <Text className="text-white font-sans-semibold text-base mt-4">
             Procesando imagen...
           </Text>

@@ -59,7 +59,7 @@ export default function CustomerDetailScreen() {
             className="flex-1 bg-elegant-gray rounded-xl py-3 items-center flex-row justify-center gap-2"
             onPress={() => Linking.openURL(`tel:${phone}`)}
           >
-            <Phone size={16} color="#FFC300" />
+            <Phone size={16} color="#EB1C8D" />
             <Text className="text-gold-500 font-sans-medium text-sm">
               Llamar
             </Text>
@@ -111,14 +111,14 @@ export default function CustomerDetailScreen() {
 
       {/* Order History */}
       <View className="flex-row items-center gap-2 mb-3">
-        <ShoppingBag size={16} color="#FFC300" />
+        <ShoppingBag size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-base">
           Historial de pedidos
         </Text>
       </View>
 
       {isLoading ? (
-        <ActivityIndicator size="small" color="#FFC300" />
+        <ActivityIndicator size="small" color="#EB1C8D" />
       ) : orders && orders.length > 0 ? (
         orders.map((order) => {
           const orderNumber = order.id.slice(0, 8).toUpperCase();

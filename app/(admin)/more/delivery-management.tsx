@@ -30,11 +30,11 @@ const STATUS_CONFIG: Record<string, { label: string; bg: string; text: string }>
 function VehicleIcon({ type }: { type: string | null }) {
   switch (type) {
     case "motorcycle":
-      return <Bike size={14} color="#FFC300" />;
+      return <Bike size={14} color="#EB1C8D" />;
     case "car":
-      return <Car size={14} color="#FFC300" />;
+      return <Car size={14} color="#EB1C8D" />;
     default:
-      return <Truck size={14} color="#FFC300" />;
+      return <Truck size={14} color="#EB1C8D" />;
   }
 }
 
@@ -116,7 +116,7 @@ export default function DeliveryManagementScreen() {
                 onValueChange={(val) =>
                   toggleActive.mutate({ id: item.id, is_active: val })
                 }
-                trackColor={{ false: "#333", true: "#FFC300" }}
+                trackColor={{ false: "#333", true: "#EB1C8D" }}
                 thumbColor="#fff"
                 style={{ transform: [{ scaleX: 0.85 }, { scaleY: 0.85 }] }}
               />
@@ -139,7 +139,7 @@ export default function DeliveryManagementScreen() {
 
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -151,8 +151,8 @@ export default function DeliveryManagementScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListEmptyComponent={
@@ -165,7 +165,7 @@ export default function DeliveryManagementScreen() {
           }
           ListFooterComponent={
             <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mt-2">
-              <Info size={16} color="#FFC300" />
+              <Info size={16} color="#EB1C8D" />
               <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
                 Agregá y editá motoristas desde el panel web
               </Text>

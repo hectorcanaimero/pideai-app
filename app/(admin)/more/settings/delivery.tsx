@@ -221,7 +221,7 @@ export default function DeliverySettingsScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-6">
-        <Truck size={20} color="#FFC300" />
+        <Truck size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">Entrega</Text>
       </View>
 
@@ -247,7 +247,7 @@ export default function DeliverySettingsScreen() {
 
       {/* Delivery price mode */}
       <View className="flex-row items-center gap-2 mb-3">
-        <DollarSign size={16} color="#FFC300" />
+        <DollarSign size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">
           Modo de precio de entrega
         </Text>
@@ -325,7 +325,7 @@ export default function DeliverySettingsScreen() {
         <View className="mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-row items-center gap-2">
-              <MapPin size={16} color="#FFC300" />
+              <MapPin size={16} color="#EB1C8D" />
               <Text className="text-white font-sans-semibold text-sm">
                 Zonas de envío
               </Text>
@@ -338,7 +338,7 @@ export default function DeliverySettingsScreen() {
               }}
               activeOpacity={0.8}
             >
-              <Plus size={14} color="#1A1A2E" />
+              <Plus size={14} color="#1A1A1A" />
               <Text className="text-elegant-dark font-sans-bold text-xs">
                 Nueva
               </Text>
@@ -389,7 +389,7 @@ export default function DeliverySettingsScreen() {
                 <Switch
                   value={zoneFreeEnabled}
                   onValueChange={setZoneFreeEnabled}
-                  trackColor={{ false: "#444", true: "#FFC300" }}
+                  trackColor={{ false: "#444", true: "#EB1C8D" }}
                   thumbColor="#fff"
                 />
               </View>
@@ -429,7 +429,7 @@ export default function DeliverySettingsScreen() {
 
           {/* Zones list */}
           {zonesLoading ? (
-            <ActivityIndicator size="small" color="#FFC300" />
+            <ActivityIndicator size="small" color="#EB1C8D" />
           ) : zones && zones.length > 0 ? (
             zones.map((zone) => (
               <View
@@ -458,7 +458,7 @@ export default function DeliverySettingsScreen() {
                   className="p-2 mr-1"
                   onPress={() => startEditZone(zone)}
                 >
-                  <Edit3 size={15} color="#FFC300" />
+                  <Edit3 size={15} color="#EB1C8D" />
                 </TouchableOpacity>
                 <TouchableOpacity
                   className="p-2"
@@ -491,7 +491,7 @@ export default function DeliverySettingsScreen() {
 
       {/* ============ FREE DELIVERY (global) ============ */}
       <View className="flex-row items-center gap-2 mb-3 mt-2">
-        <Gift size={16} color="#FFC300" />
+        <Gift size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">
           Envío gratis global
         </Text>
@@ -510,7 +510,7 @@ export default function DeliverySettingsScreen() {
           <Switch
             value={freeDeliveryEnabled}
             onValueChange={setFreeDeliveryEnabled}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -553,7 +553,7 @@ export default function DeliverySettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Guardar

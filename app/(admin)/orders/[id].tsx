@@ -17,7 +17,7 @@ export default function OrderDetailScreen() {
   if (isLoading || !order) {
     return (
       <View className="flex-1 items-center justify-center bg-elegant-dark">
-        <ActivityIndicator size="large" color="#FFC300" />
+        <ActivityIndicator size="large" color="#EB1C8D" />
       </View>
     );
   }
@@ -63,7 +63,7 @@ export default function OrderDetailScreen() {
             className="flex-row items-center gap-2 mb-2"
             onPress={() => Linking.openURL(`tel:${order.customer_phone}`)}
           >
-            <Phone size={14} color="#FFC300" />
+            <Phone size={14} color="#EB1C8D" />
             <Text className="text-gold-400 font-sans text-sm">{order.customer_phone}</Text>
           </TouchableOpacity>
         )}
@@ -84,7 +84,7 @@ export default function OrderDetailScreen() {
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
           <Text className="text-cream-400 font-sans text-xs mb-1">Dirección</Text>
           <View className="flex-row items-start gap-2">
-            <MapPin size={14} color="#FFC300" />
+            <MapPin size={14} color="#EB1C8D" />
             <Text className="text-white font-sans text-sm flex-1">{order.delivery_address}</Text>
           </View>
         </View>
@@ -125,7 +125,7 @@ export default function OrderDetailScreen() {
       {order.payment_method && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
           <View className="flex-row items-center gap-2">
-            <CreditCard size={14} color="#FFC300" />
+            <CreditCard size={14} color="#EB1C8D" />
             <Text className="text-cream-400 font-sans text-xs">Pago</Text>
           </View>
           <Text className="text-white font-sans text-sm mt-1">{order.payment_method}</Text>
@@ -136,7 +136,7 @@ export default function OrderDetailScreen() {
       {order.notes && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
           <View className="flex-row items-center gap-2 mb-1">
-            <StickyNote size={14} color="#FFC300" />
+            <StickyNote size={14} color="#EB1C8D" />
             <Text className="text-cream-400 font-sans text-xs">Notas</Text>
           </View>
           <Text className="text-white font-sans text-sm">{order.notes}</Text>

@@ -50,7 +50,7 @@ export class ErrorBoundary extends Component<Props, State> {
             onPress={this.handleReset}
             activeOpacity={0.8}
           >
-            <RefreshCw size={16} color="#1A1A2E" />
+            <RefreshCw size={16} color="#1A1A1A" />
             <Text className="text-elegant-dark font-sans-bold text-sm">Reintentar</Text>
           </TouchableOpacity>
         </View>

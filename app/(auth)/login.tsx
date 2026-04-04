@@ -88,7 +88,7 @@ export default function LoginScreen() {
           activeOpacity={0.8}
         >
           {loading ? (
-            <ActivityIndicator color="#1A1A2E" />
+            <ActivityIndicator color="#1A1A1A" />
           ) : (
             <Text className="text-elegant-dark font-sans-bold text-base">
               Iniciar Sesión

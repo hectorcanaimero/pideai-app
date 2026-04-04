@@ -259,7 +259,7 @@ export default function PaymentMethodsScreen() {
     >
       <View className="flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
-          <CreditCard size={20} color="#FFC300" />
+          <CreditCard size={20} color="#EB1C8D" />
           <Text className="text-white font-sans-bold text-lg">Métodos de pago</Text>
         </View>
         <TouchableOpacity
@@ -267,7 +267,7 @@ export default function PaymentMethodsScreen() {
           onPress={() => { resetForm(); setShowForm(true); }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A2E" />
+          <Plus size={14} color="#1A1A1A" />
           <Text className="text-elegant-dark font-sans-bold text-xs">Nuevo</Text>
         </TouchableOpacity>
       </View>
@@ -306,7 +306,7 @@ export default function PaymentMethodsScreen() {
                   onPress={() => setPaymentType(type.key)}
                   activeOpacity={0.7}
                 >
-                  <Icon size={14} color={isSelected ? "#1A1A2E" : "#888"} />
+                  <Icon size={14} color={isSelected ? "#1A1A1A" : "#888"} />
                   <Text
                     className={`font-sans-medium text-[10px] ${
                       isSelected ? "text-elegant-dark" : "text-cream-400"
@@ -440,7 +440,7 @@ export default function PaymentMethodsScreen() {
             <Switch
               value={isActive}
               onValueChange={setIsActive}
-              trackColor={{ false: "#444", true: "#FFC300" }}
+              trackColor={{ false: "#444", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -465,7 +465,7 @@ export default function PaymentMethodsScreen() {
 
       {/* Methods List */}
       {isLoading ? (
-        <ActivityIndicator size="small" color="#FFC300" />
+        <ActivityIndicator size="small" color="#EB1C8D" />
       ) : methods && methods.length > 0 ? (
         methods.map((method) => {
           const Icon = getTypeIcon(method.payment_type);
@@ -480,7 +480,7 @@ export default function PaymentMethodsScreen() {
             >
               <View className="flex-row items-start">
                 <View className="w-9 h-9 rounded-full bg-gold-500/15 items-center justify-center mr-3 mt-0.5">
-                  <Icon size={16} color="#FFC300" />
+                  <Icon size={16} color="#EB1C8D" />
                 </View>
                 <View className="flex-1">
                   <View className="flex-row items-center gap-2">
@@ -492,7 +492,7 @@ export default function PaymentMethodsScreen() {
                       onValueChange={(val) =>
                         toggleActive.mutate({ id: method.id, is_active: val })
                       }
-                      trackColor={{ false: "#444", true: "#FFC300" }}
+                      trackColor={{ false: "#444", true: "#EB1C8D" }}
                       thumbColor="#fff"
                     />
                   </View>
@@ -518,7 +518,7 @@ export default function PaymentMethodsScreen() {
                   className="flex-row items-center gap-1 px-3 py-1.5"
                   onPress={() => startEdit(method)}
                 >
-                  <Edit3 size={13} color="#FFC300" />
+                  <Edit3 size={13} color="#EB1C8D" />
                   <Text className="text-gold-500 font-sans text-xs">Editar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity

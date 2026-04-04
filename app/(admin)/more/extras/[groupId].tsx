@@ -71,7 +71,7 @@ export default function ExtrasGroupScreen() {
         onValueChange={(v) =>
           updateExtra.mutate({ id: item.id, is_available: v })
         }
-        trackColor={{ false: "#444", true: "#FFC300" }}
+        trackColor={{ false: "#444", true: "#EB1C8D" }}
         thumbColor="#fff"
       />
       <TouchableOpacity className="ml-3" onPress={() => handleDelete(item)}>
@@ -89,9 +89,9 @@ export default function ExtrasGroupScreen() {
           activeOpacity={0.8}
         >
           {showCreate ? (
-            <X size={16} color="#1A1A2E" />
+            <X size={16} color="#1A1A1A" />
           ) : (
-            <Plus size={16} color="#1A1A2E" />
+            <Plus size={16} color="#1A1A1A" />
           )}
           <Text className="text-elegant-dark font-sans-bold text-sm">
             {showCreate ? "Cancelar" : "Nuevo Extra"}
@@ -139,8 +139,8 @@ export default function ExtrasGroupScreen() {
           <RefreshControl
             refreshing={isRefetching}
             onRefresh={refetch}
-            tintColor="#FFC300"
-            colors={["#FFC300"]}
+            tintColor="#EB1C8D"
+            colors={["#EB1C8D"]}
           />
         }
         ListEmptyComponent={

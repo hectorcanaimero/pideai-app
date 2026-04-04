@@ -37,7 +37,7 @@ export default function OrdersScreen() {
             onPress={() => router.push("/(admin)/orders/kitchen")}
             activeOpacity={0.7}
           >
-            <ChefHat size={16} color="#FFC300" />
+            <ChefHat size={16} color="#EB1C8D" />
             <Text className="text-gold-500 font-sans-medium text-sm">Cocina</Text>
           </TouchableOpacity>
         )}
@@ -53,7 +53,7 @@ export default function OrdersScreen() {
       {/* Orders List */}
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -65,8 +65,8 @@ export default function OrdersScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListEmptyComponent={

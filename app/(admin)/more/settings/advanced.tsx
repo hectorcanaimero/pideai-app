@@ -77,13 +77,13 @@ export default function AdvancedSettingsScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
     >
       <View className="flex-row items-center gap-2 mb-6">
-        <Settings size={20} color="#FFC300" />
+        <Settings size={20} color="#EB1C8D" />
         <Text className="text-white font-sans-bold text-lg">Avanzado</Text>
       </View>
 
       {/* Audio Notifications Section */}
       <View className="flex-row items-center gap-2 mb-3">
-        <Bell size={16} color="#FFC300" />
+        <Bell size={16} color="#EB1C8D" />
         <Text className="text-white font-sans-semibold text-sm">
           Alerta sonora de pedidos
         </Text>
@@ -109,7 +109,7 @@ export default function AdvancedSettingsScreen() {
           <Switch
             value={enableAudio}
             onValueChange={setEnableAudio}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -119,7 +119,7 @@ export default function AdvancedSettingsScreen() {
         <>
           {/* Volume */}
           <View className="flex-row items-center gap-2 mb-1.5">
-            <Volume2 size={14} color="#FFC300" />
+            <Volume2 size={14} color="#EB1C8D" />
             <Text className="text-cream-300 font-sans-medium text-sm">
               Volumen (1 - 100)
             </Text>
@@ -168,9 +168,9 @@ export default function AdvancedSettingsScreen() {
             activeOpacity={0.7}
           >
             {testing ? (
-              <ActivityIndicator size="small" color="#FFC300" />
+              <ActivityIndicator size="small" color="#EB1C8D" />
             ) : (
-              <Play size={16} color="#FFC300" />
+              <Play size={16} color="#EB1C8D" />
             )}
             <Text className="text-gold-500 font-sans-medium text-sm">
               {testing ? "Reproduciendo..." : "Probar sonido"}
@@ -189,7 +189,7 @@ export default function AdvancedSettingsScreen() {
         activeOpacity={0.8}
       >
         {updateStore.isPending ? (
-          <ActivityIndicator color="#1A1A2E" />
+          <ActivityIndicator color="#1A1A1A" />
         ) : (
           <Text className="text-elegant-dark font-sans-bold text-base">
             Guardar

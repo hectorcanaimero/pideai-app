@@ -42,7 +42,7 @@ export function StoreStatusToggle() {
   return (
     <View className="bg-elegant-gray rounded-2xl p-4">
       <View className="flex-row items-center gap-2 mb-3">
-        <Store size={18} color="#FFC300" />
+        <Store size={18} color="#EB1C8D" />
         <Text className="text-cream-300 font-sans-medium text-sm">Estado de la tienda</Text>
       </View>
 

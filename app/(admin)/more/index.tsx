@@ -64,35 +64,35 @@ export default function MoreScreen() {
   };
 
   const settingsItems: MenuItem[] = [
-    { icon: <Store size={22} color="#FFC300" />, label: "Info de tienda", onPress: () => router.push("/(admin)/more/settings/store-info") },
-    { icon: <Clock size={22} color="#FFC300" />, label: "Horarios", onPress: () => router.push("/(admin)/more/settings/business-hours") },
-    { icon: <CreditCard size={22} color="#FFC300" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
-    { icon: <Wallet size={22} color="#FFC300" />, label: "Métodos de pago", onPress: () => router.push("/(admin)/more/settings/payment-methods") },
-    { icon: <DollarSign size={22} color="#FFC300" />, label: "Conversión de moneda", onPress: () => router.push("/(admin)/more/settings/currency") },
-    { icon: <ShoppingBag size={22} color="#FFC300" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
-    { icon: <Truck size={22} color="#FFC300" />, label: "Entrega", onPress: () => router.push("/(admin)/more/settings/delivery") },
-    { icon: <Palette size={22} color="#FFC300" />, label: "Diseño", onPress: () => router.push("/(admin)/more/settings/design") },
-    { icon: <Wrench size={22} color="#FFC300" />, label: "Avanzado", onPress: () => router.push("/(admin)/more/settings/advanced") },
+    { icon: <Store size={22} color="#EB1C8D" />, label: "Info de tienda", onPress: () => router.push("/(admin)/more/settings/store-info") },
+    { icon: <Clock size={22} color="#EB1C8D" />, label: "Horarios", onPress: () => router.push("/(admin)/more/settings/business-hours") },
+    { icon: <CreditCard size={22} color="#EB1C8D" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
+    { icon: <Wallet size={22} color="#EB1C8D" />, label: "Métodos de pago", onPress: () => router.push("/(admin)/more/settings/payment-methods") },
+    { icon: <DollarSign size={22} color="#EB1C8D" />, label: "Conversión de moneda", onPress: () => router.push("/(admin)/more/settings/currency") },
+    { icon: <ShoppingBag size={22} color="#EB1C8D" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
+    { icon: <Truck size={22} color="#EB1C8D" />, label: "Entrega", onPress: () => router.push("/(admin)/more/settings/delivery") },
+    { icon: <Palette size={22} color="#EB1C8D" />, label: "Diseño", onPress: () => router.push("/(admin)/more/settings/design") },
+    { icon: <Wrench size={22} color="#EB1C8D" />, label: "Avanzado", onPress: () => router.push("/(admin)/more/settings/advanced") },
   ];
 
   const otherItems: MenuItem[] = [
-    { icon: <BarChart3 size={22} color="#FFC300" />, label: "Analíticas", onPress: () => router.push("/(admin)/more/analytics") },
-    { icon: <Tag size={22} color="#FFC300" />, label: "Promociones", onPress: () => router.push("/(admin)/more/promotions") },
-    { icon: <Ticket size={22} color="#FFC300" />, label: "Cupones", onPress: () => router.push("/(admin)/more/coupons") },
-    { icon: <CreditCard size={22} color="#FFC300" />, label: "Suscripción", onPress: () => router.push("/(admin)/more/subscription") },
-    { icon: <Layers size={22} color="#FFC300" />, label: "Grupos de Extra", onPress: () => router.push("/(admin)/more/extras") },
+    { icon: <BarChart3 size={22} color="#EB1C8D" />, label: "Analíticas", onPress: () => router.push("/(admin)/more/analytics") },
+    { icon: <Tag size={22} color="#EB1C8D" />, label: "Promociones", onPress: () => router.push("/(admin)/more/promotions") },
+    { icon: <Ticket size={22} color="#EB1C8D" />, label: "Cupones", onPress: () => router.push("/(admin)/more/coupons") },
+    { icon: <CreditCard size={22} color="#EB1C8D" />, label: "Suscripción", onPress: () => router.push("/(admin)/more/subscription") },
+    { icon: <Layers size={22} color="#EB1C8D" />, label: "Grupos de Extra", onPress: () => router.push("/(admin)/more/extras") },
     // WhatsApp only shows if module is enabled in subscription
     ...(hasWhatsapp
       ? [
           {
-            icon: <MessageCircle size={22} color="#FFC300" />,
+            icon: <MessageCircle size={22} color="#EB1C8D" />,
             label: "WhatsApp",
             onPress: () => router.push("/(admin)/more/whatsapp"),
           },
         ]
       : []),
-    { icon: <Sparkles size={22} color="#FFC300" />, label: "AI Studio", onPress: () => router.push("/(admin)/more/ai-studio") },
-    { icon: <HelpCircle size={22} color="#FFC300" />, label: "Central de ayuda", onPress: () => router.push("/(admin)/more/help") },
+    { icon: <Sparkles size={22} color="#EB1C8D" />, label: "AI Studio", onPress: () => router.push("/(admin)/more/ai-studio") },
+    { icon: <HelpCircle size={22} color="#EB1C8D" />, label: "Central de ayuda", onPress: () => router.push("/(admin)/more/help") },
   ];
 
   return (

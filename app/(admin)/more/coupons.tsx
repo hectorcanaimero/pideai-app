@@ -421,7 +421,7 @@ export default function CouponsScreen() {
           <Switch
             value={form.is_active}
             onValueChange={(val) => setForm((f) => ({ ...f, is_active: val }))}
-            trackColor={{ false: "#444", true: "#FFC300" }}
+            trackColor={{ false: "#444", true: "#EB1C8D" }}
             thumbColor="#fff"
           />
         </View>
@@ -490,7 +490,7 @@ export default function CouponsScreen() {
               onValueChange={(val) =>
                 toggleActive.mutate({ id: item.id, is_active: val })
               }
-              trackColor={{ false: "#333", true: "#FFC300" }}
+              trackColor={{ false: "#333", true: "#EB1C8D" }}
               thumbColor="#fff"
             />
           </View>
@@ -498,9 +498,9 @@ export default function CouponsScreen() {
           <View className="flex-row items-center mt-3 flex-wrap gap-y-2">
             <View className="flex-row items-center mr-4">
               {item.type === "percentage" ? (
-                <Percent size={14} color="#FFC300" />
+                <Percent size={14} color="#EB1C8D" />
               ) : (
-                <DollarSign size={14} color="#FFC300" />
+                <DollarSign size={14} color="#EB1C8D" />
               )}
               <Text className="text-cream-400 font-sans text-xs ml-1">
                 {formatType(item.type)} · {formatValue(item.type, item.value)}
@@ -508,7 +508,7 @@ export default function CouponsScreen() {
             </View>
 
             <View className="flex-row items-center">
-              <Ticket size={14} color="#FFC300" />
+              <Ticket size={14} color="#EB1C8D" />
               <Text className="text-cream-400 font-sans text-xs ml-1">
                 {usageText}
               </Text>
@@ -524,7 +524,7 @@ export default function CouponsScreen() {
                   style={{
                     width: `${usageProgress * 100}%`,
                     backgroundColor:
-                      usageProgress >= 0.9 ? "#EF4444" : "#FFC300",
+                      usageProgress >= 0.9 ? "#EF4444" : "#EB1C8D",
                   }}
                 />
               </View>
@@ -551,7 +551,7 @@ export default function CouponsScreen() {
           }}
           activeOpacity={0.8}
         >
-          <Plus size={14} color="#1A1A2E" />
+          <Plus size={14} color="#1A1A1A" />
           <Text className="text-elegant-dark font-sans-bold text-xs">
             Nuevo
           </Text>
@@ -560,7 +560,7 @@ export default function CouponsScreen() {
 
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#FFC300" />
+          <ActivityIndicator size="large" color="#EB1C8D" />
         </View>
       ) : (
         <FlatList
@@ -572,8 +572,8 @@ export default function CouponsScreen() {
             <RefreshControl
               refreshing={isRefetching}
               onRefresh={refetch}
-              tintColor="#FFC300"
-              colors={["#FFC300"]}
+              tintColor="#EB1C8D"
+              colors={["#EB1C8D"]}
             />
           }
           ListHeaderComponent={renderForm()}
@@ -587,7 +587,7 @@ export default function CouponsScreen() {
           }
           ListFooterComponent={
             <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mt-2">
-              <Info size={16} color="#FFC300" />
+              <Info size={16} color="#EB1C8D" />
               <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
                 Los cupones permiten a tus clientes aplicar descuentos al
                 momento de pagar.

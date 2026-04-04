@@ -70,7 +70,7 @@ export function ProductCard({ product }: ProductCardProps) {
           onValueChange={(value) =>
             toggleAvailability.mutate({ id: product.id, is_available: value })
           }
-          trackColor={{ false: "#444", true: "#FFC300" }}
+          trackColor={{ false: "#444", true: "#EB1C8D" }}
           thumbColor="#fff"
         />
       </View>

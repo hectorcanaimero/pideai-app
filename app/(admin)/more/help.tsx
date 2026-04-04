@@ -44,8 +44,8 @@ const CATEGORIES: Category[] = [
   {
     id: "empezar",
     label: "Primeros pasos",
-    icon: <Rocket size={20} color="#FFC300" />,
-    color: "#FFC300",
+    icon: <Rocket size={20} color="#EB1C8D" />,
+    color: "#EB1C8D",
     articles: [
       {
         id: "crear-tienda",
@@ -307,7 +307,7 @@ export default function HelpScreen() {
           onPress={() => setSelectedArticle(null)}
           activeOpacity={0.7}
         >
-          <ChevronLeft size={20} color="#FFC300" />
+          <ChevronLeft size={20} color="#EB1C8D" />
           <Text className="text-brand-yellow font-sans-medium text-sm ml-1">
             Volver
           </Text>
@@ -375,7 +375,7 @@ export default function HelpScreen() {
           onPress={() => setSelectedCategory(null)}
           activeOpacity={0.7}
         >
-          <ChevronLeft size={20} color="#FFC300" />
+          <ChevronLeft size={20} color="#EB1C8D" />
           <Text className="text-brand-yellow font-sans-medium text-sm ml-1">
             Volver
           </Text>
@@ -417,7 +417,7 @@ export default function HelpScreen() {
       {/* Sofía Header */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4 flex-row items-center gap-3">
         <View className="w-12 h-12 rounded-full bg-brand-yellow/20 items-center justify-center">
-          <Sparkles size={24} color="#FFC300" />
+          <Sparkles size={24} color="#EB1C8D" />
         </View>
         <View className="flex-1">
           <Text className="text-white font-sans-bold text-base">
