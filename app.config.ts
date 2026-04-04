@@ -78,7 +78,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       "@sentry/react-native/expo",
       {
         organization: "pideai",
-        project: "mobile-admin",
+        project: "pideai-admin",
       },
     ],
   ],
