@@ -16,7 +16,7 @@ export function StockBadge({ trackStock, quantity, minimum }: StockBadgeProps) {
   if (isOutOfStock) {
     return (
       <View className="bg-red-500/20 px-2 py-0.5 rounded-full">
-        <Text className="text-red-400 font-sans-medium text-[10px]">
+        <Text className="text-red-400 font-sans-medium text-xs">
           Agotado
         </Text>
       </View>
@@ -26,7 +26,7 @@ export function StockBadge({ trackStock, quantity, minimum }: StockBadgeProps) {
   if (isLowStock) {
     return (
       <View className="bg-yellow-500/20 px-2 py-0.5 rounded-full">
-        <Text className="text-yellow-400 font-sans-medium text-[10px]">
+        <Text className="text-yellow-400 font-sans-medium text-xs">
           Stock: {quantity}
         </Text>
       </View>
@@ -35,7 +35,7 @@ export function StockBadge({ trackStock, quantity, minimum }: StockBadgeProps) {
 
   return (
     <View className="bg-green-500/20 px-2 py-0.5 rounded-full">
-      <Text className="text-green-400 font-sans-medium text-[10px]">
+      <Text className="text-green-400 font-sans-medium text-xs">
         Stock: {quantity}
       </Text>
     </View>

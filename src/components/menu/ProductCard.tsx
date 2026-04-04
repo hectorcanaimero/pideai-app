@@ -37,7 +37,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <View className="flex-1 justify-center">
         <View className="flex-row items-center gap-2">
           <Text
-            className="text-text-primary font-sans-medium text-sm flex-1"
+            className="text-text-primary font-sans-medium text-base flex-1"
             numberOfLines={1}
           >
             {product.name}
@@ -55,7 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </Text>
         {product.description && (
           <Text
-            className="text-cream-400 font-sans text-xs mt-0.5"
+            className="text-cream-400 font-sans text-sm mt-0.5"
             numberOfLines={1}
           >
             {product.description}

@@ -22,8 +22,8 @@ export function OrderCard({ order }: OrderCardProps) {
     >
       <View className="flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
-          <Text className="text-text-primary font-sans-bold text-base">#{orderNumber}</Text>
-          <Text className="text-cream-400 font-sans text-xs">{orderType}</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">#{orderNumber}</Text>
+          <Text className="text-cream-400 font-sans text-sm">{orderType}</Text>
         </View>
         <OrderStatusBadge status={order.status} />
       </View>
@@ -35,26 +35,26 @@ export function OrderCard({ order }: OrderCardProps) {
       {order.customer_phone && (
         <View className="flex-row items-center gap-1.5 mb-1">
           <Phone size={12} color="#F7EBF4" />
-          <Text className="text-cream-400 font-sans text-xs">{order.customer_phone}</Text>
+          <Text className="text-cream-400 font-sans text-sm">{order.customer_phone}</Text>
         </View>
       )}
 
       {order.order_type === "delivery" && order.delivery_address && (
         <View className="flex-row items-center gap-1.5 mb-1">
           <MapPin size={12} color="#F7EBF4" />
-          <Text className="text-cream-400 font-sans text-xs flex-1" numberOfLines={1}>
+          <Text className="text-cream-400 font-sans text-sm flex-1" numberOfLines={1}>
             {order.delivery_address}
           </Text>
         </View>
       )}
 
       <View className="flex-row items-center justify-between mt-2 pt-2 border-t border-elegant-dark">
-        <Text className="text-gold-500 font-sans-bold text-base">
+        <Text className="text-gold-500 font-sans-bold text-xl">
           ${order.total_amount?.toFixed(2)}
         </Text>
         <View className="flex-row items-center gap-1">
           <Clock size={12} color="#888" />
-          <Text className="text-cream-400 font-sans text-xs">{timeAgo}</Text>
+          <Text className="text-cream-400 font-sans text-sm">{timeAgo}</Text>
           <ChevronRight size={14} color="#666" />
         </View>
       </View>

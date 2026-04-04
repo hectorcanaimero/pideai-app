@@ -23,7 +23,7 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
         activeOpacity={0.7}
       >
         <Text
-          className={`font-sans-medium text-sm ${
+          className={`font-sans-medium text-base ${
             selectedStatus === null ? "text-text-inverted" : "text-cream-300"
           }`}
         >
@@ -49,7 +49,7 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
               style={{ backgroundColor: STATUS_COLORS[status] }}
             />
             <Text
-              className={`font-sans-medium text-sm ${
+              className={`font-sans-medium text-base ${
                 isSelected ? "text-text-inverted" : "text-cream-300"
               }`}
             >
@@ -57,7 +57,7 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
             </Text>
             {showBadge && (
               <View className="bg-red-500 rounded-full min-w-[18px] h-[18px] items-center justify-center ml-0.5">
-                <Text className="text-text-primary font-sans-bold text-[10px]">{pendingCount}</Text>
+                <Text className="text-text-primary font-sans-bold text-xs">{pendingCount}</Text>
               </View>
             )}
           </TouchableOpacity>

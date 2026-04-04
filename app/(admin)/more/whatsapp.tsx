@@ -45,11 +45,11 @@ export default function WhatsAppScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <MessageCircle size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">WhatsApp</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">WhatsApp</Text>
       </View>
 
       {/* WhatsApp Number */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Número de WhatsApp
       </Text>
       <TextInput
@@ -65,10 +65,10 @@ export default function WhatsAppScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               Redirigir pedidos a WhatsApp
             </Text>
-            <Text className="text-cream-400 font-sans text-xs mt-0.5">
+            <Text className="text-cream-400 font-sans text-sm mt-0.5">
               Los clientes enviarán su pedido por WhatsApp
             </Text>
           </View>
@@ -84,7 +84,7 @@ export default function WhatsAppScreen() {
       {/* Info Note */}
       <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mb-6">
         <Info size={16} color="#EB1C8D" />
-        <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
+        <Text className="text-cream-400 font-sans text-sm ml-2 flex-1">
           Configurá templates y campañas desde el panel web
         </Text>
       </View>
@@ -96,7 +96,7 @@ export default function WhatsAppScreen() {
         activeOpacity={0.8}
         disabled={updateStore.isPending}
       >
-        <Text className="text-text-inverted font-sans-bold text-base">
+        <Text className="text-text-inverted font-sans-bold text-lg">
           {updateStore.isPending ? "Guardando..." : "Guardar cambios"}
         </Text>
       </TouchableOpacity>

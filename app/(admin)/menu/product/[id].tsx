@@ -160,7 +160,7 @@ export default function ProductDetailScreen() {
       </TouchableOpacity>
 
       {/* Name */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Nombre *
       </Text>
       <TextInput
@@ -170,7 +170,7 @@ export default function ProductDetailScreen() {
       />
 
       {/* Price */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Precio *
       </Text>
       <TextInput
@@ -181,7 +181,7 @@ export default function ProductDetailScreen() {
       />
 
       {/* Description */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Descripción
       </Text>
       <TextInput
@@ -197,7 +197,7 @@ export default function ProductDetailScreen() {
       {isStockEnabled && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               Controlar stock
             </Text>
             <Switch
@@ -209,7 +209,7 @@ export default function ProductDetailScreen() {
           </View>
           {trackStock && (
             <View>
-              <Text className="text-cream-300 font-sans text-xs mb-1">
+              <Text className="text-cream-300 font-sans text-sm mb-1">
                 Cantidad disponible
               </Text>
               <TextInput
@@ -233,7 +233,7 @@ export default function ProductDetailScreen() {
         {saving ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Guardar Cambios
           </Text>
         )}
@@ -246,7 +246,7 @@ export default function ProductDetailScreen() {
         activeOpacity={0.7}
       >
         <Trash2 size={16} color="#EF4444" />
-        <Text className="text-red-400 font-sans-medium text-sm">
+        <Text className="text-red-400 font-sans-medium text-base">
           Eliminar producto
         </Text>
       </TouchableOpacity>

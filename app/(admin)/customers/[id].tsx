@@ -60,7 +60,7 @@ export default function CustomerDetailScreen() {
             onPress={() => Linking.openURL(`tel:${phone}`)}
           >
             <Phone size={16} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans-medium text-sm">
+            <Text className="text-gold-500 font-sans-medium text-base">
               Llamar
             </Text>
           </TouchableOpacity>
@@ -75,7 +75,7 @@ export default function CustomerDetailScreen() {
             }
           >
             <MessageCircle size={16} color="#22C55E" />
-            <Text className="text-green-400 font-sans-medium text-sm">
+            <Text className="text-green-400 font-sans-medium text-base">
               WhatsApp
             </Text>
           </TouchableOpacity>
@@ -85,7 +85,7 @@ export default function CustomerDetailScreen() {
           onPress={() => Linking.openURL(`mailto:${email}`)}
         >
           <Mail size={16} color="#3B82F6" />
-          <Text className="text-blue-400 font-sans-medium text-sm">Email</Text>
+          <Text className="text-blue-400 font-sans-medium text-base">Email</Text>
         </TouchableOpacity>
       </View>
 
@@ -96,13 +96,13 @@ export default function CustomerDetailScreen() {
             <Text className="text-gold-500 font-sans-bold text-2xl">
               {customer.order_count}
             </Text>
-            <Text className="text-cream-400 font-sans text-xs">Pedidos</Text>
+            <Text className="text-cream-400 font-sans text-sm">Pedidos</Text>
           </View>
           <View className="flex-1 bg-elegant-gray rounded-2xl p-4 items-center">
-            <Text className="text-gold-500 font-sans-bold text-lg">
+            <Text className="text-gold-500 font-sans-bold text-xl">
               {currency} {customer.total_spent.toFixed(2)}
             </Text>
-            <Text className="text-cream-400 font-sans text-xs">
+            <Text className="text-cream-400 font-sans text-sm">
               Total gastado
             </Text>
           </View>
@@ -112,7 +112,7 @@ export default function CustomerDetailScreen() {
       {/* Order History */}
       <View className="flex-row items-center gap-2 mb-3">
         <ShoppingBag size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-base">
+        <Text className="text-text-primary font-sans-semibold text-lg">
           Historial de pedidos
         </Text>
       </View>
@@ -135,12 +135,12 @@ export default function CustomerDetailScreen() {
             >
               <View className="flex-1">
                 <View className="flex-row items-center gap-2">
-                  <Text className="text-text-primary font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-base">
                     #{orderNumber}
                   </Text>
                   <OrderStatusBadge status={order.status as OrderStatus} />
                 </View>
-                <Text className="text-cream-400 font-sans text-xs mt-0.5">
+                <Text className="text-cream-400 font-sans text-sm mt-0.5">
                   {ORDER_TYPE_LABELS[order.order_type ?? ""] ??
                     order.order_type}{" "}
                   · {date}

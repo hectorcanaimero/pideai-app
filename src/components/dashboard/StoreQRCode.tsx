@@ -41,11 +41,11 @@ export function StoreQRCode() {
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
           <QrCode size={18} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-semibold text-base">Código QR de tu tienda</Text>
+          <Text className="text-text-primary font-sans-semibold text-lg">Código QR de tu tienda</Text>
         </View>
       </View>
 
-      <Text className="text-cream-400 font-sans text-xs mb-4">
+      <Text className="text-cream-400 font-sans text-sm mb-4">
         Compartí este código con tus clientes para que accedan fácilmente
       </Text>
 
@@ -60,7 +60,7 @@ export function StoreQRCode() {
             getRef={(ref: any) => (qrRef.current = ref)}
           />
         </View>
-        <Text className="text-cream-400 font-sans text-xs mt-2">{storeUrl}</Text>
+        <Text className="text-cream-400 font-sans text-sm mt-2">{storeUrl}</Text>
       </View>
 
       {/* Share Button */}

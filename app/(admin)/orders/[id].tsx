@@ -45,7 +45,7 @@ export default function OrderDetailScreen() {
 
       {/* Order Type */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
-        <Text className="text-cream-400 font-sans text-xs mb-1">Tipo de pedido</Text>
+        <Text className="text-cream-400 font-sans text-sm mb-1">Tipo de pedido</Text>
         <Text className="text-text-primary font-sans-medium text-base">
           {ORDER_TYPE_LABELS[order.order_type ?? ""] ?? order.order_type}
         </Text>
@@ -53,7 +53,7 @@ export default function OrderDetailScreen() {
 
       {/* Customer Info */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
-        <Text className="text-cream-400 font-sans text-xs mb-2">Cliente</Text>
+        <Text className="text-cream-400 font-sans text-sm mb-2">Cliente</Text>
         <Text className="text-text-primary font-sans-medium text-base mb-2">
           {order.customer_name}
         </Text>
@@ -82,7 +82,7 @@ export default function OrderDetailScreen() {
       {/* Delivery Address */}
       {order.order_type === "delivery" && order.delivery_address && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
-          <Text className="text-cream-400 font-sans text-xs mb-1">Dirección</Text>
+          <Text className="text-cream-400 font-sans text-sm mb-1">Dirección</Text>
           <View className="flex-row items-start gap-2">
             <MapPin size={14} color="#EB1C8D" />
             <Text className="text-text-primary font-sans text-sm flex-1">{order.delivery_address}</Text>
@@ -92,7 +92,7 @@ export default function OrderDetailScreen() {
 
       {/* Order Items */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
-        <Text className="text-cream-400 font-sans text-xs mb-3">Productos</Text>
+        <Text className="text-cream-400 font-sans text-sm mb-3">Productos</Text>
         <OrderItemsList items={order.order_items ?? []} currency={currency} />
 
         <View className="border-t border-elegant-dark mt-3 pt-3">
@@ -113,8 +113,8 @@ export default function OrderDetailScreen() {
             </View>
           )}
           <View className="flex-row justify-between">
-            <Text className="text-text-primary font-sans-bold text-lg">Total</Text>
-            <Text className="text-gold-500 font-sans-bold text-lg">
+            <Text className="text-text-primary font-sans-bold text-xl">Total</Text>
+            <Text className="text-gold-500 font-sans-bold text-xl">
               {currency} {order.total_amount?.toFixed(2)}
             </Text>
           </View>
@@ -126,7 +126,7 @@ export default function OrderDetailScreen() {
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
           <View className="flex-row items-center gap-2">
             <CreditCard size={14} color="#EB1C8D" />
-            <Text className="text-cream-400 font-sans text-xs">Pago</Text>
+            <Text className="text-cream-400 font-sans text-sm">Pago</Text>
           </View>
           <Text className="text-text-primary font-sans text-sm mt-1">{order.payment_method}</Text>
         </View>
@@ -137,7 +137,7 @@ export default function OrderDetailScreen() {
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
           <View className="flex-row items-center gap-2 mb-1">
             <StickyNote size={14} color="#EB1C8D" />
-            <Text className="text-cream-400 font-sans text-xs">Notas</Text>
+            <Text className="text-cream-400 font-sans text-sm">Notas</Text>
           </View>
           <Text className="text-text-primary font-sans text-sm">{order.notes}</Text>
         </View>

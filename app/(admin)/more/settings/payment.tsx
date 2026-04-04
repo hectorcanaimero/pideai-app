@@ -39,10 +39,10 @@ export default function PaymentSettingsScreen() {
     <ScrollView className="flex-1 bg-elegant-dark" contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
       <View className="flex-row items-center gap-2 mb-6">
         <CreditCard size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">Pagos</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">Pagos</Text>
       </View>
 
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Moneda</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Moneda</Text>
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={currency}
@@ -53,7 +53,7 @@ export default function PaymentSettingsScreen() {
 
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
         <View className="flex-row items-center justify-between">
-          <Text className="text-text-primary font-sans-medium text-sm">Aceptar efectivo</Text>
+          <Text className="text-text-primary font-sans-medium text-base">Aceptar efectivo</Text>
           <Switch value={acceptCash} onValueChange={setAcceptCash} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
         </View>
       </View>
@@ -61,8 +61,8 @@ export default function PaymentSettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-sm">Requerir comprobante de pago</Text>
-            <Text className="text-cream-400 font-sans text-xs mt-0.5">El cliente debe subir comprobante</Text>
+            <Text className="text-text-primary font-sans-medium text-base">Requerir comprobante de pago</Text>
+            <Text className="text-cream-400 font-sans text-sm mt-0.5">El cliente debe subir comprobante</Text>
           </View>
           <Switch value={requireProof} onValueChange={setRequireProof} trackColor={{ false: "#444", true: "#EB1C8D" }} thumbColor="#fff" />
         </View>
@@ -74,7 +74,7 @@ export default function PaymentSettingsScreen() {
         disabled={updateStore.isPending}
         activeOpacity={0.8}
       >
-        {updateStore.isPending ? <ActivityIndicator color="#FFFFFF" /> : <Text className="text-text-inverted font-sans-bold text-base">Guardar</Text>}
+        {updateStore.isPending ? <ActivityIndicator color="#FFFFFF" /> : <Text className="text-text-inverted font-sans-bold text-lg">Guardar</Text>}
       </TouchableOpacity>
     </ScrollView>
   );

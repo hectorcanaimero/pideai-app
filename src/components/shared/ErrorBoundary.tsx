@@ -39,7 +39,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <View className="flex-1 items-center justify-center bg-elegant-dark px-8">
           <AlertTriangle size={48} color="#EF4444" />
-          <Text className="text-text-primary font-sans-bold text-lg mt-4 text-center">
+          <Text className="text-text-primary font-sans-bold text-xl mt-4 text-center">
             Algo salió mal
           </Text>
           <Text className="text-cream-400 font-sans text-sm mt-2 text-center">

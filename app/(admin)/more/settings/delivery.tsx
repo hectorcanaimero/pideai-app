@@ -222,11 +222,11 @@ export default function DeliverySettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Truck size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">Entrega</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">Entrega</Text>
       </View>
 
       {/* Estimated delivery time */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Tiempo estimado de entrega (minutos)
       </Text>
       <TextInput
@@ -239,7 +239,7 @@ export default function DeliverySettingsScreen() {
       />
       <View className="flex-row items-start gap-1.5 mb-6">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Tiempo aproximado que se le muestra al cliente cuando hace un pedido de
           delivery.
         </Text>
@@ -248,7 +248,7 @@ export default function DeliverySettingsScreen() {
       {/* Delivery price mode */}
       <View className="flex-row items-center gap-2 mb-3">
         <DollarSign size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-lg">
           Modo de precio de entrega
         </Text>
       </View>
@@ -262,7 +262,7 @@ export default function DeliverySettingsScreen() {
           activeOpacity={0.7}
         >
           <Text
-            className={`font-sans-medium text-sm ${
+            className={`font-sans-medium text-base ${
               priceMode === "fixed" ? "text-text-inverted" : "text-cream-300"
             }`}
           >
@@ -278,7 +278,7 @@ export default function DeliverySettingsScreen() {
           activeOpacity={0.7}
         >
           <Text
-            className={`font-sans-medium text-sm ${
+            className={`font-sans-medium text-base ${
               priceMode === "by_zone" ? "text-text-inverted" : "text-cream-300"
             }`}
           >
@@ -289,7 +289,7 @@ export default function DeliverySettingsScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-4">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           {priceMode === "fixed"
             ? "Se cobra el mismo precio de envío para todos los pedidos."
             : "El precio de envío depende de la zona del cliente."}
@@ -299,7 +299,7 @@ export default function DeliverySettingsScreen() {
       {/* Fixed price input */}
       {priceMode === "fixed" && (
         <>
-          <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+          <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
             Precio fijo de envío ({currency})
           </Text>
           <TextInput
@@ -312,7 +312,7 @@ export default function DeliverySettingsScreen() {
           />
           <View className="flex-row items-start gap-1.5 mb-4">
             <Info size={12} color="#888" style={{ marginTop: 2 }} />
-            <Text className="text-cream-400/60 font-sans text-xs flex-1">
+            <Text className="text-cream-400/60 font-sans text-sm flex-1">
               Este monto se suma automáticamente al total del pedido en órdenes
               de delivery.
             </Text>
@@ -326,7 +326,7 @@ export default function DeliverySettingsScreen() {
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-row items-center gap-2">
               <MapPin size={16} color="#EB1C8D" />
-              <Text className="text-text-primary font-sans-semibold text-sm">
+              <Text className="text-text-primary font-sans-semibold text-lg">
                 Zonas de envío
               </Text>
             </View>
@@ -349,7 +349,7 @@ export default function DeliverySettingsScreen() {
           {showZoneForm && (
             <View className="bg-elegant-gray rounded-2xl p-4 mb-3 border border-gold-500/30">
               <View className="flex-row items-center justify-between mb-3">
-                <Text className="text-gold-500 font-sans-semibold text-sm">
+                <Text className="text-gold-500 font-sans-semibold text-lg">
                   {editingZone ? "Editar zona" : "Nueva zona"}
                 </Text>
                 <TouchableOpacity onPress={resetZoneForm}>
@@ -357,7 +357,7 @@ export default function DeliverySettingsScreen() {
                 </TouchableOpacity>
               </View>
 
-              <Text className="text-cream-300 font-sans text-xs mb-1">
+              <Text className="text-cream-300 font-sans text-sm mb-1">
                 Nombre de la zona *
               </Text>
               <TextInput
@@ -369,7 +369,7 @@ export default function DeliverySettingsScreen() {
                 autoFocus
               />
 
-              <Text className="text-cream-300 font-sans text-xs mb-1">
+              <Text className="text-cream-300 font-sans text-sm mb-1">
                 Precio de envío ({currency})
               </Text>
               <TextInput
@@ -383,7 +383,7 @@ export default function DeliverySettingsScreen() {
 
               {/* Zone-level free delivery */}
               <View className="flex-row items-center justify-between mb-2">
-                <Text className="text-cream-300 font-sans text-xs">
+                <Text className="text-cream-300 font-sans text-sm">
                   Envío gratis en esta zona
                 </Text>
                 <Switch
@@ -396,7 +396,7 @@ export default function DeliverySettingsScreen() {
 
               {zoneFreeEnabled && (
                 <>
-                  <Text className="text-cream-300 font-sans text-xs mb-1">
+                  <Text className="text-cream-300 font-sans text-sm mb-1">
                     Monto mínimo ({currency})
                   </Text>
                   <TextInput
@@ -437,16 +437,16 @@ export default function DeliverySettingsScreen() {
                 className="bg-elegant-gray rounded-xl p-3 mb-2 flex-row items-center"
               >
                 <View className="flex-1">
-                  <Text className="text-text-primary font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-base">
                     {zone.zone_name}
                   </Text>
                   <View className="flex-row items-center gap-2 mt-0.5">
-                    <Text className="text-gold-500 font-sans text-xs">
+                    <Text className="text-gold-500 font-sans text-sm">
                       {currency} {zone.delivery_price.toFixed(2)}
                     </Text>
                     {zone.free_delivery_enabled && (
                       <View className="bg-green-500/20 px-1.5 py-0.5 rounded">
-                        <Text className="text-green-400 font-sans text-[10px]">
+                        <Text className="text-green-400 font-sans text-sm">
                           Gratis desde {currency}{" "}
                           {zone.free_delivery_min_amount?.toFixed(2)}
                         </Text>
@@ -473,7 +473,7 @@ export default function DeliverySettingsScreen() {
               <Text className="text-cream-400 font-sans text-sm">
                 No hay zonas configuradas
               </Text>
-              <Text className="text-cream-400/60 font-sans text-xs mt-1">
+              <Text className="text-cream-400/60 font-sans text-sm mt-1">
                 Tocá "Nueva" para agregar tu primera zona
               </Text>
             </View>
@@ -481,7 +481,7 @@ export default function DeliverySettingsScreen() {
 
           <View className="flex-row items-start gap-1.5 mt-2">
             <Info size={12} color="#888" style={{ marginTop: 2 }} />
-            <Text className="text-cream-400/60 font-sans text-xs flex-1">
+            <Text className="text-cream-400/60 font-sans text-sm flex-1">
               Cada zona tiene su propio precio de envío. El cliente selecciona su
               zona al hacer el pedido.
             </Text>
@@ -492,7 +492,7 @@ export default function DeliverySettingsScreen() {
       {/* ============ FREE DELIVERY (global) ============ */}
       <View className="flex-row items-center gap-2 mb-3 mt-2">
         <Gift size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-lg">
           Envío gratis global
         </Text>
       </View>
@@ -500,10 +500,10 @@ export default function DeliverySettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-2">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               Habilitar envío gratis
             </Text>
-            <Text className="text-cream-400 font-sans text-xs mt-0.5">
+            <Text className="text-cream-400 font-sans text-sm mt-0.5">
               Envío sin costo cuando el pedido supera un monto mínimo
             </Text>
           </View>
@@ -517,7 +517,7 @@ export default function DeliverySettingsScreen() {
 
         {freeDeliveryEnabled && (
           <View className="mt-4 pt-4 border-t border-elegant-dark">
-            <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+            <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
               Monto mínimo para envío gratis ({currency})
             </Text>
             <TextInput
@@ -534,7 +534,7 @@ export default function DeliverySettingsScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-6">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           {freeDeliveryEnabled
             ? `Los clientes con pedidos mayores a ${currency} ${
                 freeDeliveryMinAmount || "0"
@@ -555,7 +555,7 @@ export default function DeliverySettingsScreen() {
         {updateStore.isPending ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Guardar
           </Text>
         )}

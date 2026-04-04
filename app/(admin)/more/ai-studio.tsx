@@ -202,14 +202,14 @@ export default function AIStudioScreen() {
       {/* Header */}
       <View className="flex-row items-center gap-2 mb-2">
         <Sparkles size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">AI Photo Studio</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">AI Photo Studio</Text>
       </View>
 
       {/* Credits */}
       <View className="bg-elegant-gray rounded-xl p-3 flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
           <Zap size={14} color="#EB1C8D" />
-          <Text className="text-cream-400 font-sans text-xs">Créditos disponibles</Text>
+          <Text className="text-cream-400 font-sans text-sm">Créditos disponibles</Text>
         </View>
         <Text className="text-gold-500 font-sans-bold text-sm">
           {credits?.remaining ?? 0} / {credits?.total ?? 0}
@@ -218,7 +218,7 @@ export default function AIStudioScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-5">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Mejorá las fotos de tus productos con inteligencia artificial. Seleccioná un producto, elegí un estilo y listo.
         </Text>
       </View>
@@ -226,7 +226,7 @@ export default function AIStudioScreen() {
       {/* STEP 1: Select Product */}
       {step === "select_product" && (
         <>
-          <Text className="text-text-primary font-sans-semibold text-sm mb-3">
+          <Text className="text-text-primary font-sans-semibold text-lg mb-3">
             1. Seleccioná un producto
           </Text>
 
@@ -254,7 +254,7 @@ export default function AIStudioScreen() {
                     <ImageIcon size={20} color="#666" />
                   </View>
                 )}
-                <Text className="text-text-primary font-sans-medium text-sm flex-1">
+                <Text className="text-text-primary font-sans-medium text-base flex-1">
                   {product.name}
                 </Text>
                 <ChevronRight size={16} color="#666" />
@@ -266,7 +266,7 @@ export default function AIStudioScreen() {
               <Text className="text-cream-400 font-sans text-sm mt-3">
                 No hay productos con imagen
               </Text>
-              <Text className="text-cream-400/60 font-sans text-xs mt-1 text-center">
+              <Text className="text-cream-400/60 font-sans text-sm mt-1 text-center">
                 Agregá imágenes a tus productos desde el menú para poder mejorarlas con IA.
               </Text>
             </View>
@@ -282,7 +282,7 @@ export default function AIStudioScreen() {
             onPress={() => setStep("select_product")}
           >
             <ChevronLeft size={18} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans-medium text-sm ml-1">Volver</Text>
+            <Text className="text-gold-500 font-sans-medium text-base ml-1">Volver</Text>
           </TouchableOpacity>
 
           {/* Selected product preview */}
@@ -294,12 +294,12 @@ export default function AIStudioScreen() {
                 resizeMode="cover"
               />
             )}
-            <Text className="text-text-primary font-sans-medium text-sm flex-1">
+            <Text className="text-text-primary font-sans-medium text-base flex-1">
               {selectedProduct.name}
             </Text>
           </View>
 
-          <Text className="text-text-primary font-sans-semibold text-sm mb-3">
+          <Text className="text-text-primary font-sans-semibold text-lg mb-3">
             2. Elegí un estilo
           </Text>
 
@@ -326,8 +326,8 @@ export default function AIStudioScreen() {
                     style={{ backgroundColor: `${style.color}30` }}>
                     <View className="w-3 h-3 rounded-full" style={{ backgroundColor: style.color }} />
                   </View>
-                  <Text className="text-text-primary font-sans-medium text-sm">{style.name}</Text>
-                  <Text className="text-cream-400 font-sans text-[10px] mt-0.5">{style.description}</Text>
+                  <Text className="text-text-primary font-sans-medium text-base">{style.name}</Text>
+                  <Text className="text-cream-400 font-sans text-sm mt-0.5">{style.description}</Text>
                 </TouchableOpacity>
               );
             })}
@@ -343,7 +343,7 @@ export default function AIStudioScreen() {
             onPress={() => setStep("select_style")}
           >
             <ChevronLeft size={18} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans-medium text-sm ml-1">Volver</Text>
+            <Text className="text-gold-500 font-sans-medium text-base ml-1">Volver</Text>
           </TouchableOpacity>
 
           {/* Preview */}
@@ -356,14 +356,14 @@ export default function AIStudioScreen() {
               />
             )}
             <View>
-              <Text className="text-text-primary font-sans-medium text-sm">{selectedProduct.name}</Text>
-              <Text className="text-cream-400 font-sans text-xs">
+              <Text className="text-text-primary font-sans-medium text-base">{selectedProduct.name}</Text>
+              <Text className="text-cream-400 font-sans text-sm">
                 Estilo: {styles.find((s) => s.id === selectedStyle)?.name}
               </Text>
             </View>
           </View>
 
-          <Text className="text-text-primary font-sans-semibold text-sm mb-3">
+          <Text className="text-text-primary font-sans-semibold text-lg mb-3">
             3. Formato de imagen
           </Text>
 
@@ -382,7 +382,7 @@ export default function AIStudioScreen() {
                   <Text className={`font-sans-bold text-sm ${isSelected ? "text-text-inverted" : "text-cream-300"}`}>
                     {ratio.name}
                   </Text>
-                  <Text className={`font-sans text-[10px] mt-0.5 ${isSelected ? "text-text-inverted/70" : "text-cream-400"}`}>
+                  <Text className={`font-sans text-sm mt-0.5 ${isSelected ? "text-text-inverted/70" : "text-cream-400"}`}>
                     {ratio.description}
                   </Text>
                 </TouchableOpacity>
@@ -400,7 +400,7 @@ export default function AIStudioScreen() {
             activeOpacity={0.8}
           >
             <Sparkles size={18} color={credits && credits.remaining > 0 ? "#FFFFFF" : "#999"} />
-            <Text className={`font-sans-bold text-base ${
+            <Text className={`font-sans-bold text-xl ${
               credits && credits.remaining > 0 ? "text-text-inverted" : "text-gray-400"
             }`}>
               {credits && credits.remaining > 0 ? "Generar imagen" : "Sin créditos disponibles"}
@@ -408,7 +408,7 @@ export default function AIStudioScreen() {
           </TouchableOpacity>
 
           {credits && credits.remaining > 0 && (
-            <Text className="text-cream-400/60 font-sans text-xs text-center mt-2">
+            <Text className="text-cream-400/60 font-sans text-sm text-center mt-2">
               Consume 1 crédito · Te quedan {credits.remaining}
             </Text>
           )}
@@ -419,7 +419,7 @@ export default function AIStudioScreen() {
       {step === "processing" && (
         <View className="items-center py-16">
           <ActivityIndicator size="large" color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-semibold text-base mt-4">
+          <Text className="text-text-primary font-sans-semibold text-lg mt-4">
             Procesando imagen...
           </Text>
           <Text className="text-cream-400 font-sans text-sm mt-1">
@@ -447,14 +447,14 @@ export default function AIStudioScreen() {
                 <Text className="text-text-primary font-sans text-sm">
                   {item.style ?? "Standard"}
                 </Text>
-                <Text className="text-cream-400 font-sans text-xs mt-0.5">
+                <Text className="text-cream-400 font-sans text-sm mt-0.5">
                   {new Date(item.created_at).toLocaleDateString("es", { day: "2-digit", month: "short" })}
                 </Text>
               </View>
               <View className={`px-2 py-0.5 rounded-full ${
                 item.enhanced_image_url !== item.original_image_url ? "bg-green-500/20" : "bg-yellow-500/20"
               }`}>
-                <Text className={`font-sans text-[10px] ${
+                <Text className={`font-sans text-sm ${
                   item.enhanced_image_url !== item.original_image_url ? "text-green-400" : "text-yellow-400"
                 }`}>
                   {item.enhanced_image_url !== item.original_image_url ? "Completada" : "Procesando"}

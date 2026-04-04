@@ -36,7 +36,7 @@ function ProgressBar({ label, icon, used, limit }: { label: string; icon: React.
       <View className="flex-row items-center justify-between mb-1.5">
         <View className="flex-row items-center gap-2">
           {icon}
-          <Text className="text-cream-300 font-sans-medium text-sm">{label}</Text>
+          <Text className="text-cream-300 font-sans-medium text-base">{label}</Text>
         </View>
         <Text className="text-cream-400 font-sans text-sm">
           {used} / {isUnlimited ? "Ilimitado" : limit}
@@ -112,7 +112,7 @@ export default function SubscriptionScreen() {
       <ScrollView className="flex-1 bg-elegant-dark" contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
         <View className="bg-elegant-gray rounded-2xl p-6 items-center">
           <Crown size={40} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-bold text-lg mt-3">Sin suscripcion</Text>
+          <Text className="text-text-primary font-sans-bold text-xl mt-3">Sin suscripcion</Text>
           <Text className="text-cream-400 font-sans text-sm text-center mt-2">
             No tienes una suscripcion activa. Activa un plan para desbloquear todas las funcionalidades.
           </Text>
@@ -121,7 +121,7 @@ export default function SubscriptionScreen() {
             onPress={handleUpgrade}
             activeOpacity={0.8}
           >
-            <Text className="text-text-inverted font-sans-bold text-base">Ver planes</Text>
+            <Text className="text-text-inverted font-sans-bold text-lg">Ver planes</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -134,7 +134,7 @@ export default function SubscriptionScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
           <CreditCard size={20} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-bold text-lg">Plan actual</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">Plan actual</Text>
         </View>
 
         <View className="flex-row items-center justify-between mb-2">
@@ -159,19 +159,19 @@ export default function SubscriptionScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
           <Calendar size={20} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-bold text-base">Periodo de facturacion</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">Periodo de facturacion</Text>
         </View>
 
         <View className="flex-row justify-between mb-2">
           <Text className="text-cream-400 font-sans text-sm">Inicio</Text>
-          <Text className="text-text-primary font-sans-medium text-sm">
+          <Text className="text-text-primary font-sans-medium text-base">
             {formatDate(subscription.current_period_start)}
           </Text>
         </View>
 
         <View className="flex-row justify-between mb-2">
           <Text className="text-cream-400 font-sans text-sm">Vencimiento</Text>
-          <Text className="text-text-primary font-sans-medium text-sm">
+          <Text className="text-text-primary font-sans-medium text-base">
             {formatDate(subscription.current_period_end)}
           </Text>
         </View>
@@ -179,7 +179,7 @@ export default function SubscriptionScreen() {
         {status === "trialing" && (subscription as any).trial_end && (
           <View className="flex-row justify-between mt-1 pt-2 border-t border-white/10">
             <Text className="text-blue-400 font-sans text-sm">Fin de prueba</Text>
-            <Text className="text-blue-400 font-sans-medium text-sm">
+            <Text className="text-blue-400 font-sans-medium text-base">
               {formatDate((subscription as any).trial_end)}
             </Text>
           </View>
@@ -188,7 +188,7 @@ export default function SubscriptionScreen() {
 
       {/* Usage Section */}
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
-        <Text className="text-text-primary font-sans-bold text-base mb-4">Uso del plan</Text>
+        <Text className="text-text-primary font-sans-bold text-xl mb-4">Uso del plan</Text>
 
         <ProgressBar
           label="Productos"
@@ -219,7 +219,7 @@ export default function SubscriptionScreen() {
         activeOpacity={0.8}
       >
         <ExternalLink size={18} color="#FFFFFF" />
-        <Text className="text-text-inverted font-sans-bold text-base">
+        <Text className="text-text-inverted font-sans-bold text-lg">
           {status === "active" ? "Gestionar suscripcion" : "Mejorar plan"}
         </Text>
       </TouchableOpacity>

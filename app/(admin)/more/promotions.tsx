@@ -242,7 +242,7 @@ export default function PromotionsScreen() {
       >
         <View className="flex-row items-start justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-bold text-base">
+            <Text className="text-text-primary font-sans-bold text-xl">
               {item.name}
             </Text>
             {item.description ? (
@@ -264,14 +264,14 @@ export default function PromotionsScreen() {
         <View className="flex-row items-center mt-3 flex-wrap gap-y-2">
           <View className="flex-row items-center mr-4">
             <Percent size={14} color="#EB1C8D" />
-            <Text className="text-cream-400 font-sans text-xs ml-1">
+            <Text className="text-cream-400 font-sans text-sm ml-1">
               {formatType(item.type)} · {formatValue(item.type, item.value)}
             </Text>
           </View>
 
           <View className="flex-row items-center">
             <Calendar size={14} color="#EB1C8D" />
-            <Text className="text-cream-400 font-sans text-xs ml-1">
+            <Text className="text-cream-400 font-sans text-sm ml-1">
               {formatDate(item.start_date)} → {formatDate(item.end_date)}
             </Text>
           </View>
@@ -285,7 +285,7 @@ export default function PromotionsScreen() {
     <View>
       {/* Header with count and Nueva button */}
       <View className="flex-row items-center justify-between mb-3">
-        <Text className="text-cream-400 font-sans text-xs">
+        <Text className="text-cream-400 font-sans text-sm">
           {data?.length ?? 0} promociones
         </Text>
         <TouchableOpacity
@@ -306,7 +306,7 @@ export default function PromotionsScreen() {
       {/* Info text */}
       <View className="flex-row items-start bg-elegant-gray/50 rounded-xl p-3 mb-3">
         <Info size={16} color="#EB1C8D" />
-        <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
+        <Text className="text-cream-400 font-sans text-sm ml-2 flex-1">
           Las promociones te permiten ofrecer descuentos a tus clientes. Podés
           crear descuentos por porcentaje o monto fijo, y definir fechas de
           vigencia. Mantené presionada una promoción para editarla.
@@ -317,7 +317,7 @@ export default function PromotionsScreen() {
       {showForm && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3 border border-gold-500/30">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-gold-500 font-sans-semibold text-sm">
+            <Text className="text-gold-500 font-sans-semibold text-lg">
               {editingPromotion ? "Editar promoción" : "Nueva promoción"}
             </Text>
             <TouchableOpacity onPress={resetForm}>
@@ -326,7 +326,7 @@ export default function PromotionsScreen() {
           </View>
 
           {/* Name */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Nombre *
           </Text>
           <TextInput
@@ -339,7 +339,7 @@ export default function PromotionsScreen() {
           />
 
           {/* Description */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Descripción
           </Text>
           <TextInput
@@ -352,7 +352,7 @@ export default function PromotionsScreen() {
           />
 
           {/* Type selector */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">Tipo *</Text>
+          <Text className="text-cream-300 font-sans text-sm mb-1">Tipo *</Text>
           <View className="flex-row gap-2 mb-3">
             <TouchableOpacity
               className={`flex-1 py-2.5 rounded-xl items-center ${
@@ -362,7 +362,7 @@ export default function PromotionsScreen() {
               activeOpacity={0.7}
             >
               <Text
-                className={`font-sans-medium text-sm ${
+                className={`font-sans-medium text-base ${
                   formType === "percentage"
                     ? "text-text-inverted"
                     : "text-cream-300"
@@ -379,7 +379,7 @@ export default function PromotionsScreen() {
               activeOpacity={0.7}
             >
               <Text
-                className={`font-sans-medium text-sm ${
+                className={`font-sans-medium text-base ${
                   formType === "fixed" ? "text-text-inverted" : "text-cream-300"
                 }`}
               >
@@ -389,7 +389,7 @@ export default function PromotionsScreen() {
           </View>
 
           {/* Value */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Valor * {formType === "percentage" ? "(%)" : "($)"}
           </Text>
           <TextInput
@@ -402,7 +402,7 @@ export default function PromotionsScreen() {
           />
 
           {/* Start date */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Fecha inicio
           </Text>
           <TextInput
@@ -414,7 +414,7 @@ export default function PromotionsScreen() {
           />
 
           {/* End date */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Fecha fin
           </Text>
           <TextInput
@@ -427,7 +427,7 @@ export default function PromotionsScreen() {
 
           {/* Is active toggle */}
           <View className="flex-row items-center justify-between mb-4">
-            <Text className="text-cream-300 font-sans text-xs">Activa</Text>
+            <Text className="text-cream-300 font-sans text-sm">Activa</Text>
             <Switch
               value={formIsActive}
               onValueChange={setFormIsActive}
@@ -445,7 +445,7 @@ export default function PromotionsScreen() {
               activeOpacity={0.7}
             >
               <Trash2 size={15} color="#EF4444" />
-              <Text className="text-red-500 font-sans-medium text-sm ml-2">
+              <Text className="text-red-500 font-sans-medium text-base ml-2">
                 {deletePromotion.isPending ? "Eliminando..." : "Eliminar promoción"}
               </Text>
             </TouchableOpacity>
@@ -498,7 +498,7 @@ export default function PromotionsScreen() {
               <Text className="text-cream-400 font-sans text-base mt-4">
                 No hay promociones
               </Text>
-              <Text className="text-cream-400/60 font-sans text-xs mt-1">
+              <Text className="text-cream-400/60 font-sans text-sm mt-1">
                 Tocá "Nueva" para crear tu primera promoción
               </Text>
             </View>

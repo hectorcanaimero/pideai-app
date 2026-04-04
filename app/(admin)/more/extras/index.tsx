@@ -152,13 +152,13 @@ export default function ExtraGroupsScreen() {
         activeOpacity={0.7}
       >
         <View className="flex-1">
-          <Text className="text-text-primary font-sans-medium text-sm">{item.name}</Text>
-          <Text className="text-cream-400 font-sans text-xs mt-0.5">
+          <Text className="text-text-primary font-sans-medium text-base">{item.name}</Text>
+          <Text className="text-cream-400 font-sans text-sm mt-0.5">
             {item.selection_type === "single" ? "Seleccion unica" : "Seleccion multiple"}
             {item.is_required ? " - Requerido" : " - Opcional"}
           </Text>
           {assignedCat && (
-            <Text className="text-gold-500 font-sans text-xs mt-0.5">
+            <Text className="text-gold-500 font-sans text-sm mt-0.5">
               Categoria: {assignedCat.name}
             </Text>
           )}
@@ -202,7 +202,7 @@ export default function ExtraGroupsScreen() {
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-row items-center gap-2">
                 <Layers size={20} color="#EB1C8D" />
-                <Text className="text-text-primary font-sans-bold text-lg">Grupos de Extra</Text>
+                <Text className="text-text-primary font-sans-bold text-xl">Grupos de Extra</Text>
               </View>
               <TouchableOpacity
                 className="bg-gold-500 px-4 py-2 rounded-xl flex-row items-center gap-1.5"
@@ -233,17 +233,17 @@ export default function ExtraGroupsScreen() {
                 </Text>
                 {showHelp && (
                   <View>
-                    <Text className="text-cream-400 font-sans text-xs leading-5 mb-2">
+                    <Text className="text-cream-400 font-sans text-sm leading-5 mb-2">
                       Los grupos de extras permiten que tus clientes personalicen sus pedidos.
                     </Text>
-                    <Text className="text-cream-400 font-sans text-xs leading-5">
+                    <Text className="text-cream-400 font-sans text-sm leading-5">
                       {"\u2022"} Crea un grupo (ej: "Tamano", "Ingredientes Extra", "Salsas"){"\n"}
                       {"\u2022"} Defini si la seleccion es unica (radio) o multiple (checkbox){"\n"}
                       {"\u2022"} Marca si es obligatorio u opcional{"\n"}
                       {"\u2022"} Asignalo a una categoria completa o a productos individuales{"\n"}
                       {"\u2022"} Agrega las opciones dentro del grupo con su precio
                     </Text>
-                    <Text className="text-cream-400/70 font-sans text-xs leading-5 mt-2 italic">
+                    <Text className="text-cream-400/70 font-sans text-sm leading-5 mt-2 italic">
                       Ejemplo: Grupo "Tamano" con opciones "Pequeno ($0)", "Mediano ($2)", "Grande ($4)"
                     </Text>
                   </View>
@@ -265,7 +265,7 @@ export default function ExtraGroupsScreen() {
                 <Text className="text-text-primary font-sans-bold text-sm mb-1">
                   {editingGroup ? "Editar grupo" : "Nuevo grupo de extras"}
                 </Text>
-                <Text className="text-cream-400 font-sans text-xs -mt-2 mb-1">
+                <Text className="text-cream-400 font-sans text-sm -mt-2 mb-1">
                   Los grupos de extras permiten que tus clientes personalicen sus pedidos. Podes crear opciones como "Tamano", "Ingredientes Extra", "Salsas", etc.
                 </Text>
 
@@ -281,7 +281,7 @@ export default function ExtraGroupsScreen() {
 
                 {/* Selection type */}
                 <View>
-                  <Text className="text-cream-400 font-sans text-xs mb-2">Tipo de seleccion</Text>
+                  <Text className="text-cream-400 font-sans text-sm mb-2">Tipo de seleccion</Text>
                   <View className="flex-row gap-2">
                     <TouchableOpacity
                       className={`flex-1 py-2.5 rounded-xl items-center ${
@@ -328,7 +328,7 @@ export default function ExtraGroupsScreen() {
 
                 {/* Required toggle */}
                 <View className="flex-row items-center justify-between">
-                  <Text className="text-cream-400 font-sans text-xs">Obligatorio</Text>
+                  <Text className="text-cream-400 font-sans text-sm">Obligatorio</Text>
                   <Switch
                     value={form.is_required}
                     onValueChange={(v) =>
@@ -342,7 +342,7 @@ export default function ExtraGroupsScreen() {
                 {/* Min / Max selections */}
                 <View className="flex-row gap-2">
                   <View className="flex-1">
-                    <Text className="text-cream-400 font-sans text-xs mb-1">
+                    <Text className="text-cream-400 font-sans text-sm mb-1">
                       Min. selecciones
                     </Text>
                     <TextInput
@@ -357,7 +357,7 @@ export default function ExtraGroupsScreen() {
                     />
                   </View>
                   <View className="flex-1">
-                    <Text className="text-cream-400 font-sans text-xs mb-1">
+                    <Text className="text-cream-400 font-sans text-sm mb-1">
                       Max. selecciones
                     </Text>
                     <TextInput
@@ -375,7 +375,7 @@ export default function ExtraGroupsScreen() {
 
                 {/* Assignment section */}
                 <View>
-                  <Text className="text-cream-400 font-sans text-xs mb-2">Asignar a</Text>
+                  <Text className="text-cream-400 font-sans text-sm mb-2">Asignar a</Text>
                   <View className="flex-row gap-2 mb-2">
                     <TouchableOpacity
                       className={`flex-1 py-2.5 rounded-xl items-center ${
@@ -472,7 +472,7 @@ export default function ExtraGroupsScreen() {
                             </TouchableOpacity>
                           ))}
                           {(!categories || categories.length === 0) && (
-                            <Text className="text-cream-400/50 font-sans text-xs px-4 py-3">
+                            <Text className="text-cream-400/50 font-sans text-sm px-4 py-3">
                               No hay categorias creadas
                             </Text>
                           )}
@@ -482,7 +482,7 @@ export default function ExtraGroupsScreen() {
                   )}
 
                   {form.assignment_type === "none" && (
-                    <Text className="text-cream-400/50 font-sans text-xs mt-1">
+                    <Text className="text-cream-400/50 font-sans text-sm mt-1">
                       Asigna productos individuales desde la pantalla del producto
                     </Text>
                   )}
@@ -514,7 +514,7 @@ export default function ExtraGroupsScreen() {
           ) : (
             <View className="items-center py-20">
               <Text className="text-cream-400 font-sans">No hay grupos de extras</Text>
-              <Text className="text-cream-400/50 font-sans text-xs mt-2">
+              <Text className="text-cream-400/50 font-sans text-sm mt-2">
                 Toca "Crear grupo" para empezar
               </Text>
             </View>

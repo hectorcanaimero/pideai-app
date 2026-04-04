@@ -17,15 +17,15 @@ export function CategoryCard({ category, onLongPress }: CategoryCardProps) {
       activeOpacity={0.7}
     >
       <View className="flex-1">
-        <Text className="text-text-primary font-sans-semibold text-base">{category.name}</Text>
+        <Text className="text-text-primary font-sans-semibold text-lg">{category.name}</Text>
         {category.description && (
-          <Text className="text-cream-400 font-sans text-xs mt-0.5" numberOfLines={1}>
+          <Text className="text-cream-400 font-sans text-sm mt-0.5" numberOfLines={1}>
             {category.description}
           </Text>
         )}
         <View className="flex-row items-center gap-1 mt-1.5">
           <Package size={12} color="#EB1C8D" />
-          <Text className="text-gold-500 font-sans text-xs">
+          <Text className="text-gold-500 font-sans text-sm">
             {category.product_count ?? 0} productos
           </Text>
         </View>

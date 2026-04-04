@@ -30,13 +30,13 @@ export function KitchenCard({ order }: KitchenCardProps) {
     >
       <View className="flex-row items-center justify-between mb-3">
         <View className="flex-row items-center gap-2">
-          <Text className="text-text-primary font-sans-bold text-lg">#{orderNumber}</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">#{orderNumber}</Text>
           <OrderStatusBadge status={order.status} />
         </View>
         <View className="flex-row items-center gap-1">
           <Clock size={14} color={minutesAgo > 15 ? "#EF4444" : "#888"} />
           <Text
-            className={`font-sans-medium text-sm ${
+            className={`font-sans-medium text-base ${
               minutesAgo > 15 ? "text-red-400" : "text-cream-400"
             }`}
           >
@@ -45,7 +45,7 @@ export function KitchenCard({ order }: KitchenCardProps) {
         </View>
       </View>
 
-      <Text className="text-text-secondary font-sans-medium text-sm mb-2">
+      <Text className="text-text-secondary font-sans-medium text-base mb-2">
         {order.customer_name}
       </Text>
 
@@ -58,7 +58,7 @@ export function KitchenCard({ order }: KitchenCardProps) {
             {item.extras && item.extras.length > 0 && (
               <View className="ml-4">
                 {item.extras.map((extra, idx) => (
-                  <Text key={idx} className="text-cream-400 font-sans text-xs">
+                  <Text key={idx} className="text-cream-400 font-sans text-sm">
                     + {extra.name}
                   </Text>
                 ))}
@@ -74,7 +74,7 @@ export function KitchenCard({ order }: KitchenCardProps) {
 
       {order.notes && (
         <View className="bg-yellow-500/10 rounded-xl p-2.5 mb-3">
-          <Text className="text-yellow-400 font-sans text-xs font-sans-medium">📝 {order.notes}</Text>
+          <Text className="text-yellow-400 font-sans text-sm font-sans-medium">📝 {order.notes}</Text>
         </View>
       )}
 

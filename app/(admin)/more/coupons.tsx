@@ -262,7 +262,7 @@ export default function CouponsScreen() {
     return (
       <View className="bg-elegant-gray rounded-2xl p-4 mx-4 mb-3 border border-gold-500/30">
         <View className="flex-row items-center justify-between mb-3">
-          <Text className="text-gold-500 font-sans-semibold text-sm">
+          <Text className="text-gold-500 font-sans-semibold text-lg">
             {editingCoupon ? "Editar cupón" : "Nuevo cupón"}
           </Text>
           <TouchableOpacity onPress={resetForm}>
@@ -271,7 +271,7 @@ export default function CouponsScreen() {
         </View>
 
         {/* Code */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">Código *</Text>
+        <Text className="text-cream-300 font-sans text-sm mb-1">Código *</Text>
         <TextInput
           className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.code}
@@ -283,7 +283,7 @@ export default function CouponsScreen() {
         />
 
         {/* Name */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">Nombre *</Text>
+        <Text className="text-cream-300 font-sans text-sm mb-1">Nombre *</Text>
         <TextInput
           className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
           value={form.name}
@@ -293,7 +293,7 @@ export default function CouponsScreen() {
         />
 
         {/* Type selector */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">Tipo</Text>
+        <Text className="text-cream-300 font-sans text-sm mb-1">Tipo</Text>
         <View className="flex-row gap-2 mb-3">
           <TouchableOpacity
             className={`flex-1 py-2.5 rounded-xl items-center ${
@@ -332,7 +332,7 @@ export default function CouponsScreen() {
         </View>
 
         {/* Value */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">
+        <Text className="text-cream-300 font-sans text-sm mb-1">
           Valor {form.type === "percentage" ? "(%)" : "($)"} *
         </Text>
         <TextInput
@@ -345,7 +345,7 @@ export default function CouponsScreen() {
         />
 
         {/* Minimum order amount */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">
+        <Text className="text-cream-300 font-sans text-sm mb-1">
           Monto mínimo de orden ($)
         </Text>
         <TextInput
@@ -362,7 +362,7 @@ export default function CouponsScreen() {
         {/* Maximum discount (only for percentage) */}
         {form.type === "percentage" && (
           <>
-            <Text className="text-cream-300 font-sans text-xs mb-1">
+            <Text className="text-cream-300 font-sans text-sm mb-1">
               Descuento máximo ($)
             </Text>
             <TextInput
@@ -379,7 +379,7 @@ export default function CouponsScreen() {
         )}
 
         {/* Usage limit */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">
+        <Text className="text-cream-300 font-sans text-sm mb-1">
           Límite de usos
         </Text>
         <TextInput
@@ -392,7 +392,7 @@ export default function CouponsScreen() {
         />
 
         {/* Start date */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">
+        <Text className="text-cream-300 font-sans text-sm mb-1">
           Fecha inicio (YYYY-MM-DD)
         </Text>
         <TextInput
@@ -404,7 +404,7 @@ export default function CouponsScreen() {
         />
 
         {/* End date */}
-        <Text className="text-cream-300 font-sans text-xs mb-1">
+        <Text className="text-cream-300 font-sans text-sm mb-1">
           Fecha fin (YYYY-MM-DD)
         </Text>
         <TextInput
@@ -417,7 +417,7 @@ export default function CouponsScreen() {
 
         {/* Is active */}
         <View className="flex-row items-center justify-between mb-4">
-          <Text className="text-cream-300 font-sans text-xs">Activo</Text>
+          <Text className="text-cream-300 font-sans text-sm">Activo</Text>
           <Switch
             value={form.is_active}
             onValueChange={(val) => setForm((f) => ({ ...f, is_active: val }))}
@@ -450,7 +450,7 @@ export default function CouponsScreen() {
             activeOpacity={0.8}
           >
             <Trash2 size={14} color="#EF4444" />
-            <Text className="text-red-500 font-sans-medium text-sm">
+            <Text className="text-red-500 font-sans-medium text-base">
               {deleteCoupon.isPending ? "Eliminando..." : "Eliminar cupón"}
             </Text>
           </TouchableOpacity>
@@ -478,7 +478,7 @@ export default function CouponsScreen() {
         >
           <View className="flex-row items-start justify-between">
             <View className="flex-1 mr-3">
-              <Text className="text-gold font-sans-bold text-lg tracking-wider">
+              <Text className="text-gold font-sans-bold text-xl tracking-wider">
                 {item.code}
               </Text>
               <Text className="text-text-primary font-sans text-sm mt-1">
@@ -502,14 +502,14 @@ export default function CouponsScreen() {
               ) : (
                 <DollarSign size={14} color="#EB1C8D" />
               )}
-              <Text className="text-cream-400 font-sans text-xs ml-1">
+              <Text className="text-cream-400 font-sans text-sm ml-1">
                 {formatType(item.type)} · {formatValue(item.type, item.value)}
               </Text>
             </View>
 
             <View className="flex-row items-center">
               <Ticket size={14} color="#EB1C8D" />
-              <Text className="text-cream-400 font-sans text-xs ml-1">
+              <Text className="text-cream-400 font-sans text-sm ml-1">
                 {usageText}
               </Text>
             </View>
@@ -540,7 +540,7 @@ export default function CouponsScreen() {
     <View className="flex-1 bg-elegant-dark">
       {/* Header row */}
       <View className="px-4 pt-3 pb-2 flex-row items-center justify-between">
-        <Text className="text-cream-400 font-sans text-xs">
+        <Text className="text-cream-400 font-sans text-sm">
           {data?.length ?? 0} cupones
         </Text>
         <TouchableOpacity
@@ -588,7 +588,7 @@ export default function CouponsScreen() {
           ListFooterComponent={
             <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mt-2">
               <Info size={16} color="#EB1C8D" />
-              <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
+              <Text className="text-cream-400 font-sans text-sm ml-2 flex-1">
                 Los cupones permiten a tus clientes aplicar descuentos al
                 momento de pagar.
               </Text>

@@ -1,26 +1,27 @@
-import { useState } from "react";
+import { useAuth } from '@/hooks/useAuth';
+import { router } from 'expo-router';
+import { useState } from 'react';
 import {
-  View,
+  ActivityIndicator,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
   Text,
   TextInput,
   TouchableOpacity,
-  ActivityIndicator,
-  KeyboardAvoidingView,
-  Platform,
-  Alert,
-} from "react-native";
-import { useAuth } from "@/hooks/useAuth";
-import { router } from "expo-router";
+  View,
+} from 'react-native';
+import { SvgUri } from 'react-native-svg';
 
 export default function LoginScreen() {
   const { signIn } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     if (!email || !password) {
-      Alert.alert("Error", "Ingresá email y contraseña");
+      Alert.alert('Error', 'Ingresá email y contraseña');
       return;
     }
 
@@ -29,29 +30,26 @@ export default function LoginScreen() {
     setLoading(false);
 
     if (error) {
-      Alert.alert("Error", error.message);
+      Alert.alert('Error', error.message);
     } else {
-      router.replace("/(admin)");
+      router.replace('/(admin)');
     }
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      className="flex-1 bg-elegant-dark"
-    >
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} className="flex-1 bg-elegant-dark">
       <View className="flex-1 justify-center px-8">
         <View className="items-center mb-12">
-          <Text className="text-4xl font-sans-bold text-gold-500">PideAI</Text>
-          <Text className="text-base font-sans text-text-secondary mt-2">
-            Panel Administrativo
-          </Text>
+          <SvgUri
+            uri="https://s3.guria.lat/pideai/logo-pideai.svg"
+            width={192}
+            height={64}
+          />
+          <Text className="text-base font-sans text-text-secondary mt-2">Panel Administrativo</Text>
         </View>
 
         <View className="mb-4">
-          <Text className="text-sm font-sans-medium text-cream-300 mb-2">
-            Email
-          </Text>
+          <Text className="text-sm font-sans-medium text-text-secondary mb-2">Email</Text>
           <TextInput
             className="bg-elegant-gray text-text-primary px-4 py-3.5 rounded-xl font-sans text-base"
             placeholder="tu@email.com"
@@ -65,9 +63,7 @@ export default function LoginScreen() {
         </View>
 
         <View className="mb-6">
-          <Text className="text-sm font-sans-medium text-cream-300 mb-2">
-            Contraseña
-          </Text>
+          <Text className="text-sm font-sans-medium text-text-secondary mb-2">Contraseña</Text>
           <TextInput
             className="bg-elegant-gray text-text-primary px-4 py-3.5 rounded-xl font-sans text-base"
             placeholder="••••••••"
@@ -80,9 +76,7 @@ export default function LoginScreen() {
         </View>
 
         <TouchableOpacity
-          className={`py-4 rounded-xl items-center ${
-            loading ? "bg-gold-700" : "bg-gold-500"
-          }`}
+          className={`py-4 rounded-xl items-center ${loading ? 'bg-gold-700' : 'bg-gold-500'}`}
           onPress={handleLogin}
           disabled={loading}
           activeOpacity={0.8}
@@ -90,9 +84,7 @@ export default function LoginScreen() {
           {loading ? (
             <ActivityIndicator color="#FFFFFF" />
           ) : (
-            <Text className="text-text-inverted font-sans-bold text-base">
-              Iniciar Sesión
-            </Text>
+            <Text className="text-text-inverted font-sans-bold text-lg">Iniciar Sesión</Text>
           )}
         </TouchableOpacity>
       </View>

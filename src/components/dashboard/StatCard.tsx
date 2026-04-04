@@ -13,11 +13,11 @@ export function StatCard({ icon, label, value, subtitle }: StatCardProps) {
     <View className="bg-elegant-gray rounded-2xl p-4 flex-1 min-w-[140px]">
       <View className="flex-row items-center gap-2 mb-2">
         {icon}
-        <Text className="text-cream-400 font-sans text-xs">{label}</Text>
+        <Text className="text-cream-400 font-sans text-sm">{label}</Text>
       </View>
       <Text className="text-text-primary font-sans-bold text-2xl">{value}</Text>
       {subtitle && (
-        <Text className="text-cream-400 font-sans text-xs mt-1">{subtitle}</Text>
+        <Text className="text-cream-400 font-sans text-sm mt-1">{subtitle}</Text>
       )}
     </View>
   );

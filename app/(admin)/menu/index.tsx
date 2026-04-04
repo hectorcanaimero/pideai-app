@@ -121,12 +121,12 @@ export default function MenuScreen() {
       {showForm && (
         <View className="px-4 pb-3">
           <View className="bg-elegant-gray rounded-2xl p-4 border border-gold-500/30">
-            <Text className="text-gold-500 font-sans-semibold text-sm mb-3">
+            <Text className="text-gold-500 font-sans-semibold text-lg mb-3">
               {editing ? "Editar categoría" : "Nueva categoría"}
             </Text>
 
             {/* Name */}
-            <Text className="text-cream-300 font-sans text-xs mb-1">
+            <Text className="text-cream-300 font-sans text-sm mb-1">
               Nombre *
             </Text>
             <TextInput
@@ -139,7 +139,7 @@ export default function MenuScreen() {
             />
 
             {/* Description */}
-            <Text className="text-cream-300 font-sans text-xs mb-1">
+            <Text className="text-cream-300 font-sans text-sm mb-1">
               Descripción
             </Text>
             <TextInput
@@ -154,7 +154,7 @@ export default function MenuScreen() {
             />
 
             {/* Display Order */}
-            <Text className="text-cream-300 font-sans text-xs mb-1">
+            <Text className="text-cream-300 font-sans text-sm mb-1">
               Orden de visualización
             </Text>
             <TextInput
@@ -168,7 +168,7 @@ export default function MenuScreen() {
             />
             <View className="flex-row items-start gap-1.5 mb-4">
               <Info size={11} color="#888" style={{ marginTop: 2 }} />
-              <Text className="text-cream-400/60 font-sans text-[10px] flex-1">
+              <Text className="text-cream-400/60 font-sans text-sm flex-1">
                 Número menor = aparece primero. Usá 0 para la primera categoría
                 del catálogo.
               </Text>
@@ -185,7 +185,7 @@ export default function MenuScreen() {
                   }}
                   activeOpacity={0.7}
                 >
-                  <Text className="text-red-400 font-sans-medium text-sm">
+                  <Text className="text-red-400 font-sans-medium text-base">
                     Eliminar
                   </Text>
                 </TouchableOpacity>

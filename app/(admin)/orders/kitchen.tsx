@@ -33,19 +33,19 @@ export default function KitchenScreen() {
           <Text className="text-yellow-400 font-sans-bold text-xl">
             {kitchenOrders.filter((o) => o.status === "pending").length}
           </Text>
-          <Text className="text-cream-400 font-sans text-xs">Nuevos</Text>
+          <Text className="text-cream-400 font-sans text-sm">Nuevos</Text>
         </View>
         <View className="items-center">
           <Text className="text-purple-400 font-sans-bold text-xl">
             {kitchenOrders.filter((o) => o.status === "preparing").length}
           </Text>
-          <Text className="text-cream-400 font-sans text-xs">Preparando</Text>
+          <Text className="text-cream-400 font-sans text-sm">Preparando</Text>
         </View>
         <View className="items-center">
           <Text className="text-green-400 font-sans-bold text-xl">
             {kitchenOrders.filter((o) => o.status === "ready").length}
           </Text>
-          <Text className="text-cream-400 font-sans text-xs">Listos</Text>
+          <Text className="text-cream-400 font-sans text-sm">Listos</Text>
         </View>
       </View>
 

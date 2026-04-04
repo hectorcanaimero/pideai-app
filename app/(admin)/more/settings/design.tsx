@@ -151,11 +151,11 @@ export default function DesignSettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Palette size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">Diseño</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">Diseño</Text>
       </View>
 
       {/* Logo */}
-      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Logo de la tienda</Text>
+      <Text className="text-text-primary font-sans-semibold text-lg mb-3">Logo de la tienda</Text>
       <TouchableOpacity
         className="bg-elegant-gray rounded-2xl h-32 items-center justify-center mb-2 overflow-hidden"
         onPress={handlePickLogo}
@@ -173,7 +173,7 @@ export default function DesignSettingsScreen() {
         ) : (
           <View className="items-center">
             <Camera size={28} color="#666" />
-            <Text className="text-cream-400 font-sans text-xs mt-2">
+            <Text className="text-cream-400 font-sans text-sm mt-2">
               Tocá para subir tu logo
             </Text>
           </View>
@@ -181,13 +181,13 @@ export default function DesignSettingsScreen() {
       </TouchableOpacity>
       <View className="flex-row items-start gap-1.5 mb-6">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Recomendado: imagen cuadrada, fondo transparente (PNG), mínimo 512x512px.
         </Text>
       </View>
 
       {/* Primary Color */}
-      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Color primario</Text>
+      <Text className="text-text-primary font-sans-semibold text-lg mb-3">Color primario</Text>
       <View className="flex-row items-center gap-3 mb-2">
         <View
           className="w-12 h-12 rounded-xl border-2 border-cream-400/20"
@@ -222,13 +222,13 @@ export default function DesignSettingsScreen() {
       </ScrollView>
       <View className="flex-row items-start gap-1.5 mb-6">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Color principal de tu tienda. Se usa en botones, enlaces y elementos destacados del catálogo.
         </Text>
       </View>
 
       {/* Price Color */}
-      <Text className="text-text-primary font-sans-semibold text-sm mb-3">Color de precio</Text>
+      <Text className="text-text-primary font-sans-semibold text-lg mb-3">Color de precio</Text>
       <View className="flex-row items-center gap-3 mb-2">
         <View
           className="w-12 h-12 rounded-xl border-2 border-cream-400/20"
@@ -263,7 +263,7 @@ export default function DesignSettingsScreen() {
       </ScrollView>
       <View className="flex-row items-start gap-1.5 mb-6">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Color de los precios en el catálogo. Elegí uno que contraste bien con el fondo.
         </Text>
       </View>
@@ -271,18 +271,18 @@ export default function DesignSettingsScreen() {
       {/* Separator */}
       <View className="flex-row items-center gap-2 mb-4 mt-2">
         <Tag size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-lg">
           Etiquetas Personalizadas
         </Text>
       </View>
       <View className="flex-row items-start gap-1.5 mb-4">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Personalizá los nombres que ven tus clientes para cada tipo de pedido. Si los dejás vacíos, se usan los valores por defecto.
         </Text>
       </View>
 
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Delivery</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Delivery</Text>
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={deliveryLabel}
@@ -291,7 +291,7 @@ export default function DesignSettingsScreen() {
         placeholderTextColor="#666"
       />
 
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Pick-up</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Pick-up</Text>
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={pickupLabel}
@@ -300,7 +300,7 @@ export default function DesignSettingsScreen() {
         placeholderTextColor="#666"
       />
 
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">Etiqueta Menú Digital</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Menú Digital</Text>
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-6"
         value={digitalMenuLabel}
@@ -313,7 +313,7 @@ export default function DesignSettingsScreen() {
       <View className="flex-row items-center justify-between mb-3 mt-2">
         <View className="flex-row items-center gap-2">
           <Share2 size={16} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-semibold text-sm">
+          <Text className="text-text-primary font-sans-semibold text-lg">
             Redes Sociales
           </Text>
         </View>
@@ -335,7 +335,7 @@ export default function DesignSettingsScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-3">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Agregá tus redes sociales para que aparezcan en el pie de página de tu tienda.
         </Text>
       </View>
@@ -343,7 +343,7 @@ export default function DesignSettingsScreen() {
       {/* Add social form */}
       {showSocialForm && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-3 border border-gold-500/30">
-          <Text className="text-cream-300 font-sans text-xs mb-2">Red social</Text>
+          <Text className="text-cream-300 font-sans text-sm mb-2">Red social</Text>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -359,7 +359,7 @@ export default function DesignSettingsScreen() {
                 onPress={() => setSocialPlatform(p.key)}
               >
                 <Text
-                  className={`font-sans text-xs ${
+                  className={`font-sans text-sm ${
                     socialPlatform === p.key
                       ? "text-text-inverted font-sans-medium"
                       : "text-cream-300"
@@ -371,7 +371,7 @@ export default function DesignSettingsScreen() {
             ))}
           </ScrollView>
 
-          <Text className="text-cream-300 font-sans text-xs mb-1">URL</Text>
+          <Text className="text-cream-300 font-sans text-sm mb-1">URL</Text>
           <TextInput
             className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
             value={socialUrl}
@@ -408,11 +408,11 @@ export default function DesignSettingsScreen() {
               className="bg-elegant-gray rounded-xl p-3 mb-2 flex-row items-center"
             >
               <View className="flex-1">
-                <Text className="text-text-primary font-sans-medium text-sm">
+                <Text className="text-text-primary font-sans-medium text-base">
                   {platformInfo?.label ?? link.platform}
                 </Text>
                 <Text
-                  className="text-cream-400/70 font-sans text-xs mt-0.5"
+                  className="text-cream-400/70 font-sans text-sm mt-0.5"
                   numberOfLines={1}
                 >
                   {link.url}
@@ -439,7 +439,7 @@ export default function DesignSettingsScreen() {
       ) : (
         !showSocialForm && (
           <View className="bg-elegant-gray rounded-xl p-4 items-center mb-3">
-            <Text className="text-cream-400/60 font-sans text-xs">
+            <Text className="text-cream-400/60 font-sans text-sm">
               No hay redes sociales configuradas
             </Text>
           </View>
@@ -460,7 +460,7 @@ export default function DesignSettingsScreen() {
         {updateStore.isPending ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Guardar
           </Text>
         )}

@@ -66,7 +66,7 @@ export function OrderStatusSelector({ orderId, currentStatus }: OrderStatusSelec
           disabled={updateStatus.isPending}
           activeOpacity={0.8}
         >
-          <Text className="text-text-primary font-sans-bold text-base">
+          <Text className="text-text-primary font-sans-bold text-xl">
             {updateStatus.isPending ? "Actualizando..." : `Pasar a: ${STATUS_LABELS[nextStatus]}`}
           </Text>
         </TouchableOpacity>
@@ -77,7 +77,7 @@ export function OrderStatusSelector({ orderId, currentStatus }: OrderStatusSelec
         onPress={handleCancel}
         activeOpacity={0.7}
       >
-        <Text className="text-red-400 font-sans-medium text-sm">Cancelar pedido</Text>
+        <Text className="text-red-400 font-sans-medium text-base">Cancelar pedido</Text>
       </TouchableOpacity>
     </View>
   );

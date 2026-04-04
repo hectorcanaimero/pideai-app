@@ -78,20 +78,20 @@ export default function AdvancedSettingsScreen() {
     >
       <View className="flex-row items-center gap-2 mb-6">
         <Settings size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">Avanzado</Text>
+        <Text className="text-text-primary font-sans-bold text-xl">Avanzado</Text>
       </View>
 
       {/* Audio Notifications Section */}
       <View className="flex-row items-center gap-2 mb-3">
         <Bell size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-sm">
+        <Text className="text-text-primary font-sans-semibold text-lg">
           Alerta sonora de pedidos
         </Text>
       </View>
 
       <View className="flex-row items-start gap-1.5 mb-3">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Cuando llega un nuevo pedido y la app esta abierta, se reproduce un sonido de alerta para que no se te pase ningun pedido. Funciona incluso en modo silencio (iOS).
         </Text>
       </View>
@@ -99,10 +99,10 @@ export default function AdvancedSettingsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-3">
         <View className="flex-row items-center justify-between">
           <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               Habilitar sonido
             </Text>
-            <Text className="text-cream-400 font-sans text-xs mt-0.5">
+            <Text className="text-cream-400 font-sans text-sm mt-0.5">
               Sonido al recibir un nuevo pedido
             </Text>
           </View>
@@ -120,7 +120,7 @@ export default function AdvancedSettingsScreen() {
           {/* Volume */}
           <View className="flex-row items-center gap-2 mb-1.5">
             <Volume2 size={14} color="#EB1C8D" />
-            <Text className="text-cream-300 font-sans-medium text-sm">
+            <Text className="text-cream-300 font-sans-medium text-base">
               Volumen (1 - 100)
             </Text>
           </View>
@@ -135,13 +135,13 @@ export default function AdvancedSettingsScreen() {
           />
           <View className="flex-row items-start gap-1.5 mb-4">
             <Info size={12} color="#888" style={{ marginTop: 2 }} />
-            <Text className="text-cream-400/60 font-sans text-xs flex-1">
+            <Text className="text-cream-400/60 font-sans text-sm flex-1">
               Intensidad del sonido de alerta. 100 es el maximo.
             </Text>
           </View>
 
           {/* Repeat Count */}
-          <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+          <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
             Repeticiones (1 - 10)
           </Text>
           <TextInput
@@ -155,7 +155,7 @@ export default function AdvancedSettingsScreen() {
           />
           <View className="flex-row items-start gap-1.5 mb-4">
             <Info size={12} color="#888" style={{ marginTop: 2 }} />
-            <Text className="text-cream-400/60 font-sans text-xs flex-1">
+            <Text className="text-cream-400/60 font-sans text-sm flex-1">
               Cuantas veces se repite el sonido por cada pedido nuevo. Mas repeticiones = mas dificil de ignorar.
             </Text>
           </View>
@@ -172,7 +172,7 @@ export default function AdvancedSettingsScreen() {
             ) : (
               <Play size={16} color="#EB1C8D" />
             )}
-            <Text className="text-gold-500 font-sans-medium text-sm">
+            <Text className="text-gold-500 font-sans-medium text-base">
               {testing ? "Reproduciendo..." : "Probar sonido"}
             </Text>
           </TouchableOpacity>
@@ -191,7 +191,7 @@ export default function AdvancedSettingsScreen() {
         {updateStore.isPending ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Guardar
           </Text>
         )}

@@ -61,8 +61,8 @@ export default function ExtrasGroupScreen() {
   const renderExtra = ({ item }: { item: ProductExtra }) => (
     <View className="bg-elegant-gray rounded-2xl p-4 mb-2 flex-row items-center">
       <View className="flex-1">
-        <Text className="text-text-primary font-sans-medium text-sm">{item.name}</Text>
-        <Text className="text-gold-500 font-sans text-xs mt-0.5">
+        <Text className="text-text-primary font-sans-medium text-base">{item.name}</Text>
+        <Text className="text-gold-500 font-sans text-sm mt-0.5">
           +${item.price.toFixed(2)}
         </Text>
       </View>

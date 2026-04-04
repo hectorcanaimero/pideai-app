@@ -308,12 +308,12 @@ export default function HelpScreen() {
           activeOpacity={0.7}
         >
           <ChevronLeft size={20} color="#EB1C8D" />
-          <Text className="text-brand-yellow font-sans-medium text-sm ml-1">
+          <Text className="text-brand-yellow font-sans-medium text-base ml-1">
             Volver
           </Text>
         </TouchableOpacity>
 
-        <Text className="text-text-primary font-sans-bold text-lg mb-4">
+        <Text className="text-text-primary font-sans-bold text-xl mb-4">
           {selectedArticle.title}
         </Text>
 
@@ -339,7 +339,7 @@ export default function HelpScreen() {
         {/* Tip */}
         {selectedArticle.tip && (
           <View className="bg-elegant-gray rounded-xl p-4 mb-3 border-l-4 border-yellow-500">
-            <Text className="text-text-primary font-sans-medium text-sm mb-1">
+            <Text className="text-text-primary font-sans-medium text-base mb-1">
               {"💡 Consejo"}
             </Text>
             <Text className="text-cream-400 font-sans text-sm leading-5">
@@ -351,7 +351,7 @@ export default function HelpScreen() {
         {/* Note */}
         {selectedArticle.note && (
           <View className="bg-elegant-gray rounded-xl p-4 mb-3 border-l-4 border-blue-500">
-            <Text className="text-text-primary font-sans-medium text-sm mb-1">
+            <Text className="text-text-primary font-sans-medium text-base mb-1">
               {"ℹ️ Nota"}
             </Text>
             <Text className="text-cream-400 font-sans text-sm leading-5">
@@ -376,14 +376,14 @@ export default function HelpScreen() {
           activeOpacity={0.7}
         >
           <ChevronLeft size={20} color="#EB1C8D" />
-          <Text className="text-brand-yellow font-sans-medium text-sm ml-1">
+          <Text className="text-brand-yellow font-sans-medium text-base ml-1">
             Volver
           </Text>
         </TouchableOpacity>
 
         <View className="flex-row items-center gap-2 mb-4">
           {selectedCategory.icon}
-          <Text className="text-text-primary font-sans-bold text-lg">
+          <Text className="text-text-primary font-sans-bold text-xl">
             {selectedCategory.label}
           </Text>
         </View>
@@ -396,10 +396,10 @@ export default function HelpScreen() {
             onPress={() => setSelectedArticle(article)}
             activeOpacity={0.7}
           >
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               {article.title}
             </Text>
-            <Text className="text-cream-400 font-sans text-xs mt-1">
+            <Text className="text-cream-400 font-sans text-sm mt-1">
               {article.steps.length} pasos
             </Text>
           </TouchableOpacity>
@@ -420,10 +420,10 @@ export default function HelpScreen() {
           <Sparkles size={24} color="#EB1C8D" />
         </View>
         <View className="flex-1">
-          <Text className="text-text-primary font-sans-bold text-base">
+          <Text className="text-text-primary font-sans-bold text-xl">
             Hola, soy Sofía
           </Text>
-          <Text className="text-cream-400 font-sans text-xs">
+          <Text className="text-cream-400 font-sans text-sm">
             Asistente PideAI · ¿En qué puedo ayudarte?
           </Text>
         </View>
@@ -465,7 +465,7 @@ export default function HelpScreen() {
                   }}
                   activeOpacity={0.7}
                 >
-                  <Text className="text-text-primary font-sans-medium text-sm">
+                  <Text className="text-text-primary font-sans-medium text-base">
                     {article.title}
                   </Text>
                 </TouchableOpacity>
@@ -481,10 +481,10 @@ export default function HelpScreen() {
               </Text>
               {filteredFaqs.map((faq, i) => (
                 <View key={i} className="bg-elegant-gray rounded-xl p-4 mb-2">
-                  <Text className="text-text-primary font-sans-medium text-sm mb-1.5">
+                  <Text className="text-text-primary font-sans-medium text-base mb-1.5">
                     {faq.q}
                   </Text>
-                  <Text className="text-cream-400 font-sans text-xs leading-5">
+                  <Text className="text-cream-400 font-sans text-sm leading-5">
                     {faq.a}
                   </Text>
                 </View>
@@ -520,10 +520,10 @@ export default function HelpScreen() {
                 activeOpacity={0.7}
               >
                 <View className="mb-2">{cat.icon}</View>
-                <Text className="text-text-primary font-sans-medium text-sm">
+                <Text className="text-text-primary font-sans-medium text-base">
                   {cat.label}
                 </Text>
-                <Text className="text-cream-400 font-sans text-xs mt-0.5">
+                <Text className="text-cream-400 font-sans text-sm mt-0.5">
                   {cat.articles.length}{" "}
                   {cat.articles.length === 1 ? "artículo" : "artículos"}
                 </Text>
@@ -543,7 +543,7 @@ export default function HelpScreen() {
               activeOpacity={0.7}
             >
               <View className="flex-row items-center justify-between">
-                <Text className="text-text-primary font-sans-medium text-sm flex-1 pr-2">
+                <Text className="text-text-primary font-sans-medium text-base flex-1 pr-2">
                   {faq.q}
                 </Text>
                 {expandedFaq === i ? (
@@ -553,7 +553,7 @@ export default function HelpScreen() {
                 )}
               </View>
               {expandedFaq === i && (
-                <Text className="text-cream-400 font-sans text-xs leading-5 mt-3">
+                <Text className="text-cream-400 font-sans text-sm leading-5 mt-3">
                   {faq.a}
                 </Text>
               )}

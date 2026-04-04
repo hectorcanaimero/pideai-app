@@ -109,7 +109,7 @@ export default function CreateProductScreen() {
       </TouchableOpacity>
 
       {/* Name */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Nombre *
       </Text>
       <TextInput
@@ -121,7 +121,7 @@ export default function CreateProductScreen() {
       />
 
       {/* Price */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Precio *
       </Text>
       <TextInput
@@ -134,7 +134,7 @@ export default function CreateProductScreen() {
       />
 
       {/* Description */}
-      <Text className="text-cream-300 font-sans-medium text-sm mb-1.5">
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
         Descripción
       </Text>
       <TextInput
@@ -152,7 +152,7 @@ export default function CreateProductScreen() {
       {isStockEnabled && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-text-primary font-sans-medium text-sm">
+            <Text className="text-text-primary font-sans-medium text-base">
               Controlar stock
             </Text>
             <Switch
@@ -164,7 +164,7 @@ export default function CreateProductScreen() {
           </View>
           {trackStock && (
             <View>
-              <Text className="text-cream-300 font-sans text-xs mb-1">
+              <Text className="text-cream-300 font-sans text-sm mb-1">
                 Cantidad disponible
               </Text>
               <TextInput
@@ -190,7 +190,7 @@ export default function CreateProductScreen() {
         {saving ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Crear Producto
           </Text>
         )}

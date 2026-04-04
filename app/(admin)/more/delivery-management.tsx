@@ -78,26 +78,26 @@ export default function DeliveryManagementScreen() {
           <View className="flex-row items-center">
             {/* Avatar */}
             <View className="w-11 h-11 rounded-full bg-gold-500/20 items-center justify-center mr-3">
-              <Text className="text-gold-500 font-sans-bold text-lg">
+              <Text className="text-gold-500 font-sans-bold text-xl">
                 {initial}
               </Text>
             </View>
 
             {/* Info */}
             <View className="flex-1 mr-3">
-              <Text className="text-text-primary font-sans-bold text-base">
+              <Text className="text-text-primary font-sans-bold text-xl">
                 {item.name}
               </Text>
               <View className="flex-row items-center mt-1 gap-3">
                 <View className="flex-row items-center">
                   <Phone size={12} color="#999" />
-                  <Text className="text-cream-400 font-sans text-xs ml-1">
+                  <Text className="text-cream-400 font-sans text-sm ml-1">
                     {item.phone}
                   </Text>
                 </View>
                 <View className="flex-row items-center">
                   <VehicleIcon type={item.vehicle_type} />
-                  <Text className="text-cream-400 font-sans text-xs ml-1 capitalize">
+                  <Text className="text-cream-400 font-sans text-sm ml-1 capitalize">
                     {item.vehicle_type ?? "—"}
                   </Text>
                 </View>
@@ -132,7 +132,7 @@ export default function DeliveryManagementScreen() {
     <View className="flex-1 bg-elegant-dark">
       {/* Count */}
       <View className="px-4 pt-3 pb-2">
-        <Text className="text-cream-400 font-sans text-xs">
+        <Text className="text-cream-400 font-sans text-sm">
           {data?.length ?? 0} motoristas
         </Text>
       </View>
@@ -166,7 +166,7 @@ export default function DeliveryManagementScreen() {
           ListFooterComponent={
             <View className="flex-row items-center bg-elegant-gray/50 rounded-xl p-3 mt-2">
               <Info size={16} color="#EB1C8D" />
-              <Text className="text-cream-400 font-sans text-xs ml-2 flex-1">
+              <Text className="text-cream-400 font-sans text-sm ml-2 flex-1">
                 Agregá y editá motoristas desde el panel web
               </Text>
             </View>

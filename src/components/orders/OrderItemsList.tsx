@@ -18,7 +18,7 @@ export function OrderItemsList({ items, currency = "USD" }: OrderItemsListProps)
             {item.extras && item.extras.length > 0 && (
               <View className="ml-4 mt-0.5">
                 {item.extras.map((extra, idx) => (
-                  <Text key={idx} className="text-cream-400 font-sans text-xs">
+                  <Text key={idx} className="text-cream-400 font-sans text-sm">
                     + {extra.name} ({currency} {extra.price.toFixed(2)})
                   </Text>
                 ))}

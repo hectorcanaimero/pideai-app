@@ -38,7 +38,7 @@ export default function OrdersScreen() {
             activeOpacity={0.7}
           >
             <ChefHat size={16} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans-medium text-sm">Cocina</Text>
+            <Text className="text-gold-500 font-sans-medium text-base">Cocina</Text>
           </TouchableOpacity>
         )}
       </View>

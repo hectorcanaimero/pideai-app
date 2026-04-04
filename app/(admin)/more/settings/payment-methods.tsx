@@ -260,7 +260,7 @@ export default function PaymentMethodsScreen() {
       <View className="flex-row items-center justify-between mb-2">
         <View className="flex-row items-center gap-2">
           <CreditCard size={20} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-bold text-lg">Métodos de pago</Text>
+          <Text className="text-text-primary font-sans-bold text-xl">Métodos de pago</Text>
         </View>
         <TouchableOpacity
           className="bg-gold-500 px-3 py-1.5 rounded-lg flex-row items-center gap-1"
@@ -274,7 +274,7 @@ export default function PaymentMethodsScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-4">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Agregá los métodos de pago que aceptás. Tus clientes verán esta información al momento de pagar.
         </Text>
       </View>
@@ -283,7 +283,7 @@ export default function PaymentMethodsScreen() {
       {showForm && (
         <View className="bg-elegant-gray rounded-2xl p-4 mb-4 border border-gold-500/30">
           <View className="flex-row items-center justify-between mb-4">
-            <Text className="text-gold-500 font-sans-semibold text-sm">
+            <Text className="text-gold-500 font-sans-semibold text-lg">
               {editing ? "Editar método" : "Nuevo método"}
             </Text>
             <TouchableOpacity onPress={resetForm}>
@@ -292,7 +292,7 @@ export default function PaymentMethodsScreen() {
           </View>
 
           {/* Payment type selector */}
-          <Text className="text-cream-300 font-sans text-xs mb-2">Tipo</Text>
+          <Text className="text-cream-300 font-sans text-sm mb-2">Tipo</Text>
           <View className="flex-row gap-2 mb-4">
             {PAYMENT_TYPES.map((type) => {
               const isSelected = paymentType === type.key;
@@ -308,7 +308,7 @@ export default function PaymentMethodsScreen() {
                 >
                   <Icon size={14} color={isSelected ? "#FFFFFF" : "#888"} />
                   <Text
-                    className={`font-sans-medium text-[10px] ${
+                    className={`font-sans-medium text-xs ${
                       isSelected ? "text-text-inverted" : "text-cream-400"
                     }`}
                   >
@@ -320,7 +320,7 @@ export default function PaymentMethodsScreen() {
           </View>
 
           {/* Name */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Nombre (opcional, se autogenera)
           </Text>
           <TextInput
@@ -334,7 +334,7 @@ export default function PaymentMethodsScreen() {
           {/* Type-specific fields */}
           {paymentType === "pago_movil" && (
             <>
-              <Text className="text-cream-300 font-sans text-xs mb-1">Banco</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Banco</Text>
               <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -350,7 +350,7 @@ export default function PaymentMethodsScreen() {
                     onPress={() => setBankCode(bank.code)}
                   >
                     <Text
-                      className={`font-sans text-xs ${
+                      className={`font-sans text-sm ${
                         bankCode === bank.code ? "text-text-inverted font-sans-medium" : "text-cream-300"
                       }`}
                     >
@@ -360,7 +360,7 @@ export default function PaymentMethodsScreen() {
                 ))}
               </ScrollView>
 
-              <Text className="text-cream-300 font-sans text-xs mb-1">Cédula</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Cédula</Text>
               <TextInput
                 className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={cedula}
@@ -369,7 +369,7 @@ export default function PaymentMethodsScreen() {
                 placeholderTextColor="#666"
               />
 
-              <Text className="text-cream-300 font-sans text-xs mb-1">Teléfono</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Teléfono</Text>
               <TextInput
                 className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={pmPhone}
@@ -383,7 +383,7 @@ export default function PaymentMethodsScreen() {
 
           {paymentType === "zelle" && (
             <>
-              <Text className="text-cream-300 font-sans text-xs mb-1">Email de Zelle</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Email de Zelle</Text>
               <TextInput
                 className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zelleEmail}
@@ -394,7 +394,7 @@ export default function PaymentMethodsScreen() {
                 autoCapitalize="none"
               />
 
-              <Text className="text-cream-300 font-sans text-xs mb-1">Titular</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Titular</Text>
               <TextInput
                 className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={zelleHolder}
@@ -407,7 +407,7 @@ export default function PaymentMethodsScreen() {
 
           {paymentType === "binance" && (
             <>
-              <Text className="text-cream-300 font-sans text-xs mb-1">Binance Pay ID / Email</Text>
+              <Text className="text-cream-300 font-sans text-sm mb-1">Binance Pay ID / Email</Text>
               <TextInput
                 className="bg-elegant-dark text-text-primary px-3 py-2.5 rounded-xl font-sans text-sm mb-3"
                 value={binanceKey}
@@ -420,7 +420,7 @@ export default function PaymentMethodsScreen() {
           )}
 
           {/* Description */}
-          <Text className="text-cream-300 font-sans text-xs mb-1">
+          <Text className="text-cream-300 font-sans text-sm mb-1">
             Descripción / Instrucciones
           </Text>
           <TextInput
@@ -436,7 +436,7 @@ export default function PaymentMethodsScreen() {
 
           {/* Active */}
           <View className="flex-row items-center justify-between mb-4">
-            <Text className="text-cream-300 font-sans text-xs">Activo</Text>
+            <Text className="text-cream-300 font-sans text-sm">Activo</Text>
             <Switch
               value={isActive}
               onValueChange={setIsActive}
@@ -484,7 +484,7 @@ export default function PaymentMethodsScreen() {
                 </View>
                 <View className="flex-1">
                   <View className="flex-row items-center gap-2">
-                    <Text className="text-text-primary font-sans-medium text-sm flex-1">
+                    <Text className="text-text-primary font-sans-medium text-base flex-1">
                       {method.name}
                     </Text>
                     <Switch
@@ -496,16 +496,16 @@ export default function PaymentMethodsScreen() {
                       thumbColor="#fff"
                     />
                   </View>
-                  <Text className="text-cream-400 font-sans text-xs mt-0.5">
+                  <Text className="text-cream-400 font-sans text-sm mt-0.5">
                     {getTypeLabel(method.payment_type)}
                   </Text>
                   {details && (
-                    <Text className="text-cream-400/70 font-sans text-xs mt-1" numberOfLines={2}>
+                    <Text className="text-cream-400/70 font-sans text-sm mt-1" numberOfLines={2}>
                       {details}
                     </Text>
                   )}
                   {method.description && (
-                    <Text className="text-cream-400/50 font-sans text-xs mt-1 italic" numberOfLines={1}>
+                    <Text className="text-cream-400/50 font-sans text-sm mt-1 italic" numberOfLines={1}>
                       {method.description}
                     </Text>
                   )}
@@ -519,14 +519,14 @@ export default function PaymentMethodsScreen() {
                   onPress={() => startEdit(method)}
                 >
                   <Edit3 size={13} color="#EB1C8D" />
-                  <Text className="text-gold-500 font-sans text-xs">Editar</Text>
+                  <Text className="text-gold-500 font-sans text-sm">Editar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   className="flex-row items-center gap-1 px-3 py-1.5"
                   onPress={() => handleDelete(method)}
                 >
                   <Trash2 size={13} color="#EF4444" />
-                  <Text className="text-red-400 font-sans text-xs">Eliminar</Text>
+                  <Text className="text-red-400 font-sans text-sm">Eliminar</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -538,7 +538,7 @@ export default function PaymentMethodsScreen() {
           <Text className="text-cream-400 font-sans text-sm mt-3">
             No hay métodos de pago configurados
           </Text>
-          <Text className="text-cream-400/60 font-sans text-xs mt-1 text-center">
+          <Text className="text-cream-400/60 font-sans text-sm mt-1 text-center">
             Tus clientes necesitan saber cómo pagarte. Tocá "Nuevo" para agregar uno.
           </Text>
         </View>

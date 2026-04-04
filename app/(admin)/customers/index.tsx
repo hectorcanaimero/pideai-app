@@ -63,7 +63,7 @@ export default function CustomersScreen() {
 
       {/* Count */}
       <View className="px-4 pb-2">
-        <Text className="text-cream-400 font-sans text-xs">
+        <Text className="text-cream-400 font-sans text-sm">
           {customers?.length ?? 0} clientes
         </Text>
       </View>

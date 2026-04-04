@@ -41,7 +41,7 @@ export default function AnalyticsScreen() {
             className={`flex-1 py-2.5 rounded-xl items-center ${period === p.key ? "bg-gold-500" : "bg-elegant-gray"}`}
             onPress={() => setPeriod(p.key)}
           >
-            <Text className={`font-sans-medium text-sm ${period === p.key ? "text-text-inverted" : "text-cream-300"}`}>
+            <Text className={`font-sans-medium text-base ${period === p.key ? "text-text-inverted" : "text-cream-300"}`}>
               {p.label}
             </Text>
           </TouchableOpacity>
@@ -53,7 +53,7 @@ export default function AnalyticsScreen() {
         <View className="flex-1 bg-elegant-gray rounded-2xl p-4">
           <View className="flex-row items-center gap-1.5 mb-1">
             <DollarSign size={14} color="#22C55E" />
-            <Text className="text-cream-400 font-sans text-xs">Ventas</Text>
+            <Text className="text-cream-400 font-sans text-sm">Ventas</Text>
           </View>
           <Text className="text-text-primary font-sans-bold text-xl">
             {currency} {data?.totalRevenue.toFixed(2)}
@@ -62,7 +62,7 @@ export default function AnalyticsScreen() {
         <View className="flex-1 bg-elegant-gray rounded-2xl p-4">
           <View className="flex-row items-center gap-1.5 mb-1">
             <ShoppingBag size={14} color="#EB1C8D" />
-            <Text className="text-cream-400 font-sans text-xs">Pedidos</Text>
+            <Text className="text-cream-400 font-sans text-sm">Pedidos</Text>
           </View>
           <Text className="text-text-primary font-sans-bold text-xl">{data?.totalOrders}</Text>
         </View>
@@ -71,7 +71,7 @@ export default function AnalyticsScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         <View className="flex-row items-center gap-1.5 mb-1">
           <TrendingUp size={14} color="#F59E0B" />
-          <Text className="text-cream-400 font-sans text-xs">Ticket promedio</Text>
+          <Text className="text-cream-400 font-sans text-sm">Ticket promedio</Text>
         </View>
         <Text className="text-text-primary font-sans-bold text-xl">
           {currency} {data?.avgOrderValue.toFixed(2)}
@@ -79,7 +79,7 @@ export default function AnalyticsScreen() {
       </View>
 
       {/* By order type */}
-      <Text className="text-text-primary font-sans-semibold text-base mb-3">Por tipo de pedido</Text>
+      <Text className="text-text-primary font-sans-semibold text-lg mb-3">Por tipo de pedido</Text>
       <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
         {Object.entries(data?.byType ?? {}).map(([type, count]) => (
           <View key={type} className="flex-row items-center justify-between py-2 border-b border-elegant-dark last:border-b-0">
@@ -97,7 +97,7 @@ export default function AnalyticsScreen() {
       {/* Top products */}
       <View className="flex-row items-center gap-2 mb-3">
         <Trophy size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-base">Productos mas vendidos</Text>
+        <Text className="text-text-primary font-sans-semibold text-lg">Productos mas vendidos</Text>
       </View>
       <View className="bg-elegant-gray rounded-2xl p-4">
         {(data?.topProducts ?? []).map((p, i) => (

@@ -158,7 +158,7 @@ export default function BusinessHoursScreen() {
     >
       <View className="flex-row items-center gap-2 mb-2">
         <Clock size={20} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-bold text-lg">
+        <Text className="text-text-primary font-sans-bold text-xl">
           Horarios de atención
         </Text>
       </View>
@@ -167,7 +167,7 @@ export default function BusinessHoursScreen() {
       <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
         <View className="flex-row items-center gap-2 mb-3">
           <Power size={16} color="#EB1C8D" />
-          <Text className="text-text-primary font-sans-semibold text-sm">
+          <Text className="text-text-primary font-sans-semibold text-lg">
             Forzar apertura / cierre
           </Text>
         </View>
@@ -233,7 +233,7 @@ export default function BusinessHoursScreen() {
 
         <View className="flex-row items-start gap-1.5">
           <Info size={12} color="#888" style={{ marginTop: 2 }} />
-          <Text className="text-cream-400/60 font-sans text-xs flex-1">
+          <Text className="text-cream-400/60 font-sans text-sm flex-1">
             {forceStatus === "normal"
               ? "La tienda abre y cierra según los horarios configurados abajo."
               : forceStatus === "force_open"
@@ -245,7 +245,7 @@ export default function BusinessHoursScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-5">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Configurá los horarios de apertura y cierre para cada día. Podés
           agregar múltiples turnos por día (ej: mañana y noche).
         </Text>
@@ -260,12 +260,12 @@ export default function BusinessHoursScreen() {
           <View key={day.value} className="bg-elegant-gray rounded-2xl p-4 mb-3">
             {/* Day header */}
             <View className="flex-row items-center justify-between mb-2">
-              <Text className="text-text-primary font-sans-semibold text-sm">
+              <Text className="text-text-primary font-sans-semibold text-lg">
                 {day.label}
               </Text>
               <View className="flex-row items-center gap-2">
                 {!hasTurns && (
-                  <Text className="text-red-400 font-sans text-xs">Cerrado</Text>
+                  <Text className="text-red-400 font-sans text-sm">Cerrado</Text>
                 )}
                 <TouchableOpacity
                   className="bg-elegant-dark p-1.5 rounded-lg"
@@ -289,7 +289,7 @@ export default function BusinessHoursScreen() {
                   {/* Time inputs */}
                   <View className="flex-row items-center gap-2">
                     <View className="flex-1">
-                      <Text className="text-cream-400 font-sans text-[10px] mb-1">
+                      <Text className="text-cream-400 font-sans text-sm mb-1">
                         Apertura
                       </Text>
                       <TextInput
@@ -308,7 +308,7 @@ export default function BusinessHoursScreen() {
                     <Text className="text-cream-400 font-sans text-sm mt-3">—</Text>
 
                     <View className="flex-1">
-                      <Text className="text-cream-400 font-sans text-[10px] mb-1">
+                      <Text className="text-cream-400 font-sans text-sm mb-1">
                         Cierre
                       </Text>
                       <TextInput
@@ -336,7 +336,7 @@ export default function BusinessHoursScreen() {
                   <View className="flex-row items-center justify-between mt-2 pt-2 border-t border-elegant-gray">
                     <View className="flex-row items-center gap-1.5">
                       <Moon size={12} color="#A855F7" />
-                      <Text className="text-cream-400 font-sans text-xs">
+                      <Text className="text-cream-400 font-sans text-sm">
                         Cierra al día siguiente
                       </Text>
                     </View>
@@ -354,7 +354,7 @@ export default function BusinessHoursScreen() {
             })}
 
             {!hasTurns && (
-              <Text className="text-cream-400/40 font-sans text-xs text-center py-1">
+              <Text className="text-cream-400/40 font-sans text-sm text-center py-1">
                 Tocá + para agregar un turno
               </Text>
             )}
@@ -364,7 +364,7 @@ export default function BusinessHoursScreen() {
 
       <View className="flex-row items-start gap-1.5 mb-4 mt-1">
         <Info size={12} color="#888" style={{ marginTop: 2 }} />
-        <Text className="text-cream-400/60 font-sans text-xs flex-1">
+        <Text className="text-cream-400/60 font-sans text-sm flex-1">
           Usá "Cierra al día siguiente" para turnos nocturnos que cruzan la
           medianoche (ej: 22:00 - 02:00).
         </Text>
@@ -382,7 +382,7 @@ export default function BusinessHoursScreen() {
         {saving ? (
           <ActivityIndicator color="#FFFFFF" />
         ) : (
-          <Text className="text-text-inverted font-sans-bold text-base">
+          <Text className="text-text-inverted font-sans-bold text-lg">
             Guardar horarios
           </Text>
         )}

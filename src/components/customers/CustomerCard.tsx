@@ -21,20 +21,20 @@ export function CustomerCard({
     >
       {/* Avatar */}
       <View className="w-11 h-11 rounded-full bg-gold-500/20 items-center justify-center mr-3">
-        <Text className="text-gold-500 font-sans-bold text-base">
+        <Text className="text-gold-500 font-sans-bold text-xl">
           {customer.name.charAt(0).toUpperCase()}
         </Text>
       </View>
 
       {/* Info */}
       <View className="flex-1">
-        <Text className="text-text-primary font-sans-medium text-sm">
+        <Text className="text-text-primary font-sans-medium text-base">
           {customer.name}
         </Text>
         <View className="flex-row items-center gap-1 mt-0.5">
           <Mail size={10} color="#F7EBF4" />
           <Text
-            className="text-cream-400 font-sans text-xs"
+            className="text-cream-400 font-sans text-sm"
             numberOfLines={1}
           >
             {customer.email}
@@ -43,11 +43,11 @@ export function CustomerCard({
         <View className="flex-row items-center gap-3 mt-1">
           <View className="flex-row items-center gap-1">
             <ShoppingBag size={10} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans text-xs">
+            <Text className="text-gold-500 font-sans text-sm">
               {customer.order_count} pedidos
             </Text>
           </View>
-          <Text className="text-cream-400 font-sans text-xs">
+          <Text className="text-cream-400 font-sans text-sm">
             {currency} {customer.total_spent.toFixed(2)}
           </Text>
         </View>
