@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { supabase } from "@/services/supabase";
 import { useStore } from "@/contexts/StoreContext";
 import type { OrderStatus, OrderWithItems } from "@/lib/orderConstants";
@@ -10,11 +10,53 @@ const orderKeys = {
   detail: (orderId: string) => [...orderKeys.all, "detail", orderId] as const,
 };
 
-export function useOrders(statusFilter?: OrderStatus | null) {
+/**
+ * Subscribes to realtime order changes ONCE per store.
+ * Use this in a single parent component (e.g. OrdersLayout),
+ * NOT in every screen that calls useOrders.
+ */
+export function useOrdersRealtime() {
   const { store } = useStore();
   const queryClient = useQueryClient();
+  const channelRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
 
-  const query = useQuery({
+  useEffect(() => {
+    if (!store?.id) return;
+
+    // Avoid duplicate subscriptions
+    if (channelRef.current) {
+      supabase.removeChannel(channelRef.current);
+    }
+
+    const channel = supabase
+      .channel(`orders-rt-${store.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "orders",
+          filter: `store_id=eq.${store.id}`,
+        },
+        () => {
+          queryClient.invalidateQueries({ queryKey: orderKeys.list(store.id) });
+        }
+      )
+      .subscribe();
+
+    channelRef.current = channel;
+
+    return () => {
+      supabase.removeChannel(channel);
+      channelRef.current = null;
+    };
+  }, [store?.id, queryClient]);
+}
+
+export function useOrders(statusFilter?: OrderStatus | null) {
+  const { store } = useStore();
+
+  return useQuery({
     queryKey: [...orderKeys.list(store?.id ?? ""), statusFilter],
     queryFn: async () => {
       let q = supabase
@@ -35,32 +77,6 @@ export function useOrders(statusFilter?: OrderStatus | null) {
     enabled: !!store?.id,
     staleTime: 30 * 1000,
   });
-
-  useEffect(() => {
-    if (!store?.id) return;
-
-    const channel = supabase
-      .channel(`orders-${store.id}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "orders",
-          filter: `store_id=eq.${store.id}`,
-        },
-        () => {
-          queryClient.invalidateQueries({ queryKey: orderKeys.list(store.id) });
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [store?.id, queryClient]);
-
-  return query;
 }
 
 export function useOrderDetail(orderId: string | undefined) {

@@ -1,0 +1,103 @@
+import { ExpoConfig, ConfigContext } from "expo/config";
+
+export default ({ config }: ConfigContext): ExpoConfig => ({
+  ...config,
+  name: "PideAI Admin",
+  slug: "pideai-admin",
+  version: "1.0.0",
+  orientation: "portrait",
+  icon: "./assets/images/icon.png",
+  scheme: "pideai",
+  userInterfaceStyle: "light",
+  newArchEnabled: true,
+  splash: {
+    image: "./assets/images/splash-icon.png",
+    resizeMode: "contain",
+    backgroundColor: "#F0EFEF",
+  },
+  ios: {
+    supportsTablet: false,
+    bundleIdentifier: "com.pideai.admin",
+    associatedDomains: ["applinks:pideai.com", "applinks:*.pideai.com"],
+  },
+  android: {
+    googleServicesFile:
+      process.env.GOOGLE_SERVICES_JSON ?? "./google-services.json",
+    adaptiveIcon: {
+      backgroundColor: "#d2d2d5",
+      foregroundImage: "./assets/images/android-icon-foreground.png",
+      backgroundImage: "./assets/images/android-icon-background.png",
+      monochromeImage: "./assets/images/android-icon-monochrome.png",
+    },
+    package: "com.pideai.admin",
+    edgeToEdgeEnabled: true,
+    predictiveBackGestureEnabled: false,
+    intentFilters: [
+      {
+        action: "VIEW",
+        autoVerify: true,
+        data: [
+          {
+            scheme: "https",
+            host: "*.pideai.com",
+            pathPrefix: "/",
+          },
+        ],
+        category: ["BROWSABLE", "DEFAULT"],
+      },
+    ],
+  },
+  web: {
+    output: "static",
+    favicon: "./assets/images/favicon.png",
+  },
+  plugins: [
+    "expo-router",
+    "expo-updates",
+    [
+      "expo-splash-screen",
+      {
+        image: "./assets/images/splash-icon.png",
+        imageWidth: 200,
+        resizeMode: "contain",
+        backgroundColor: "#F0EFEF",
+        dark: {
+          backgroundColor: "#F0EFEF",
+        },
+      },
+    ],
+    "expo-secure-store",
+    "expo-font",
+    [
+      "expo-notifications",
+      {
+        sounds: [],
+      },
+    ],
+    [
+      "@sentry/react-native/expo",
+      {
+        organization: "pideai",
+        project: "mobile-admin",
+      },
+    ],
+  ],
+  updates: {
+    url: "https://u.expo.dev/12ebd853-86b8-4a00-ba59-c5170229eeaf",
+    fallbackToCacheTimeout: 5000,
+  },
+  runtimeVersion: {
+    policy: "appVersion",
+  },
+  experiments: {
+    typedRoutes: true,
+    reactCompiler: true,
+  },
+  extra: {
+    router: {},
+    eas: {
+      projectId: "12ebd853-86b8-4a00-ba59-c5170229eeaf",
+    },
+  },
+  owner: "knaimero",
+});

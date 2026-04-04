@@ -1,4 +1,5 @@
 import { useAuth } from '@/hooks/useAuth';
+import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import {
@@ -11,7 +12,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { SvgUri } from 'react-native-svg';
 
 export default function LoginScreen() {
   const { signIn } = useAuth();
@@ -40,12 +40,12 @@ export default function LoginScreen() {
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} className="flex-1 bg-elegant-dark">
       <View className="flex-1 justify-center px-8">
         <View className="items-center mb-12">
-          <SvgUri
-            uri="https://s3.guria.lat/pideai/logo-pideai.svg"
-            width={192}
-            height={64}
+          <Image
+            source="https://s3.guria.lat/pideai/logo-pideai.svg"
+            style={{ width: 192, height: 160 }}
+            contentFit="contain"
           />
-          <Text className="text-base font-sans text-text-secondary mt-2">Panel Administrativo</Text>
+          <Text className="text-xl font-sans-semibold text-text-secondary mt-2">Panel Administrativo</Text>
         </View>
 
         <View className="mb-4">

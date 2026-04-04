@@ -38,29 +38,17 @@ export function OrderFilters({ selectedStatus, onStatusChange, pendingCount }: O
         return (
           <TouchableOpacity
             key={status}
-            className={`px-4 py-2 rounded-full flex-row items-center gap-1.5 ${
-              isSelected ? "bg-gold-500" : "bg-elegant-gray"
-            }`}
+            className={`px-4 py-2 rounded-full flex-row items-center ${isSelected ? "bg-gold-500" : "bg-elegant-gray"}`}
             onPress={() => onStatusChange(isSelected ? null : status)}
             activeOpacity={0.7}
-          >
-            <View
-              className="w-2 h-2 rounded-full"
+          ><View
+              className="w-2 h-2 rounded-full mr-1.5"
               style={{ backgroundColor: STATUS_COLORS[status] }}
-            />
-            <Text
-              className={`font-sans-medium text-base ${
-                isSelected ? "text-text-inverted" : "text-cream-300"
-              }`}
-            >
-              {STATUS_LABELS[status]}
-            </Text>
-            {showBadge && (
-              <View className="bg-red-500 rounded-full min-w-[18px] h-[18px] items-center justify-center ml-0.5">
-                <Text className="text-text-primary font-sans-bold text-xs">{pendingCount}</Text>
-              </View>
-            )}
-          </TouchableOpacity>
+            /><Text
+              className={`font-sans-medium text-base ${isSelected ? "text-text-inverted" : "text-cream-300"}`}
+            >{STATUS_LABELS[status]}</Text>{showBadge ? (
+              <Text className="text-red-500 font-sans-bold text-xs ml-1">{pendingCount}</Text>
+            ) : null}</TouchableOpacity>
         );
       })}
     </ScrollView>

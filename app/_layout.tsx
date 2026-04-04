@@ -1,6 +1,7 @@
 import "../global.css";
-import { useEffect, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Slot } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +13,7 @@ import { focusManager } from "@tanstack/react-query";
 import { useOrderNotifications } from "@/hooks/useOrderNotifications";
 import { OfflineBanner } from "@/components/shared/OfflineBanner";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
+import { AnimatedSplash } from "@/components/shared/AnimatedSplash";
 import { initSentry } from "@/lib/sentry";
 
 // Initialize Sentry at module level
@@ -36,8 +38,11 @@ export default function RootLayout() {
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
   });
 
+  const [showSplash, setShowSplash] = useState(true);
+
   useEffect(() => {
     if (fontsLoaded) {
+      // Hide native splash — animated splash takes over seamlessly
       SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
@@ -45,6 +50,10 @@ export default function RootLayout() {
   useEffect(() => {
     const subscription = AppState.addEventListener("change", onAppStateChange);
     return () => subscription.remove();
+  }, []);
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
   }, []);
 
   if (!fontsLoaded) {
@@ -57,8 +66,12 @@ export default function RootLayout() {
         <AuthProvider>
           <StoreProvider>
             <NotificationSetup>
+              <StatusBar style="dark" backgroundColor="#FFC300" />
               <OfflineBanner />
               <Slot />
+              {showSplash && (
+                <AnimatedSplash onComplete={handleSplashComplete} />
+              )}
             </NotificationSetup>
           </StoreProvider>
         </AuthProvider>

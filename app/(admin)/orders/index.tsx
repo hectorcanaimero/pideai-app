@@ -5,18 +5,13 @@ import {
   FlatList,
   RefreshControl,
   ActivityIndicator,
-  TouchableOpacity,
 } from "react-native";
-import { ChefHat } from "lucide-react-native";
-import { router } from "expo-router";
 import { useOrders } from "@/hooks/useOrders";
-import { useStore } from "@/contexts/StoreContext";
 import { OrderCard } from "@/components/orders/OrderCard";
 import { OrderFilters } from "@/components/orders/OrderFilters";
 import type { OrderStatus, OrderWithItems } from "@/lib/orderConstants";
 
 export default function OrdersScreen() {
-  const { store } = useStore();
   const [statusFilter, setStatusFilter] = useState<OrderStatus | null>(null);
   const { data: orders, isLoading, refetch, isRefetching } = useOrders(statusFilter);
 
@@ -29,26 +24,14 @@ export default function OrdersScreen() {
 
   return (
     <View className="flex-1 bg-elegant-dark">
-      {/* Top actions */}
-      <View className="flex-row justify-end px-4 pt-2 gap-2">
-        {store?.is_food_business && (
-          <TouchableOpacity
-            className="bg-elegant-gray px-3 py-2 rounded-xl flex-row items-center gap-1.5"
-            onPress={() => router.push("/(admin)/orders/kitchen")}
-            activeOpacity={0.7}
-          >
-            <ChefHat size={16} color="#EB1C8D" />
-            <Text className="text-gold-500 font-sans-medium text-base">Cocina</Text>
-          </TouchableOpacity>
-        )}
+      {/* Filters — fixed height, never stretches */}
+      <View style={{ flexShrink: 0 }}>
+        <OrderFilters
+          selectedStatus={statusFilter}
+          onStatusChange={setStatusFilter}
+          pendingCount={statusFilter === null ? pendingCount : undefined}
+        />
       </View>
-
-      {/* Filters */}
-      <OrderFilters
-        selectedStatus={statusFilter}
-        onStatusChange={setStatusFilter}
-        pendingCount={statusFilter === null ? pendingCount : undefined}
-      />
 
       {/* Orders List */}
       {isLoading ? (

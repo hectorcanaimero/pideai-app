@@ -44,3 +44,10 @@ app-example
 # generated native folders
 /ios
 /android
+
+Google
+google-services.json
+*-firebase-adminsdk-*.json
+
+# Testing
+coverage/

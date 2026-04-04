@@ -74,7 +74,7 @@ export function useCustomers(search?: string) {
           }
         } else {
           customerMap.set(key, {
-            id: order.customer_id ?? key,
+            id: key,
             name: order.customer_name,
             email: order.customer_email,
             phone: order.customer_phone,

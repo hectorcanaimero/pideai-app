@@ -9,7 +9,7 @@ export default function MoreLayout() {
         headerTitleStyle: { fontFamily: "Poppins-SemiBold" },
       }}
     >
-      <Stack.Screen name="index" options={{ title: "Más" }} />
+      <Stack.Screen name="index" options={{ title: "Mi Tienda" }} />
       <Stack.Screen name="settings/store-info" options={{ title: "Info de tienda" }} />
       <Stack.Screen name="settings/business-hours" options={{ title: "Horarios" }} />
       <Stack.Screen name="settings/payment" options={{ title: "Pagos" }} />
