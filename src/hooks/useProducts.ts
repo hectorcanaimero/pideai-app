@@ -12,6 +12,7 @@ export interface Product {
   image_url: string | null;
   is_available: boolean | null;
   is_featured: boolean | null;
+  admin_only: boolean | null;
   display_order: number | null;
   track_stock: boolean;
   stock_quantity: number | null;
@@ -25,7 +26,10 @@ export interface CreateProductData {
   price: number;
   category_id: string | null;
   image_url?: string | null;
+  display_order?: number;
   is_available?: boolean;
+  is_featured?: boolean;
+  admin_only?: boolean;
   track_stock?: boolean;
   stock_quantity?: number | null;
   stock_minimum?: number | null;
