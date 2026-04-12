@@ -95,11 +95,32 @@ EXPO_PUBLIC_SENTRY_DSN=
 
 ## Conventions
 
-- Dark theme: `bg-elegant-dark` (#1A1A2E), `bg-elegant-gray` (#2D2D44)
-- Gold accent: `text-gold-500` (#FFC300), `bg-gold-500`
-- Cream text: `text-cream-*` for secondary text
-- Font: Poppins (Regular, Medium, SemiBold, Bold)
-- Cards: `bg-elegant-gray rounded-2xl p-4`
-- All text in Spanish (Rioplatense)
-- Icons from lucide-react-native
-- Status colors defined in src/lib/orderConstants.ts
+### Brand Colors (defined in tailwind.config.ts)
+
+- **Primary (brand):** `#EB1C8D` (pink/magenta) — `primary` / `gold-500` (legacy alias)
+- **Primary hover:** `#C9157A` — `primary-hover` / `gold-700`
+- **Primary light:** `#F7EBF4` — `primary-light` / `cream-100`
+- **Primary badge:** `#FADADF` — `primary-badge`
+
+### Background
+
+- **Main bg:** `#F0EFEF` — `bg-background-main` / `bg-elegant-dark` (legacy alias)
+- **Surface:** `#FFFFFF` — `bg-background-surface` / `bg-elegant-gray` (legacy alias)
+- **Soft:** `#F7EBF4` — `bg-background-soft`
+
+### Text
+
+- **Primary text:** `#1A1A1A` — `text-text-primary`
+- **Secondary text:** `#6B6B6B` — `text-text-secondary` / `text-cream-400` (legacy)
+- **Inverted text:** `#FFFFFF` — `text-text-inverted`
+
+### Other
+
+- **Theme:** Light theme with pink/magenta accent (NOT dark theme)
+- **Font:** Poppins (Regular, Medium, SemiBold, Bold)
+- **Cards:** `bg-background-surface rounded-2xl p-4`
+- **All text in Spanish (Rioplatense)**
+- **Icons from lucide-react-native**
+- **Status colors defined in [src/lib/orderConstants.ts](src/lib/orderConstants.ts)**
+
+> **Note:** The `gold-*`, `cream-*`, `elegant-dark`, and `elegant-gray` class names are legacy aliases kept for backward compatibility. They map to the new pink/light palette — see [tailwind.config.ts](tailwind.config.ts).

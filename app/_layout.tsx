@@ -14,7 +14,7 @@ import { useOrderNotifications } from "@/hooks/useOrderNotifications";
 import { OfflineBanner } from "@/components/shared/OfflineBanner";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 import { AnimatedSplash } from "@/components/shared/AnimatedSplash";
-import { initSentry } from "@/lib/sentry";
+import { initSentry, captureError } from "@/lib/sentry";
 
 // Initialize Sentry at module level
 initSentry();
@@ -31,7 +31,7 @@ function onAppStateChange(status: AppStateStatus) {
 }
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
@@ -41,11 +41,23 @@ export default function RootLayout() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    if (fontsLoaded) {
+    if (fontError) {
+      captureError(fontError, { context: "font-loading" });
+    }
+    if (fontsLoaded || fontError) {
       // Hide native splash — animated splash takes over seamlessly
       SplashScreen.hideAsync();
     }
-  }, [fontsLoaded]);
+  }, [fontsLoaded, fontError]);
+
+  // Safety-net: force-hide splash if stuck for more than 8 seconds
+  useEffect(() => {
+    const safetyNet = setTimeout(() => {
+      SplashScreen.hideAsync();
+      setShowSplash(false);
+    }, 8000);
+    return () => clearTimeout(safetyNet);
+  }, []);
 
   useEffect(() => {
     const subscription = AppState.addEventListener("change", onAppStateChange);
