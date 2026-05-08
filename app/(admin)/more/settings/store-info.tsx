@@ -33,6 +33,29 @@ const OPERATING_MODES = [
   { key: "pickup", label: "Entrega en Tienda", icon: "🏪" },
 ];
 
+type BusinessType = "restaurant" | "store" | "catalog";
+
+const BUSINESS_TYPES: { key: BusinessType; label: string; description: string; icon: string }[] = [
+  {
+    key: "restaurant",
+    label: "Restaurante / Comida",
+    description: "Pedidos online con delivery o retiro. Stock deshabilitado.",
+    icon: "🍽️",
+  },
+  {
+    key: "store",
+    label: "Tienda / Comercio",
+    description: "Productos con stock, pedidos y delivery o retiro.",
+    icon: "🏪",
+  },
+  {
+    key: "catalog",
+    label: "Catálogo digital",
+    description: "Solo muestra productos, sin delivery ni pedidos.",
+    icon: "📖",
+  },
+];
+
 export default function StoreInfoScreen() {
   const { store } = useStore();
   const updateStore = useUpdateStore();
@@ -43,10 +66,17 @@ export default function StoreInfoScreen() {
   const [address, setAddress] = useState("");
   const [country, setCountry] = useState("");
   const [currency, setCurrency] = useState("USD");
-  const [isFoodBusiness, setIsFoodBusiness] = useState(true);
-  const [catalogMode, setCatalogMode] = useState(false);
+  const [businessType, setBusinessType] = useState<BusinessType>("restaurant");
   const [operatingModes, setOperatingModes] = useState<string[]>([]);
   const [hideCatalogPrices, setHideCatalogPrices] = useState(false);
+
+  const isCatalog = businessType === "catalog";
+
+  function deriveBusinessType(s: { is_food_business: boolean; catalog_mode: boolean }): BusinessType {
+    if (s.catalog_mode) return "catalog";
+    if (s.is_food_business) return "restaurant";
+    return "store";
+  }
 
   useEffect(() => {
     if (store) {
@@ -56,8 +86,7 @@ export default function StoreInfoScreen() {
       setAddress((store as any).address ?? "");
       setCountry((store as any).country ?? "");
       setCurrency((store as any).currency ?? "USD");
-      setIsFoodBusiness(store.is_food_business ?? true);
-      setCatalogMode(store.catalog_mode ?? false);
+      setBusinessType(deriveBusinessType(store));
       setOperatingModes(store.operating_modes ?? []);
       setHideCatalogPrices((store as any).hide_catalog_prices === true);
     }
@@ -70,7 +99,7 @@ export default function StoreInfoScreen() {
   };
 
   const needsPhysicalAddress =
-    operatingModes.includes("delivery") || operatingModes.includes("pickup");
+    !isCatalog && (operatingModes.includes("delivery") || operatingModes.includes("pickup"));
 
   const handleSave = async () => {
     if (!name.trim()) {
@@ -84,6 +113,8 @@ export default function StoreInfoScreen() {
     }
 
     try {
+      const catalogMode = businessType === "catalog";
+      const isFoodBusiness = businessType === "restaurant";
       await updateStore.mutateAsync({
         name: name.trim(),
         email: email.trim() || null,
@@ -93,7 +124,7 @@ export default function StoreInfoScreen() {
         currency,
         is_food_business: isFoodBusiness,
         catalog_mode: catalogMode,
-        operating_modes: operatingModes.length > 0 ? operatingModes : null,
+        operating_modes: catalogMode ? null : (operatingModes.length > 0 ? operatingModes : null),
         hide_catalog_prices: catalogMode ? hideCatalogPrices : false,
       });
       Alert.alert("Guardado", "Información actualizada");
@@ -215,35 +246,38 @@ export default function StoreInfoScreen() {
         ))}
       </ScrollView>
 
-      {/* Operating Modes */}
+      {/* Business Type */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
-        <ShoppingBag size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-lg">Modos de funcionamiento</Text>
+        <Utensils size={16} color="#EB1C8D" />
+        <Text className="text-text-primary font-sans-semibold text-lg">Tipo de negocio</Text>
       </View>
       <View className="gap-2 mb-4">
-        {OPERATING_MODES.map((mode) => {
-          const isActive = operatingModes.includes(mode.key);
+        {BUSINESS_TYPES.map((bt) => {
+          const isActive = businessType === bt.key;
           return (
             <TouchableOpacity
-              key={mode.key}
+              key={bt.key}
               className={`flex-row items-center justify-between px-4 py-3.5 rounded-xl ${
                 isActive ? "bg-gold-500/15 border border-gold-500/30" : "bg-elegant-gray"
               }`}
-              onPress={() => toggleOperatingMode(mode.key)}
+              onPress={() => setBusinessType(bt.key)}
               activeOpacity={0.7}
             >
-              <View className="flex-row items-center gap-2">
-                <Text className="text-lg">{mode.icon}</Text>
-                <Text
-                  className={`font-sans-medium text-base ${
-                    isActive ? "text-gold-500" : "text-cream-300"
-                  }`}
-                >
-                  {mode.label}
-                </Text>
+              <View className="flex-row items-center gap-3 flex-1">
+                <Text className="text-xl">{bt.icon}</Text>
+                <View className="flex-1">
+                  <Text
+                    className={`font-sans-medium text-base ${
+                      isActive ? "text-gold-500" : "text-cream-300"
+                    }`}
+                  >
+                    {bt.label}
+                  </Text>
+                  <Text className="text-cream-400 font-sans text-xs mt-0.5">{bt.description}</Text>
+                </View>
               </View>
               <View
-                className={`w-5 h-5 rounded-md items-center justify-center ${
+                className={`w-5 h-5 rounded-full items-center justify-center ${
                   isActive ? "bg-gold-500" : "bg-elegant-dark border border-cream-400/30"
                 }`}
               >
@@ -254,52 +288,10 @@ export default function StoreInfoScreen() {
         })}
       </View>
 
-      {/* Business Type */}
-      <View className="flex-row items-center gap-2 mb-2 mt-2">
-        <Utensils size={16} color="#EB1C8D" />
-        <Text className="text-text-primary font-sans-semibold text-lg">Tipo de empresa</Text>
-      </View>
-      <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
-        <View className="flex-row items-center justify-between">
-          <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-base">Negocio de comida</Text>
-            <Text className="text-cream-400 font-sans text-sm mt-0.5">
-              {isFoodBusiness
-                ? "Stock deshabilitado, galería de imágenes limitada"
-                : "Stock habilitado, galería de imágenes extendida"}
-            </Text>
-          </View>
-          <Switch
-            value={isFoodBusiness}
-            onValueChange={setIsFoodBusiness}
-            trackColor={{ false: "#444", true: "#EB1C8D" }}
-            thumbColor="#fff"
-          />
-        </View>
-      </View>
-
-      {/* Catalog Mode */}
-      <View className="bg-elegant-gray rounded-2xl p-4 mb-6">
-        <View className="flex-row items-center justify-between">
-          <View className="flex-1 mr-3">
-            <Text className="text-text-primary font-sans-medium text-base">Modo catálogo</Text>
-            <Text className="text-cream-400 font-sans text-sm mt-0.5">
-              {catalogMode
-                ? "Solo muestra productos, sin carrito ni pedidos"
-                : "Permite pedidos y carrito de compras"}
-            </Text>
-          </View>
-          <Switch
-            value={catalogMode}
-            onValueChange={setCatalogMode}
-            trackColor={{ false: "#444", true: "#EB1C8D" }}
-            thumbColor="#fff"
-          />
-        </View>
-
-        {/* Hide prices - only when catalog mode is ON */}
-        {catalogMode && (
-          <View className="flex-row items-center justify-between mt-4 pt-4 border-t border-elegant-dark">
+      {/* Hide prices — only when catalog type is selected */}
+      {isCatalog && (
+        <View className="bg-elegant-gray rounded-2xl p-4 mb-4">
+          <View className="flex-row items-center justify-between">
             <View className="flex-1 mr-3">
               <Text className="text-text-primary font-sans-medium text-base">Ocultar precios</Text>
               <Text className="text-cream-400 font-sans text-sm mt-0.5">
@@ -313,8 +305,51 @@ export default function StoreInfoScreen() {
               thumbColor="#fff"
             />
           </View>
-        )}
-      </View>
+        </View>
+      )}
+
+      {/* Operating Modes — hidden for catalog type */}
+      {!isCatalog && (
+        <>
+          <View className="flex-row items-center gap-2 mb-2 mt-2">
+            <ShoppingBag size={16} color="#EB1C8D" />
+            <Text className="text-text-primary font-sans-semibold text-lg">Modos de funcionamiento</Text>
+          </View>
+          <View className="gap-2 mb-6">
+            {OPERATING_MODES.map((mode) => {
+              const isActive = operatingModes.includes(mode.key);
+              return (
+                <TouchableOpacity
+                  key={mode.key}
+                  className={`flex-row items-center justify-between px-4 py-3.5 rounded-xl ${
+                    isActive ? "bg-gold-500/15 border border-gold-500/30" : "bg-elegant-gray"
+                  }`}
+                  onPress={() => toggleOperatingMode(mode.key)}
+                  activeOpacity={0.7}
+                >
+                  <View className="flex-row items-center gap-2">
+                    <Text className="text-lg">{mode.icon}</Text>
+                    <Text
+                      className={`font-sans-medium text-base ${
+                        isActive ? "text-gold-500" : "text-cream-300"
+                      }`}
+                    >
+                      {mode.label}
+                    </Text>
+                  </View>
+                  <View
+                    className={`w-5 h-5 rounded-md items-center justify-center ${
+                      isActive ? "bg-gold-500" : "bg-elegant-dark border border-cream-400/30"
+                    }`}
+                  >
+                    {isActive && <Text className="text-text-inverted text-xs font-sans-bold">✓</Text>}
+                  </View>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </>
+      )}
 
       {/* Save */}
       <TouchableOpacity
