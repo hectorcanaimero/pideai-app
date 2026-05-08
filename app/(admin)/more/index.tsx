@@ -88,14 +88,24 @@ export default function MoreScreen() {
     { icon: <HelpCircle size={22} color="#EB1C8D" />, label: "Central de ayuda", onPress: () => router.push("/(admin)/more/help") },
   ];
 
+  const isCatalogOnly = store?.catalog_mode === true;
+
   const settingsItems: MenuItem[] = [
     { icon: <Store size={22} color="#EB1C8D" />, label: "Info de tienda", onPress: () => router.push("/(admin)/more/settings/store-info") },
     { icon: <Clock size={22} color="#EB1C8D" />, label: "Horarios", onPress: () => router.push("/(admin)/more/settings/business-hours") },
-    { icon: <CreditCard size={22} color="#EB1C8D" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
-    { icon: <Wallet size={22} color="#EB1C8D" />, label: "Métodos de pago", onPress: () => router.push("/(admin)/more/settings/payment-methods") },
+    ...(!isCatalogOnly
+      ? [
+          { icon: <CreditCard size={22} color="#EB1C8D" />, label: "Pagos", onPress: () => router.push("/(admin)/more/settings/payment") },
+          { icon: <Wallet size={22} color="#EB1C8D" />, label: "Métodos de pago", onPress: () => router.push("/(admin)/more/settings/payment-methods") },
+        ]
+      : []),
     { icon: <DollarSign size={22} color="#EB1C8D" />, label: "Conversión de moneda", onPress: () => router.push("/(admin)/more/settings/currency") },
-    { icon: <ShoppingBag size={22} color="#EB1C8D" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
-    { icon: <Truck size={22} color="#EB1C8D" />, label: "Entrega", onPress: () => router.push("/(admin)/more/settings/delivery") },
+    ...(!isCatalogOnly
+      ? [
+          { icon: <ShoppingBag size={22} color="#EB1C8D" />, label: "Config. de pedidos", onPress: () => router.push("/(admin)/more/settings/order-settings") },
+          { icon: <Truck size={22} color="#EB1C8D" />, label: "Entrega", onPress: () => router.push("/(admin)/more/settings/delivery") },
+        ]
+      : []),
     { icon: <Palette size={22} color="#EB1C8D" />, label: "Diseño", onPress: () => router.push("/(admin)/more/settings/design") },
     { icon: <Wrench size={22} color="#EB1C8D" />, label: "Avanzado", onPress: () => router.push("/(admin)/more/settings/advanced") },
   ];
