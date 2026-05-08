@@ -12,21 +12,7 @@ import {
 import { Store, Globe, DollarSign, ShoppingBag, Utensils } from "lucide-react-native";
 import { useStore } from "@/contexts/StoreContext";
 import { useUpdateStore } from "@/hooks/useStoreSettings";
-
-const COUNTRIES = [
-  { code: "VE", label: "Venezuela" },
-  { code: "CO", label: "Colombia" },
-  { code: "MX", label: "México" },
-  { code: "AR", label: "Argentina" },
-  { code: "CL", label: "Chile" },
-  { code: "PE", label: "Perú" },
-  { code: "EC", label: "Ecuador" },
-  { code: "BR", label: "Brasil" },
-  { code: "US", label: "Estados Unidos" },
-  { code: "ES", label: "España" },
-];
-
-const CURRENCIES = ["USD", "EUR", "VES", "COP", "MXN", "ARS", "CLP", "PEN", "BRL"];
+import { CURRENCIES, COUNTRIES } from "@/lib/currencies";
 
 const OPERATING_MODES = [
   { key: "delivery", label: "Delivery", icon: "🚚" },
@@ -220,31 +206,45 @@ export default function StoreInfoScreen() {
         <DollarSign size={16} color="#EB1C8D" />
         <Text className="text-text-primary font-sans-semibold text-lg">Moneda</Text>
       </View>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ gap: 8, paddingBottom: 4 }}
-        className="mb-4"
-      >
-        {CURRENCIES.map((c) => (
-          <TouchableOpacity
-            key={c}
-            className={`px-4 py-2.5 rounded-xl ${
-              currency === c ? "bg-gold-500" : "bg-elegant-gray"
-            }`}
-            onPress={() => setCurrency(c)}
-            activeOpacity={0.7}
-          >
-            <Text
-              className={`font-sans-medium text-base ${
-                currency === c ? "text-text-inverted" : "text-cream-300"
+      <View className="gap-2 mb-4">
+        {CURRENCIES.map((c) => {
+          const isActive = currency === c.code;
+          return (
+            <TouchableOpacity
+              key={c.code}
+              className={`flex-row items-center justify-between px-4 py-3 rounded-xl ${
+                isActive ? "bg-gold-500/15 border border-gold-500/30" : "bg-elegant-gray"
               }`}
+              onPress={() => setCurrency(c.code)}
+              activeOpacity={0.7}
             >
-              {c}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+              <View className="flex-row items-center gap-2">
+                <Text
+                  className={`font-sans-bold text-base ${
+                    isActive ? "text-gold-500" : "text-cream-300"
+                  }`}
+                >
+                  {c.symbol}
+                </Text>
+                <Text
+                  className={`font-sans-medium text-base ${
+                    isActive ? "text-gold-500" : "text-cream-300"
+                  }`}
+                >
+                  {c.code} — {c.label}
+                </Text>
+              </View>
+              <View
+                className={`w-5 h-5 rounded-full items-center justify-center ${
+                  isActive ? "bg-gold-500" : "bg-elegant-dark border border-cream-400/30"
+                }`}
+              >
+                {isActive && <Text className="text-text-inverted text-xs font-sans-bold">✓</Text>}
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
 
       {/* Business Type */}
       <View className="flex-row items-center gap-2 mb-2 mt-2">
