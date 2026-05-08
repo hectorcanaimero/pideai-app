@@ -70,9 +70,17 @@ export default function StoreInfoScreen() {
     );
   };
 
+  const needsPhysicalAddress =
+    operatingModes.includes("delivery") || operatingModes.includes("pickup");
+
   const handleSave = async () => {
     if (!name.trim()) {
       Alert.alert("Error", "El nombre es requerido");
+      return;
+    }
+
+    if (needsPhysicalAddress && !address.trim()) {
+      Alert.alert("Error", "La dirección es requerida para tiendas con delivery o pick-up");
       return;
     }
 
@@ -130,11 +138,20 @@ export default function StoreInfoScreen() {
         keyboardType="phone-pad"
       />
 
-      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Dirección</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">
+        Dirección {needsPhysicalAddress ? "*" : "(opcional)"}
+      </Text>
+      {!needsPhysicalAddress && (
+        <Text className="text-cream-400 font-sans text-sm mb-1.5">
+          Tu tienda es virtual/online, no necesita dirección física
+        </Text>
+      )}
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
         value={address}
         onChangeText={setAddress}
+        placeholder={needsPhysicalAddress ? "Dirección de tu tienda" : "Opcional"}
+        placeholderTextColor="#666"
       />
 
       {/* Country */}
