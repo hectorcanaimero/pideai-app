@@ -4,8 +4,10 @@ import {
   useEffect,
   useState,
   useCallback,
+  useRef,
   type ReactNode,
 } from "react";
+import { AppState, type AppStateStatus } from "react-native";
 import { supabase } from "@/services/supabase";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -96,13 +98,50 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     loadStore();
   }, [loadStore]);
 
+  // Realtime subscription: sync store changes (e.g. force_status from web)
+  const channelRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
+
   useEffect(() => {
-    if (!store) return;
-    const interval = setInterval(() => {
-      loadStore();
-    }, 5 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, [store, loadStore]);
+    if (!store?.id) return;
+
+    if (channelRef.current) {
+      supabase.removeChannel(channelRef.current);
+    }
+
+    const channel = supabase
+      .channel(`store-rt-${store.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "stores",
+          filter: `id=eq.${store.id}`,
+        },
+        (payload) => {
+          setStore(payload.new as unknown as Store);
+        }
+      )
+      .subscribe();
+
+    channelRef.current = channel;
+
+    return () => {
+      supabase.removeChannel(channel);
+      channelRef.current = null;
+    };
+  }, [store?.id]);
+
+  // Refetch when app returns to foreground
+  useEffect(() => {
+    const handleAppState = (nextState: AppStateStatus) => {
+      if (nextState === "active" && store?.id) {
+        loadStore();
+      }
+    };
+    const sub = AppState.addEventListener("change", handleAppState);
+    return () => sub.remove();
+  }, [store?.id, loadStore]);
 
   return (
     <StoreContext.Provider
