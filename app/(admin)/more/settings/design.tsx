@@ -32,7 +32,6 @@ export default function DesignSettingsScreen() {
   const [priceColor, setPriceColor] = useState("");
   const [deliveryLabel, setDeliveryLabel] = useState("");
   const [pickupLabel, setPickupLabel] = useState("");
-  const [digitalMenuLabel, setDigitalMenuLabel] = useState("");
   const [uploadingLogo, setUploadingLogo] = useState(false);
   const [showSocialForm, setShowSocialForm] = useState(false);
   const [socialPlatform, setSocialPlatform] = useState("");
@@ -104,7 +103,6 @@ export default function DesignSettingsScreen() {
       setPriceColor(s.price_color ?? "");
       setDeliveryLabel(s.delivery_label ?? "");
       setPickupLabel(s.pickup_label ?? "");
-      setDigitalMenuLabel(s.digital_menu_label ?? "");
     }
   }, [store]);
 
@@ -136,7 +134,6 @@ export default function DesignSettingsScreen() {
         price_color: priceColor || null,
         delivery_label: deliveryLabel || null,
         pickup_label: pickupLabel || null,
-        digital_menu_label: digitalMenuLabel || null,
       });
       Alert.alert("Guardado", "Configuración de diseño actualizada");
     } catch {
@@ -291,21 +288,12 @@ export default function DesignSettingsScreen() {
         placeholderTextColor="#666"
       />
 
-      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Pick-up</Text>
-      <TextInput
-        className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-4"
-        value={pickupLabel}
-        onChangeText={setPickupLabel}
-        placeholder="Pick-up"
-        placeholderTextColor="#666"
-      />
-
-      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Menú Digital</Text>
+      <Text className="text-cream-300 font-sans-medium text-base mb-1.5">Etiqueta Entrega en Tienda</Text>
       <TextInput
         className="bg-elegant-gray text-text-primary px-4 py-3 rounded-xl font-sans text-base mb-6"
-        value={digitalMenuLabel}
-        onChangeText={setDigitalMenuLabel}
-        placeholder="Mesa"
+        value={pickupLabel}
+        onChangeText={setPickupLabel}
+        placeholder="Entrega en Tienda"
         placeholderTextColor="#666"
       />
 

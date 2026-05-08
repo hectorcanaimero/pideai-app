@@ -76,7 +76,7 @@ describe("orderConstants", () => {
   describe("ORDER_TYPE_LABELS", () => {
     it("has labels for all order types", () => {
       expect(ORDER_TYPE_LABELS.delivery).toBe("Delivery");
-      expect(ORDER_TYPE_LABELS.pickup).toBe("Pick-up");
+      expect(ORDER_TYPE_LABELS.pickup).toBe("Entrega en Tienda");
       expect(ORDER_TYPE_LABELS.digital_menu).toBe("Mesa");
       expect(ORDER_TYPE_LABELS.dine_in).toBe("En tienda");
     });

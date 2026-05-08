@@ -42,7 +42,7 @@ export const STATUS_LABELS: Record<OrderStatus, string> = {
 
 export const ORDER_TYPE_LABELS: Record<string, string> = {
   delivery: "Delivery",
-  pickup: "Pick-up",
+  pickup: "Entrega en Tienda",
   digital_menu: "Mesa",
   dine_in: "En tienda",
 };

@@ -83,7 +83,7 @@ Deno.serve(async (req) => {
 
     const orderTypeLabel: Record<string, string> = {
       delivery: "DELIVERY",
-      pickup: "PICK-UP",
+      pickup: "ENTREGA EN TIENDA",
       digital_menu: "MESA",
       dine_in: "EN TIENDA",
     };

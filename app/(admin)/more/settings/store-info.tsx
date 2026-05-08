@@ -30,8 +30,7 @@ const CURRENCIES = ["USD", "EUR", "VES", "COP", "MXN", "ARS", "CLP", "PEN", "BRL
 
 const OPERATING_MODES = [
   { key: "delivery", label: "Delivery", icon: "🚚" },
-  { key: "pickup", label: "Pick-up", icon: "🏪" },
-  { key: "digital_menu", label: "Menú digital", icon: "🍽️" },
+  { key: "pickup", label: "Entrega en Tienda", icon: "🏪" },
 ];
 
 export default function StoreInfoScreen() {
@@ -80,7 +79,7 @@ export default function StoreInfoScreen() {
     }
 
     if (needsPhysicalAddress && !address.trim()) {
-      Alert.alert("Error", "La dirección es requerida para tiendas con delivery o pick-up");
+      Alert.alert("Error", "La dirección es requerida para tiendas con delivery o entrega en tienda");
       return;
     }
 

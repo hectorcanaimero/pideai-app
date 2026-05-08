@@ -188,7 +188,7 @@ const CATEGORIES: Category[] = [
           "En Info de tienda podés cambiar el nombre, logo, descripción y datos de contacto.",
           "En Horarios configurás cuándo está abierta tu tienda.",
           "En Pagos y Métodos de pago gestionás cómo te pagan los clientes.",
-          "En Pedidos configurás el modo de operación (delivery, pickup o menú digital).",
+          "En Info de tienda configurás el modo de operación (delivery o entrega en tienda).",
           "En Entrega configurás las zonas y costos de delivery.",
           "En Diseño personalizás los colores y apariencia de tu catálogo.",
           "En Avanzado encontrás opciones de notificaciones y configuración técnica.",
